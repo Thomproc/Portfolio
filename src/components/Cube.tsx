@@ -1,7 +1,6 @@
-import { useState } from "react";
-// import { useFrame } from "@react-three/fiber";
-import { Color } from "three";
-import { Edges } from "@react-three/drei";
+import { useState, useMemo } from "react";
+import { Color, MeshBasicMaterial } from "three";
+import { RoundedBoxGeometry } from "three-stdlib";
 import { TCube } from "../models/Cube";
 
 export default function Cube({
@@ -12,62 +11,60 @@ export default function Cube({
 }: {
   cube: TCube;
   colors: string[];
-  setSelectedCube: (cube: number | null) => void;
+  setSelectedCube: (meshId: number | null) => void;
   isSelected: boolean;
 }) {
-  // const meshRef = useRef<Mesh>(new Mesh());
-  const [hoveredFaceIndex, setHoveredFaceIndex] = useState(-1);
+  const [isHovered, setIsHovered] = useState(false);
 
-  const [selectedFaceIndex, setSelectedFaceIndex] = useState(-1);
+  const colorsGeometry = useMemo(() => {
+    return new RoundedBoxGeometry(
+      cube.size,
+      cube.size,
+      cube.size,
+      4,
+      cube.cornerRadius
+    );
+  }, [cube.size, cube.cornerRadius]);
 
-  //   useFrame((_state, delta) => (meshRef.current.rotation.x += delta));
+  const materials = useMemo(() => {
+    return colors.map((colorName) => {
+      const basicFaceColor: Color = new Color(colorName);
+      const hoveredCubeColor: Color = basicFaceColor
+        .clone()
+        .offsetHSL(0, 0, 0.1);
+      const faceColor: Color =
+        isHovered || isSelected ? hoveredCubeColor : basicFaceColor;
+
+      return new MeshBasicMaterial({ color: faceColor });
+    });
+  }, [colors, isHovered, isSelected]);
 
   return (
-    <mesh
-      // ref={meshRef}
-      position={cube.position}
-      rotation={cube.rotation}
+    <group
+      name={cube.id.toString()}
+      position={cube.initialPosition}
       onClick={(event) => {
-        setSelectedFaceIndex(event.face!.materialIndex);
         event.stopPropagation();
-        setSelectedCube(cube.id);
+        setSelectedCube(isSelected ? null : cube.id);
       }}
-      onPointerMove={(event) => {
+      onPointerEnter={(event) => {
         event.stopPropagation();
-        setHoveredFaceIndex(event.face!.materialIndex);
+        setIsHovered(true);
       }}
       onPointerOut={(event) => {
         event.stopPropagation();
-        setHoveredFaceIndex(-1);
+        setIsHovered(false);
       }}
     >
-      <boxGeometry args={[cube.size, cube.size, cube.size]} />
-
-      {colors.map((colorName, index) => {
-        const basicFaceColor: Color = new Color(colorName);
-        const hoveredCubeColor: Color = basicFaceColor
-          .clone()
-          .offsetHSL(0, 0, 0.1);
-        const hoveredFaceColor = basicFaceColor.clone().offsetHSL(0, 0, 0.25);
-        let faceColor: Color = basicFaceColor;
-        if (hoveredFaceIndex !== -1) {
-          faceColor =
-            index === hoveredFaceIndex ? hoveredFaceColor : hoveredCubeColor;
-        } else if (isSelected) {
-          faceColor =
-            index === selectedFaceIndex ? hoveredFaceColor : hoveredCubeColor;
-        }
-
-        return (
-          <meshBasicMaterial
-            key={index}
-            attach={`material-${index}`}
-            color={faceColor}
-          />
-        );
-      })}
-
-      <Edges color="black" lineWidth={2} scale={1.005} />
-    </mesh>
+      <mesh>
+        <boxGeometry
+          args={[cube.size - 0.02, cube.size - 0.02, cube.size - 0.02]}
+        />
+        <meshBasicMaterial color="#EEEEEE" />
+      </mesh>
+      {/* Mesh pour une face stylisée */}
+      <mesh geometry={colorsGeometry} material={materials} />
+      {/* <Edges color="white" lineWidth={5} scale={1.005} /> */}
+    </group>
   );
 }

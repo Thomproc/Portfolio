@@ -1,22 +1,33 @@
+import { Vector3 } from "three";
 import { TCube } from "./Cube";
 
 export default class RubiksCube {
   private nbCubes: number; // Rubik's cube de : n X n X n
+  private position: [number, number, number];
   private sizeCube: number; // Taille d'un cube du rubik's cube
   private cubeColors: string[] = [
     "blue",
     "green",
-    "yellow",
+    "purple",
     "grey",
     "orange",
     "red",
   ];
+  private rotationSpeed: number = 5;
   private offsetToCenter: number;
   private cubes: TCube[] = [];
-  private selectedCube: TCube | null = null;
 
-  constructor({ nbCubes, sizeCube }: { nbCubes: number; sizeCube: number }) {
+  constructor({
+    nbCubes,
+    position,
+    sizeCube = 1,
+  }: {
+    nbCubes: number;
+    position: [number, number, number];
+    sizeCube: number;
+  }) {
     this.nbCubes = nbCubes;
+    this.position = position;
     this.sizeCube = sizeCube;
     this.offsetToCenter = ((this.nbCubes - 1) * this.sizeCube) / 2;
 
@@ -28,14 +39,14 @@ export default class RubiksCube {
       ) {
         this.cubes.push({
           id: indexCrown * this.nbCubes * this.nbCubes + indexCube,
-          position: [
+          size: this.sizeCube,
+          cornerRadius: 0.13,
+          initialPosition: [
             (indexCube % this.nbCubes) * this.sizeCube - this.offsetToCenter,
             indexCrown * this.sizeCube - this.offsetToCenter,
             Math.floor(indexCube / this.nbCubes) * this.sizeCube -
               this.offsetToCenter,
           ],
-          rotation: [0, 0, 0],
-          size: this.sizeCube,
         });
       }
     }
@@ -45,23 +56,40 @@ export default class RubiksCube {
     return this.cubes;
   }
 
+  getCubeById(cubeId: number) {
+    return this.cubes[cubeId];
+  }
+
   getColors() {
     return this.cubeColors;
   }
 
-  getSelectedCube() {
-    return this.selectedCube;
+  getRotationSpeed() {
+    return this.rotationSpeed;
   }
 
-  rotateUp() {
-    if (this.selectedCube !== null) {
-      this.selectedCube.rotation[0] += 10;
-    }
+  getPosition() {
+    return this.position;
   }
 
-  private cubesToRotate(): TCube[] {
-    const cubes: TCube[] = [];
-    this.cubes.forEach((element) => {});
-    return cubes;
+  onSameX(meshPosition: Vector3, selectedMeshPosition: Vector3) {
+    return (
+      Math.round(meshPosition.x * 10) ===
+      Math.round(selectedMeshPosition.x * 10)
+    );
+  }
+
+  onSameY(meshPosition: Vector3, selectedMeshPosition: Vector3) {
+    return (
+      Math.round(meshPosition.y * 10) ===
+      Math.round(selectedMeshPosition.y * 10)
+    );
+  }
+
+  onSameZ(meshPosition: Vector3, selectedMeshPosition: Vector3) {
+    return (
+      Math.round(meshPosition.z * 10) ===
+      Math.round(selectedMeshPosition.z * 10)
+    );
   }
 }
