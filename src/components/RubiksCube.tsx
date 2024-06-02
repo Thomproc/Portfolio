@@ -1,31 +1,50 @@
 import { useCallback, useEffect, useMemo, useRef, useState } from "react";
-import { useFrame } from "@react-three/fiber";
-import { OrbitControls as OC } from "three-stdlib";
-import { OrbitControls } from "@react-three/drei";
 import { Group, Vector3 } from "three";
+import { OrbitControls } from "@react-three/drei";
+import { useFrame, useThree } from "@react-three/fiber";
+import { animated, useSpring } from "@react-spring/three";
+
 import Cube from "./Cube";
 import RubiksCube from "../models/RubiksCube";
 
-export default function RubiksCubeComponent() {
+export default function RubiksCubeComponent({
+  dim,
+  sizeCube,
+  envPosition,
+  envRotation,
+  focusedPosition,
+  focusedRotation,
+  setParentIsFocused,
+}: {
+  dim: number;
+  sizeCube: number;
+  envPosition: [number, number, number];
+  envRotation: [number, number, number];
+  focusedPosition: [number, number, number];
+  focusedRotation: [number, number, number];
+  setParentIsFocused: (value: boolean) => void;
+}) {
   const rubiksCube: RubiksCube = useMemo(() => {
     return new RubiksCube({
-      nbCubes: 3,
-      sizeCube: 1,
-      position: [0, 0, 0],
+      nbCubes: dim,
+      sizeCube: sizeCube < 1 ? 1 : sizeCube,
+      position: envPosition,
+      rotation: envRotation,
     });
-  }, []);
+  }, [dim, envPosition, sizeCube]);
 
-  const RC = useRef<Group>(null);
-  const faceToRotate = useRef<Group>(null);
-  const orbitControl = useRef<OC>(null);
-
+  const [isFocused, setIsFocused] = useState<boolean>(false);
   const [selectedCubeId, setSelectedCubeId] = useState<number | null>(null);
-
   const [animation, setAnimation] = useState({
     playing: false,
     axis: "",
     direction: 1, // Mettre une valeur de 1 (ou -1) pour que l'animation de rotation se fasse dans le sens anti horaire (ou horaire )
   });
+  const [wrongKey, setWrongKey] = useState(false);
+
+  const RC = useRef<Group>(null);
+  const faceToRotate = useRef<Group>(null);
+  const { camera } = useThree();
 
   // Permet d'empêcher un problème d'animation si on selectionne un autre cube lorsqu'elle est lancée
   const setSelectedCubeWrapper = useCallback(
@@ -33,11 +52,15 @@ export default function RubiksCubeComponent() {
       if (!animation.playing) {
         setSelectedCubeId(meshId);
       }
+      if (!isFocused) {
+        setIsFocused(true);
+        setParentIsFocused(false);
+      }
     },
-    [animation.playing]
+    [animation.playing, isFocused]
   );
 
-  // Gestion des événements clavier
+  // Gestion des événements clavier pour faire tourner le cube
   useEffect(() => {
     const prepareCubesToRotate = (
       onSameAxisRotation: (
@@ -66,7 +89,9 @@ export default function RubiksCubeComponent() {
 
     const getAxes = () => {
       const cameraPosition = new Vector3(0, 0, 0);
-      orbitControl.current?.object.getWorldDirection(cameraPosition);
+      camera.getWorldPosition(cameraPosition);
+      RC.current!.worldToLocal(cameraPosition);
+
       const absX = Math.abs(cameraPosition.x);
       const absZ = Math.abs(cameraPosition.z);
 
@@ -75,12 +100,12 @@ export default function RubiksCubeComponent() {
           main: {
             name: "x",
             func: rubiksCube.onSameX,
-            mainDirection: cameraPosition.x >= 0 ? 1 : -1,
+            mainDirection: cameraPosition.x >= 0 ? -1 : 1,
           },
           horizontal: {
             name: "z",
             func: rubiksCube.onSameZ,
-            mainDirection: cameraPosition.x >= 0 ? -1 : 1,
+            mainDirection: cameraPosition.x >= 0 ? 1 : -1,
           },
         };
       }
@@ -88,61 +113,88 @@ export default function RubiksCubeComponent() {
         main: {
           name: "z",
           func: rubiksCube.onSameZ,
-          mainDirection: cameraPosition.z >= 0 ? 1 : -1,
+          mainDirection: cameraPosition.z >= 0 ? -1 : 1,
         },
         horizontal: {
           name: "x",
           func: rubiksCube.onSameX,
-          mainDirection: cameraPosition.z >= 0 ? 1 : -1,
+          mainDirection: cameraPosition.z >= 0 ? -1 : 1,
         },
       };
     };
     const handleKeyUp = (event: KeyboardEvent) => {
-      if (selectedCubeId !== null && !animation.playing) {
-        const axes = getAxes();
-        const lowerKey = event.key.toLowerCase();
+      if (selectedCubeId === null || animation.playing) {
+        return;
+      }
 
-        // Rotation autour de l'axe verticale
-        if (lowerKey === "d" || lowerKey === "q") {
-          prepareCubesToRotate(rubiksCube.onSameY);
-          setAnimation({
-            axis: "y",
-            playing: true,
-            direction: event.key === "d" ? 1 : -1,
-          });
-        }
-        // Rotation autour de l'axe horizontal à la vue de la caméra
-        else if (lowerKey === "z" || lowerKey === "s") {
-          prepareCubesToRotate(axes!.horizontal.func);
-          setAnimation({
-            axis: axes!.horizontal.name,
-            playing: true,
-            direction:
-              event.key === "z"
-                ? axes!.horizontal.mainDirection
-                : -1 * axes!.horizontal.mainDirection,
-          });
-        }
-        // Rotation autour de l'axe parallèle à la vue de la caméra
-        else if (lowerKey === "e" || lowerKey === "a") {
-          prepareCubesToRotate(axes!.main.func);
-          setAnimation({
-            axis: axes!.main.name,
-            playing: true,
-            direction:
-              event.key === "e"
-                ? axes!.main.mainDirection
-                : -1 * axes!.main.mainDirection,
-          });
-        }
+      const axes = getAxes();
+      const lowerKey = event.key.toLowerCase();
+
+      // Rotation autour de l'axe verticale
+      if (lowerKey === "d" || lowerKey === "q") {
+        prepareCubesToRotate(rubiksCube.onSameY);
+        setAnimation({
+          axis: "y",
+          playing: true,
+          direction: event.key === "d" ? 1 : -1,
+        });
+        setWrongKey(false);
+      }
+      // Rotation autour de l'axe horizontal à la vue de la caméra
+      else if (lowerKey === "z" || lowerKey === "s") {
+        prepareCubesToRotate(axes!.horizontal.func);
+        setAnimation({
+          axis: axes!.horizontal.name,
+          playing: true,
+          direction:
+            event.key === "z"
+              ? axes!.horizontal.mainDirection
+              : -1 * axes!.horizontal.mainDirection,
+        });
+        setWrongKey(false);
+      }
+      // Rotation autour de l'axe parallèle à la vue de la caméra
+      else if (lowerKey === "e" || lowerKey === "a") {
+        prepareCubesToRotate(axes!.main.func);
+        setAnimation({
+          axis: axes!.main.name,
+          playing: true,
+          direction:
+            event.key === "e"
+              ? axes!.main.mainDirection
+              : -1 * axes!.main.mainDirection,
+        });
+        setWrongKey(false);
+      }
+      // Mauvaise touche
+      else {
+        setWrongKey(true);
+      }
+    };
+    document.addEventListener("keyup", handleKeyUp, {
+      once: true,
+    });
+    return () => {
+      setWrongKey(false);
+      document.removeEventListener("keyup", handleKeyUp);
+    };
+  }, [selectedCubeId, animation.playing, wrongKey]);
+
+  // Gestion évènements clavier pour quitter le Rubik's cube
+  useEffect(() => {
+    const unfocused = (event: KeyboardEvent) => {
+      if (event.key === "Escape") {
+        setIsFocused(false);
+        setParentIsFocused(true);
+        setSelectedCubeId(null);
       }
     };
 
-    document.addEventListener("keyup", handleKeyUp, { once: true });
+    document.addEventListener("keyup", unfocused);
     return () => {
-      document.removeEventListener("keyup", handleKeyUp);
+      document.removeEventListener("keyup", unfocused);
     };
-  }, [selectedCubeId, animation.playing]);
+  }, []);
 
   // Animation de la rotation des cubes
   useFrame((_state, delta) => {
@@ -200,8 +252,17 @@ export default function RubiksCubeComponent() {
     }
   });
 
+  const { animPosition, animRotation } = useSpring({
+    animPosition: isFocused ? focusedPosition : envPosition,
+    animRotation: isFocused ? focusedRotation : envRotation,
+    config: { mass: 1, tension: 170, friction: 26 },
+  });
   return (
-    <group ref={RC} position={rubiksCube.getPosition()}>
+    <animated.group
+      ref={RC}
+      position={animPosition}
+      rotation={animRotation as any}
+    >
       <group ref={faceToRotate} />
       {rubiksCube.getCubes().map((cube) => (
         <Cube
@@ -213,11 +274,12 @@ export default function RubiksCubeComponent() {
         />
       ))}
       <OrbitControls
-        ref={orbitControl}
-        target={rubiksCube.getPosition()}
-        minPolarAngle={Math.PI / 4}
+        enabled={isFocused}
+        enableZoom={false}
+        target={focusedPosition}
         maxPolarAngle={(3 * Math.PI) / 4}
+        minPolarAngle={Math.PI / 4}
       />
-    </group>
+    </animated.group>
   );
 }

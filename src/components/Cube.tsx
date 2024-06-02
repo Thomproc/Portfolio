@@ -2,6 +2,7 @@ import { useState, useMemo } from "react";
 import { Color, MeshBasicMaterial } from "three";
 import { RoundedBoxGeometry } from "three-stdlib";
 import { TCube } from "../models/Cube";
+import { Edges } from "@react-three/drei";
 
 export default function Cube({
   cube,
@@ -40,31 +41,32 @@ export default function Cube({
   }, [colors, isHovered, isSelected]);
 
   return (
-    <group
-      name={cube.id.toString()}
-      position={cube.initialPosition}
-      onClick={(event) => {
-        event.stopPropagation();
-        setSelectedCube(isSelected ? null : cube.id);
-      }}
-      onPointerEnter={(event) => {
-        event.stopPropagation();
-        setIsHovered(true);
-      }}
-      onPointerOut={(event) => {
-        event.stopPropagation();
-        setIsHovered(false);
-      }}
-    >
-      <mesh>
+    <group name={cube.id.toString()} position={cube.initialPosition}>
+      <mesh
+        onClick={(event) => {
+          event.stopPropagation();
+          setSelectedCube(isSelected ? null : cube.id);
+        }}
+        onPointerEnter={(event) => {
+          event.stopPropagation();
+          setIsHovered(true);
+        }}
+        onPointerOut={(event) => {
+          event.stopPropagation();
+          setIsHovered(false);
+        }}
+      >
         <boxGeometry
-          args={[cube.size - 0.02, cube.size - 0.02, cube.size - 0.02]}
+          args={[
+            cube.size - cube.size / 200,
+            cube.size - cube.size / 200,
+            cube.size - cube.size / 200,
+          ]}
         />
         <meshBasicMaterial color="#EEEEEE" />
+        <Edges color="black" lineWidth={0.3} scale={1.005} />
       </mesh>
-      {/* Mesh pour une face stylisée */}
       <mesh geometry={colorsGeometry} material={materials} />
-      {/* <Edges color="white" lineWidth={5} scale={1.005} /> */}
     </group>
   );
 }

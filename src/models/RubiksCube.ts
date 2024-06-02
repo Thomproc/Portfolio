@@ -4,14 +4,15 @@ import { TCube } from "./Cube";
 export default class RubiksCube {
   private nbCubes: number; // Rubik's cube de : n X n X n
   private position: [number, number, number];
+  private rotation: [number, number, number];
   private sizeCube: number; // Taille d'un cube du rubik's cube
   private cubeColors: string[] = [
-    "blue",
-    "green",
-    "purple",
-    "grey",
-    "orange",
-    "red",
+    "#1a5aa8",
+    "#45a81a",
+    "#841286",
+    "#777777",
+    "#9d6b00",
+    "#a92f2f",
   ];
   private rotationSpeed: number = 5;
   private offsetToCenter: number;
@@ -20,14 +21,17 @@ export default class RubiksCube {
   constructor({
     nbCubes,
     position,
-    sizeCube = 1,
+    rotation,
+    sizeCube,
   }: {
     nbCubes: number;
     position: [number, number, number];
+    rotation: [number, number, number];
     sizeCube: number;
   }) {
     this.nbCubes = nbCubes;
     this.position = position;
+    this.rotation = rotation;
     this.sizeCube = sizeCube;
     this.offsetToCenter = ((this.nbCubes - 1) * this.sizeCube) / 2;
 
@@ -40,7 +44,7 @@ export default class RubiksCube {
         this.cubes.push({
           id: indexCrown * this.nbCubes * this.nbCubes + indexCube,
           size: this.sizeCube,
-          cornerRadius: 0.13,
+          cornerRadius: this.sizeCube / 10,
           initialPosition: [
             (indexCube % this.nbCubes) * this.sizeCube - this.offsetToCenter,
             indexCrown * this.sizeCube - this.offsetToCenter,
@@ -70,6 +74,10 @@ export default class RubiksCube {
 
   getPosition() {
     return this.position;
+  }
+
+  getRotation() {
+    return this.rotation;
   }
 
   onSameX(meshPosition: Vector3, selectedMeshPosition: Vector3) {
