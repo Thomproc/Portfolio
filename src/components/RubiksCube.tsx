@@ -1,6 +1,5 @@
 import { useCallback, useEffect, useMemo, useRef, useState } from "react";
 import { Group, Vector3 } from "three";
-import { OrbitControls } from "@react-three/drei";
 import { useFrame, useThree } from "@react-three/fiber";
 import { animated, useSpring } from "@react-spring/three";
 
@@ -9,31 +8,31 @@ import RubiksCube from "../models/RubiksCube";
 
 export default function RubiksCubeComponent({
   dim,
-  sizeCube,
+  cubesSize,
   envPosition,
-  envRotation,
+  envRotationY,
   focusedPosition,
-  focusedRotation,
-  setParentIsFocused,
+  focusedRotationY,
+  isFocused,
+  focusMe,
 }: {
   dim: number;
-  sizeCube: number;
+  cubesSize: number;
   envPosition: [number, number, number];
-  envRotation: [number, number, number];
+  envRotationY: number;
   focusedPosition: [number, number, number];
-  focusedRotation: [number, number, number];
-  setParentIsFocused: (value: boolean) => void;
+  focusedRotationY: number;
+  isFocused: boolean;
+  focusMe: () => void;
 }) {
   const rubiksCube: RubiksCube = useMemo(() => {
     return new RubiksCube({
       nbCubes: dim,
-      sizeCube: sizeCube < 1 ? 1 : sizeCube,
-      position: envPosition,
-      rotation: envRotation,
+      sizeCube: cubesSize < 1 ? 1 : cubesSize,
+      rotationSpeed: 5,
     });
-  }, [dim, envPosition, sizeCube]);
+  }, [dim, envPosition, cubesSize]);
 
-  const [isFocused, setIsFocused] = useState<boolean>(false);
   const [selectedCubeId, setSelectedCubeId] = useState<number | null>(null);
   const [animation, setAnimation] = useState({
     playing: false,
@@ -46,16 +45,13 @@ export default function RubiksCubeComponent({
   const faceToRotate = useRef<Group>(null);
   const { camera } = useThree();
 
-  // Permet d'empêcher un problème d'animation si on selectionne un autre cube lorsqu'elle est lancée
+  // Permet :
+  // - d'empêcher un problème d'animation si on selectionne un autre cube lorsqu'elle est lancée
+  // - de sélectionner le Rubik's Cube
   const setSelectedCubeWrapper = useCallback(
     (meshId: number | null) => {
-      if (!animation.playing) {
-        setSelectedCubeId(meshId);
-      }
-      if (!isFocused) {
-        setIsFocused(true);
-        setParentIsFocused(false);
-      }
+      !animation.playing && setSelectedCubeId(meshId);
+      !isFocused && focusMe();
     },
     [animation.playing, isFocused]
   );
@@ -180,21 +176,9 @@ export default function RubiksCubeComponent({
     };
   }, [selectedCubeId, animation.playing, wrongKey]);
 
-  // Gestion évènements clavier pour quitter le Rubik's cube
   useEffect(() => {
-    const unfocused = (event: KeyboardEvent) => {
-      if (event.key === "Escape") {
-        setIsFocused(false);
-        setParentIsFocused(true);
-        setSelectedCubeId(null);
-      }
-    };
-
-    document.addEventListener("keyup", unfocused);
-    return () => {
-      document.removeEventListener("keyup", unfocused);
-    };
-  }, []);
+    !isFocused && setSelectedCubeId(null);
+  }, [isFocused]);
 
   // Animation de la rotation des cubes
   useFrame((_state, delta) => {
@@ -252,17 +236,14 @@ export default function RubiksCubeComponent({
     }
   });
 
-  const { animPosition, animRotation } = useSpring({
+  const { animPosition, animRotationY } = useSpring({
     animPosition: isFocused ? focusedPosition : envPosition,
-    animRotation: isFocused ? focusedRotation : envRotation,
+    animRotationY: isFocused ? focusedRotationY : envRotationY,
     config: { mass: 1, tension: 170, friction: 26 },
   });
+
   return (
-    <animated.group
-      ref={RC}
-      position={animPosition}
-      rotation={animRotation as any}
-    >
+    <animated.group ref={RC} position={animPosition} rotation-y={animRotationY}>
       <group ref={faceToRotate} />
       {rubiksCube.getCubes().map((cube) => (
         <Cube
@@ -273,13 +254,6 @@ export default function RubiksCubeComponent({
           isSelected={cube.id === selectedCubeId}
         />
       ))}
-      <OrbitControls
-        enabled={isFocused}
-        enableZoom={false}
-        target={focusedPosition}
-        maxPolarAngle={(3 * Math.PI) / 4}
-        minPolarAngle={Math.PI / 4}
-      />
     </animated.group>
   );
 }

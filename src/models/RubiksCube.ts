@@ -2,10 +2,8 @@ import { Vector3 } from "three";
 import { TCube } from "./Cube";
 
 export default class RubiksCube {
-  private nbCubes: number; // Rubik's cube de : n X n X n
-  private position: [number, number, number];
-  private rotation: [number, number, number];
-  private sizeCube: number; // Taille d'un cube du rubik's cube
+  private dim: number;
+  private cubesSize: number;
   private cubeColors: string[] = [
     "#1a5aa8",
     "#45a81a",
@@ -14,41 +12,34 @@ export default class RubiksCube {
     "#9d6b00",
     "#a92f2f",
   ];
-  private rotationSpeed: number = 5;
+  private rotationSpeed: number;
   private offsetToCenter: number;
   private cubes: TCube[] = [];
 
   constructor({
     nbCubes,
-    position,
-    rotation,
     sizeCube,
+    rotationSpeed,
   }: {
     nbCubes: number;
-    position: [number, number, number];
-    rotation: [number, number, number];
     sizeCube: number;
+    rotationSpeed: number;
   }) {
-    this.nbCubes = nbCubes;
-    this.position = position;
-    this.rotation = rotation;
-    this.sizeCube = sizeCube;
-    this.offsetToCenter = ((this.nbCubes - 1) * this.sizeCube) / 2;
+    this.rotationSpeed = rotationSpeed;
+    this.dim = nbCubes;
+    this.cubesSize = sizeCube;
+    this.offsetToCenter = ((this.dim - 1) * this.cubesSize) / 2;
 
-    for (let indexCrown = 0; indexCrown < this.nbCubes; indexCrown++) {
-      for (
-        let indexCube = 0;
-        indexCube < this.nbCubes * this.nbCubes;
-        indexCube++
-      ) {
+    for (let indexCrown = 0; indexCrown < this.dim; indexCrown++) {
+      for (let indexCube = 0; indexCube < this.dim * this.dim; indexCube++) {
         this.cubes.push({
-          id: indexCrown * this.nbCubes * this.nbCubes + indexCube,
-          size: this.sizeCube,
-          cornerRadius: this.sizeCube / 10,
+          id: indexCrown * this.dim * this.dim + indexCube,
+          size: this.cubesSize,
+          cornerRadius: this.cubesSize / 10,
           initialPosition: [
-            (indexCube % this.nbCubes) * this.sizeCube - this.offsetToCenter,
-            indexCrown * this.sizeCube - this.offsetToCenter,
-            Math.floor(indexCube / this.nbCubes) * this.sizeCube -
+            (indexCube % this.dim) * this.cubesSize - this.offsetToCenter,
+            indexCrown * this.cubesSize - this.offsetToCenter,
+            Math.floor(indexCube / this.dim) * this.cubesSize -
               this.offsetToCenter,
           ],
         });
@@ -70,14 +61,6 @@ export default class RubiksCube {
 
   getRotationSpeed() {
     return this.rotationSpeed;
-  }
-
-  getPosition() {
-    return this.position;
-  }
-
-  getRotation() {
-    return this.rotation;
   }
 
   onSameX(meshPosition: Vector3, selectedMeshPosition: Vector3) {
