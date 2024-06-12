@@ -1,0 +1,43 @@
+.grid-item {
+  display: flex;
+  width: 90%;
+  aspect-ratio: 16/9;
+  position: relative;
+  border: #ffffff solid 2px;
+  border-radius: 10px;
+  overflow: hidden;
+
+  justify-content: center;
+  text-align: center;
+}
+
+.grid-item img {
+  /* width: 80%; */
+  padding: 2%;
+  /* object-fit: contain; */
+  filter: brightness(0.7);
+  transition: filter 0.5s, scale 0.8s;
+}
+
+.grid-item:hover img {
+  scale: 1.2;
+  filter: brightness(1);
+}
+
+.grid-item:hover .grid-item-text {
+  display: none;
+}
+
+.grid-item-text {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  font-size: 0.5em;
+  font-weight: bold;
+}
+
+.grid-item:hover {
+  cursor: pointer;
+  background-color: #002859;
+}

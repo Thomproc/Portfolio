@@ -9,27 +9,31 @@ import RubiksCube from "../models/RubiksCube";
 export default function RubiksCubeComponent({
   dim,
   cubesSize,
+  rotationSpeed,
   envPosition,
   envRotationY,
   focusedPosition,
   focusedRotationY,
   isFocused,
   focusMe,
+  cameraIsRotating,
 }: {
   dim: number;
   cubesSize: number;
+  rotationSpeed: number;
   envPosition: [number, number, number];
   envRotationY: number;
   focusedPosition: [number, number, number];
   focusedRotationY: number;
   isFocused: boolean;
-  focusMe: () => void;
+  focusMe: () => boolean;
+  cameraIsRotating: boolean;
 }) {
   const rubiksCube: RubiksCube = useMemo(() => {
     return new RubiksCube({
       nbCubes: dim,
       sizeCube: cubesSize < 1 ? 1 : cubesSize,
-      rotationSpeed: 5,
+      rotationSpeed: rotationSpeed,
     });
   }, [dim, envPosition, cubesSize]);
 
@@ -46,14 +50,20 @@ export default function RubiksCubeComponent({
   const { camera } = useThree();
 
   // Permet :
-  // - d'empêcher un problème d'animation si on selectionne un autre cube lorsqu'elle est lancée
   // - de sélectionner le Rubik's Cube
+  // - d'empêcher un problème d'animation si on selectionne un autre cube lorsqu'elle est lancée
   const setSelectedCubeWrapper = useCallback(
     (meshId: number | null) => {
-      !animation.playing && setSelectedCubeId(meshId);
-      !isFocused && focusMe();
+      // Si le rubik's cube n'est pas selectionné : si on parvient à le sélectionner, alors on stocke l'id du cube choisi. Sinon il ne se passe rien
+      if (!isFocused) {
+        focusMe() ? setSelectedCubeId(meshId) : setSelectedCubeId(null);
+      }
+      // Sinon le rubik's cube est sélectionné, donc si la caméra n'est pas en mouvement et l'aucune animation en cours, alors on peut changer de cube sélectionné
+      else if (!cameraIsRotating && !animation.playing) {
+        setSelectedCubeId(meshId);
+      }
     },
-    [animation.playing, isFocused]
+    [animation.playing, isFocused, focusMe]
   );
 
   // Gestion des événements clavier pour faire tourner le cube
@@ -83,6 +93,7 @@ export default function RubiksCubeComponent({
       }
     };
 
+    // Permet de savoir pour chaque évènement clavier autour de quel axe et dans quel sens va faire tourner la face : dépend de la position de la caméra
     const getAxes = () => {
       const cameraPosition = new Vector3(0, 0, 0);
       camera.getWorldPosition(cameraPosition);
@@ -118,6 +129,7 @@ export default function RubiksCubeComponent({
         },
       };
     };
+    // Mise en place des événements clavier pour faire tourner une face du cube
     const handleKeyUp = (event: KeyboardEvent) => {
       if (selectedCubeId === null || animation.playing) {
         return;

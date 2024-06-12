@@ -1,2 +1,32 @@
 .computer {
+  width: 300px;
+  height: 200px;
+  font-size: 20px;
+  background-color: rgb(48, 48, 48);
+  scrollbar-width: thin;
+  overflow: auto;
+}
+
+.computer-focused {
+  width: 380px;
+  height: 250px;
+  font-size: 20px;
+  background-color: rgb(48, 48, 48);
+  overflow: auto;
+  animation: onFocused 0.5s;
+  animation-fill-mode: forwards;
+  animation-delay: 200ms;
+}
+
+@keyframes onFocused {
+  0% {
+    width: 380px;
+    height: 250px;
+    font-size: 20px;
+  }
+  100% {
+    width: 100vw;
+    height: 100vh;
+    font-size: 50px;
+  }
 }
