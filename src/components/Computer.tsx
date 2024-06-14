@@ -3,7 +3,7 @@ import { GLTFLoader } from "three/examples/jsm/loaders/GLTFLoader.js";
 import { Html } from "@react-three/drei";
 import style from "./Computer.module.css";
 import { orbitProps, computerPosition } from "../config";
-import Homepage from "./projects/Homepage";
+import Homepage from "./website/Homepage";
 
 export default function Commputer({
   scale,
