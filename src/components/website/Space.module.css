@@ -3,20 +3,13 @@
   align-items: center;
   justify-content: center;
   flex-grow: 1;
-  min-height: 500px;
-}
-
-@media (min-width: 700px) {
-  .space {
-    min-height: 40cqw;
-  }
+  min-height: 280px;
 }
 
 .wrapper {
   position: relative;
   display: flex;
-  width: 20%;
-  min-width: 80px;
+  width: 10em;
 
   img {
     border-radius: 50%;
