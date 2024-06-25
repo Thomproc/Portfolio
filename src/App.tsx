@@ -1,5 +1,4 @@
 import { useCallback, useEffect, useRef, useState } from "react";
-
 import { Canvas } from "@react-three/fiber";
 import { OrbitControls, PerspectiveCamera } from "@react-three/drei";
 
@@ -23,10 +22,24 @@ import {
 
 function App() {
   const [target, setTarget] = useState<"desk" | "rubiksCube" | "computer">(
-    "desk"
+    "computer"
   );
   const [cameraIsRotating, setCameraIsRotating] = useState(false);
+  const [computerCameraDistance, setComputerCameraDistance] = useState(
+    orbitProps.computer.distance
+  );
   const rotationTimeout = useRef<NodeJS.Timeout | null>(null);
+
+  const switchTarget = useCallback(
+    (newTarget: "desk" | "rubiksCube" | "computer"): boolean => {
+      if (cameraIsRotating) {
+        return false;
+      }
+      target === "desk" && setTarget(newTarget);
+      return target === "desk";
+    },
+    [target, cameraIsRotating]
+  );
 
   const handleControlStart = useCallback(() => {
     if (rotationTimeout.current) {
@@ -49,19 +62,16 @@ function App() {
       event.key === "Escape" && setTarget("desk");
     };
     window.addEventListener("keyup", onKeyUp);
-    onKeyUp;
+    return () => window.removeEventListener("keyup", onKeyUp);
   }, []);
 
-  const switchTarget = useCallback(
-    (newTarget: "desk" | "rubiksCube" | "computer"): boolean => {
-      if (cameraIsRotating) {
-        return false;
-      }
-      target === "desk" && setTarget(newTarget);
-      return target === "desk";
-    },
-    [target, cameraIsRotating]
-  );
+  useEffect(() => {
+    const handleResize = () => {
+      setComputerCameraDistance(orbitProps.computer.distance());
+    };
+    window.addEventListener("resize", handleResize);
+    return () => window.removeEventListener("resize", handleResize);
+  }, []);
 
   return (
     <Canvas>
@@ -99,8 +109,16 @@ function App() {
         maxAzimuthAngle={orbitProps[target].maxAzimuthAngle}
         minPolarAngle={orbitProps[target].minPolarAngle}
         maxPolarAngle={orbitProps[target].maxPolarAngle}
-        maxDistance={orbitProps[target].distance}
-        minDistance={orbitProps[target].distance}
+        maxDistance={
+          target === "computer"
+            ? computerCameraDistance
+            : orbitProps[target].distance
+        }
+        minDistance={
+          target === "computer"
+            ? computerCameraDistance
+            : orbitProps[target].distance
+        }
         target={orbitProps[target].target}
       />
       <ambientLight intensity={-1} />

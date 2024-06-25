@@ -1,11 +1,11 @@
 import { useLoader } from "@react-three/fiber";
 import { GLTFLoader } from "three/examples/jsm/loaders/GLTFLoader.js";
 import { Html } from "@react-three/drei";
-import style from "./Computer.module.css";
-import { orbitProps, computerPosition } from "../config";
+import { computerPosition } from "../config";
 import Homepage from "./website/Homepage";
+import styles from "./Computer.module.css";
 
-export default function Commputer({
+export default function Computer({
   scale,
   position,
   isFocused,
@@ -17,41 +17,25 @@ export default function Commputer({
   focusMe: () => boolean;
 }) {
   const computer = useLoader(GLTFLoader, "/computer.glb");
+
   return (
-    <group>
-      <group
-        onClick={() => !isFocused && focusMe()}
-        scale={scale}
-        position={position}
+    <group
+      onClick={() => !isFocused && focusMe()}
+      scale={scale}
+      position={position}
+    >
+      <primitive object={computer.scene} />
+      <Html
+        className={isFocused ? styles["computer-focused"] : styles["computer"]}
+        distanceFactor={isFocused ? undefined : 1}
+        occlude={isFocused ? undefined : "blending"}
+        zIndexRange={isFocused ? undefined : [computerPosition[2]]}
+        position={isFocused ? [0, 0, 0] : [0, 0, -0.037]}
+        transform
+        onClick={focusMe}
       >
-        <primitive object={computer.scene} />
-
-        {/* Écran de l'ordinateur dans l'environnement 3D */}
-        {!isFocused && (
-          <Html
-            className={style["computer"]}
-            distanceFactor={1}
-            occlude="blending"
-            position={[0, 0, -0.035]}
-            transform
-            onClick={focusMe}
-            zIndexRange={[computerPosition[2]]}
-          >
-            <Homepage />
-          </Html>
-        )}
-      </group>
-
-      {/* Page web */}
-      {isFocused && (
-        <Html
-          className={style["computer-focused"]}
-          position-y={orbitProps.computer.target.y}
-          center
-        >
-          <Homepage />
-        </Html>
-      )}
+        <Homepage />
+      </Html>
     </group>
   );
 }

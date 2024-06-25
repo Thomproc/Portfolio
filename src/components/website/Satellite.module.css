@@ -1,0 +1,47 @@
+.container {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  animation: orbit-animation var(--duration) infinite linear;
+}
+
+@keyframes orbit-animation {
+  from {
+    transform: rotate(0turn);
+  }
+  to {
+    transform: rotate(1turn);
+  }
+}
+
+.satellite {
+  position: absolute;
+  top: 50%;
+  left: var(--offset);
+  width: var(--width);
+  aspect-ratio: 1;
+  border-radius: 50%;
+  background: linear-gradient(to left, white, var(--color));
+  transform: translate(-100%, -50%);
+}
+
+.orbit {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  width: calc(100% - 2 * var(--offset) + var(--width) + 2px);
+  aspect-ratio: 1;
+  transform: translate(-50%, -50%);
+}
+
+.orbit::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  border-radius: 50%;
+  padding: 2px;
+  background: linear-gradient(to top right, var(--color) 10%, transparent 25%)
+    border-box;
+  mask: linear-gradient(#fff 0 0) content-box, linear-gradient(#fff 0 0);
+  mask-composite: exclude;
+}

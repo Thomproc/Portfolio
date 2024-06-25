@@ -1,32 +1,26 @@
 .computer {
   width: 300px;
   height: 200px;
-  font-size: 20px;
-  background-color: rgb(48, 48, 48);
+  font-size: 0.25rem;
   scrollbar-width: thin;
   overflow: auto;
+  container-type: size;
 }
 
 .computer-focused {
-  width: 380px;
-  height: 250px;
-  font-size: 20px;
-  background-color: rgb(48, 48, 48);
+  height: 100dvh;
+  width: 100dvw;
   overflow: auto;
-  animation: onFocused 0.5s;
-  animation-fill-mode: forwards;
-  animation-delay: 200ms;
+  container-type: size;
 }
 
-@keyframes onFocused {
-  0% {
-    width: 380px;
-    height: 250px;
-    font-size: 20px;
-  }
-  100% {
-    width: 100vw;
-    height: 100vh;
-    font-size: 50px;
+@media (max-width: 700px) {
+  .computer-focused {
+    font-size: 0.6rem;
   }
 }
+/* @media (max-width: 400px) {
+  .computer-focused {
+    font-size: 0.5rem;
+  }
+} */
