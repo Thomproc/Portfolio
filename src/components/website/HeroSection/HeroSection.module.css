@@ -1,0 +1,6 @@
+.hero-section {
+  display: flex;
+  justify-content: center;
+  max-height: 100cqh;
+  overflow: hidden;
+}

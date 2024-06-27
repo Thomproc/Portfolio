@@ -2,7 +2,7 @@ import { useEffect } from "react";
 import { cssColors } from "../../datas/ColorTheme";
 import styles from "./Homepage.module.css";
 import Projects from "./Projects";
-import HeroSection from "./HeroSection";
+import HeroSection from "./HeroSection/HeroSection";
 
 export default function Homepage() {
   useEffect(() => {

@@ -3,13 +3,15 @@ import styles from "./Satellite.module.css";
 export default function Satellite({
   offset,
   color,
-  width,
+  diameter,
   duration,
+  image_path,
 }: {
   offset: string;
   color: string;
-  width: string;
+  diameter: string;
   duration: string;
+  image_path: string;
 }) {
   return (
     <div
@@ -18,12 +20,14 @@ export default function Satellite({
         {
           "--offset": offset,
           "--color": color,
-          "--width": width,
+          "--diameter": diameter,
           "--duration": duration,
         } as any
       }
     >
-      <div className={styles["satellite"]} />
+      <div className={styles["satellite"]}>
+        <img src={image_path} alt={image_path} />
+      </div>
       <div className={styles.orbit} />
     </div>
   );

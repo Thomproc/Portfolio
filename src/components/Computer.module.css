@@ -32,7 +32,7 @@
   }
 }
 
-@media screen and (max-width: 500px) {
+@media screen and (max-width: 600px) {
   .computer-focused {
     font-size: 0.4em;
   }

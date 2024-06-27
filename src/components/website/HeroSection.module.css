@@ -1,9 +1,0 @@
-.hero-section {
-  display: flex;
-  /* flex-wrap: wrap; */
-  justify-content: center;
-  /* align-items: center; */
-  /* flex-direction: column; */
-  min-height: 100cqh;
-  overflow: hidden;
-}
