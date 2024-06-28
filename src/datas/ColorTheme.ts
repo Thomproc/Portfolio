@@ -1,5 +1,5 @@
 const bg = "#141414";
-const primary = "#0a855a";
+const primary = "#CE8147";
 const secondary = "#b17d55";
 const tertiary = "#176451";
 

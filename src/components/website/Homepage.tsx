@@ -2,6 +2,7 @@ import { useEffect } from "react";
 import { cssColors } from "../../datas/ColorTheme";
 import styles from "./Homepage.module.css";
 import Projects from "./Projects";
+import NavBar from "./NavBar";
 import HeroSection from "./HeroSection/HeroSection";
 
 export default function Homepage() {
@@ -13,6 +14,7 @@ export default function Homepage() {
 
   return (
     <div className={styles.homepage}>
+      {/* <NavBar /> */}
       <HeroSection />
       {/* <Projects /> */}
     </div>

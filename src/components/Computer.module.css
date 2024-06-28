@@ -1,7 +1,7 @@
 .computer {
   width: 300px;
   height: 200px;
-  font-size: 0.25rem;
+  font-size: 0.3rem;
   scrollbar-width: thin;
   overflow: auto;
   container-type: size;
@@ -14,32 +14,38 @@
   container-type: size;
 }
 
-@media screen and (min-width: 1301px) {
+@media screen and (min-width: 1300px) {
   .computer-focused {
-    font-size: 1em;
+    font-size: 1rem;
   }
 }
 
 @media screen and (max-width: 1300px) {
   .computer-focused {
-    font-size: 1em;
+    font-size: 1rem;
   }
 }
 
-@media screen and (max-width: 900px) {
+@media screen and (max-width: 1000px) {
   .computer-focused {
-    font-size: 0.7em;
+    font-size: 0.9rem;
+  }
+}
+
+@media screen and (max-width: 800px) {
+  .computer-focused {
+    font-size: 0.8rem;
   }
 }
 
 @media screen and (max-width: 600px) {
   .computer-focused {
-    font-size: 0.4em;
+    font-size: 0.7rem;
   }
 }
 
-@media screen and (max-width: 250px) {
+@media screen and (max-width: 400px) {
   .computer-focused {
-    font-size: 0.2em;
+    font-size: 0.6rem;
   }
 }

@@ -1,6 +1,18 @@
 .hero-section {
   display: flex;
   justify-content: center;
+  align-items: center;
+  min-height: 200px;
   max-height: 100cqh;
   overflow: hidden;
+  padding-left: 5%;
+}
+
+@media screen and (max-width: 600px) {
+  .hero-section {
+    display: flex;
+    flex-direction: column;
+    text-align: center;
+    padding: 0;
+  }
 }
