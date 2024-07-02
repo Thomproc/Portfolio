@@ -8,6 +8,7 @@
   padding-left: 5%;
 }
 
+/*Format mobile */
 @media screen and (max-width: 600px) {
   .hero-section {
     display: flex;

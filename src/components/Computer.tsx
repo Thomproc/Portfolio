@@ -4,6 +4,8 @@ import { Html } from "@react-three/drei";
 import { computerPosition } from "../config";
 import Homepage from "./website/Homepage";
 import styles from "./Computer.module.css";
+import NavBar from "./website/NavBar";
+import { useEffect } from "react";
 
 export default function Computer({
   scale,
@@ -17,6 +19,15 @@ export default function Computer({
   focusMe: () => boolean;
 }) {
   const computer = useLoader(GLTFLoader, "/computer.glb");
+  computer.scene.traverse(function (node) {
+    if (node.isObject3D) {
+      node.castShadow = true;
+    }
+  });
+
+  useEffect(() => {
+    console.log("Computer monté");
+  }, []);
 
   return (
     <group
@@ -34,7 +45,10 @@ export default function Computer({
         transform
         onClick={focusMe}
       >
-        <Homepage />
+        <NavBar />
+        <div className={styles.content}>
+          <Homepage />
+        </div>
       </Html>
     </group>
   );

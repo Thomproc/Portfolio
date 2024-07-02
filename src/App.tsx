@@ -1,6 +1,8 @@
 import { useCallback, useEffect, useRef, useState } from "react";
+import { Context } from "./datas/Context";
+
 import { Canvas } from "@react-three/fiber";
-import { OrbitControls, PerspectiveCamera } from "@react-three/drei";
+import { OrbitControls, PerspectiveCamera, SpotLight } from "@react-three/drei";
 
 import Environment from "./components/Environment";
 import Computer from "./components/Computer";
@@ -73,8 +75,11 @@ function App() {
     return () => window.removeEventListener("resize", handleResize);
   }, []);
 
+  useEffect(() => {
+    console.log("App monté avec valeur du contexte : chacale !");
+  }, []);
   return (
-    <Canvas>
+    <Canvas shadows>
       <PerspectiveCamera makeDefault fov={90} position={cameraPosition} />
       <axesHelper args={[10]} />
       <Environment />
@@ -92,13 +97,14 @@ function App() {
         cameraIsRotating={cameraIsRotating}
       />
 
-      <Computer
-        position={computerPosition}
-        scale={computerScale}
-        isFocused={target === "computer"}
-        focusMe={() => switchTarget("computer")}
-      />
-
+      <Context.Provider value="chacale !">
+        <Computer
+          position={computerPosition}
+          scale={computerScale}
+          isFocused={target === "computer"}
+          focusMe={() => switchTarget("computer")}
+        />
+      </Context.Provider>
       <OrbitControls
         regress
         onStart={handleControlStart}
@@ -121,7 +127,16 @@ function App() {
         }
         target={orbitProps[target].target}
       />
-      <ambientLight intensity={-1} />
+      <ambientLight intensity={0.8} />
+      <SpotLight
+        castShadow
+        intensity={1}
+        distance={0}
+        position={[0, 70, 0]}
+        angle={Math.PI / 5}
+        penumbra={0.5}
+        decay={0.1}
+      />
     </Canvas>
   );
 }

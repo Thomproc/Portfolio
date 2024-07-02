@@ -256,7 +256,7 @@ export default function RubiksCubeComponent({
 
   return (
     <animated.group ref={RC} position={animPosition} rotation-y={animRotationY}>
-      <group ref={faceToRotate} />
+      <group ref={faceToRotate} castShadow />
       {rubiksCube.getCubes().map((cube) => (
         <Cube
           key={cube.id}

@@ -3,15 +3,20 @@
   height: 200px;
   font-size: 0.3rem;
   scrollbar-width: thin;
-  overflow: auto;
+  overflow-x: hidden;
   container-type: size;
 }
 
 .computer-focused {
   height: 100dvh;
   width: 100dvw;
-  overflow: auto;
+  overflow-x: hidden;
   container-type: size;
+}
+
+.content {
+  position: relative;
+  top: -4em;
 }
 
 @media screen and (min-width: 1300px) {

@@ -6,7 +6,7 @@
   font-size: 14px;
 
   color-scheme: light dark;
-  color: #dcdcdc;
+  color: var(--text);
 
   font-synthesis: none;
   text-rendering: optimizeLegibility;

@@ -1,5 +1,5 @@
 import { useState, useMemo } from "react";
-import { Color, MeshBasicMaterial } from "three";
+import { Color, MeshLambertMaterial } from "three";
 import { RoundedBoxGeometry } from "three-stdlib";
 import { TCube } from "../models/Cube";
 import { Edges } from "@react-three/drei";
@@ -36,13 +36,14 @@ export default function Cube({
       const faceColor: Color =
         isHovered || isSelected ? hoveredCubeColor : basicFaceColor;
 
-      return new MeshBasicMaterial({ color: faceColor });
+      return new MeshLambertMaterial({ color: faceColor });
     });
   }, [colors, isHovered, isSelected]);
 
   return (
     <group name={cube.id.toString()} position={cube.initialPosition}>
       <mesh
+        castShadow
         onClick={(event) => {
           event.stopPropagation();
           setSelectedCube(isSelected ? null : cube.id);
@@ -63,7 +64,7 @@ export default function Cube({
             cube.size - cube.size / 200,
           ]}
         />
-        <meshBasicMaterial color="#EEEEEE" />
+        <meshLambertMaterial color="#EEEEEE" />
         <Edges color="black" lineWidth={0.3} scale={1.005} />
       </mesh>
       <mesh geometry={colorsGeometry} material={materials} />

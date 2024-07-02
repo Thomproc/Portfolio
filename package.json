@@ -4,31 +4,31 @@
   "version": "0.0.0",
   "type": "module",
   "scripts": {
-    "dev": "vite --host",
+    "dev": "vite",
     "build": "tsc && vite build",
     "lint": "eslint . --ext ts,tsx --report-unused-disable-directives --max-warnings 0",
     "preview": "vite preview"
   },
   "dependencies": {
     "@react-spring/three": "^9.7.3",
-    "@react-three/drei": "^9.105.6",
-    "@react-three/fiber": "^8.16.6",
-    "@types/three": "^0.164.0",
-    "react": "^18.2.0",
-    "react-dom": "^18.2.0",
+    "@react-three/drei": "^9.108.1",
+    "@react-three/fiber": "^8.16.8",
+    "@types/three": "^0.164.1",
+    "react": "^18.3.1",
+    "react-dom": "^18.3.1",
     "three": "^0.164.1",
     "three-stdlib": "^2.30.3"
   },
   "devDependencies": {
-    "@types/react": "^18.2.66",
-    "@types/react-dom": "^18.2.22",
-    "@typescript-eslint/eslint-plugin": "^7.2.0",
-    "@typescript-eslint/parser": "^7.2.0",
-    "@vitejs/plugin-react": "^4.2.1",
+    "@types/react": "^18.3.3",
+    "@types/react-dom": "^18.3.0",
+    "@typescript-eslint/eslint-plugin": "^7.15.0",
+    "@typescript-eslint/parser": "^7.15.0",
+    "@vitejs/plugin-react": "^4.3.1",
     "eslint": "^8.57.0",
-    "eslint-plugin-react-hooks": "^4.6.0",
-    "eslint-plugin-react-refresh": "^0.4.6",
-    "typescript": "^5.2.2",
-    "vite": "^5.2.0"
+    "eslint-plugin-react-hooks": "^4.6.2",
+    "eslint-plugin-react-refresh": "^0.4.7",
+    "typescript": "^5.5.3",
+    "vite": "^5.3.2"
   }
 }

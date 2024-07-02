@@ -11,14 +11,14 @@ export default function Space() {
         <div className={styles.satellites}>
           <Satellite
             offset="-3%"
-            color="#CE8147"
+            color="#4bb2d1"
             diameter="25%"
             duration="11s"
             image_path="./hero_images/React.png"
           />
           <Satellite
             offset="-54%"
-            color="#565656"
+            color="#6f9b81"
             diameter="24%"
             duration="17s"
             image_path="./hero_images/NodeJS.png"
