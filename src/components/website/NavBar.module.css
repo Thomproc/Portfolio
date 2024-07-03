@@ -21,7 +21,7 @@
 .navItem {
   cursor: pointer;
   :hover {
-    color: var(--bg);
+    color: var(--background2D);
   }
 }
 

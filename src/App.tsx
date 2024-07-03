@@ -1,5 +1,4 @@
 import { useCallback, useEffect, useRef, useState } from "react";
-import { Context } from "./datas/Context";
 
 import { Canvas } from "@react-three/fiber";
 import { OrbitControls, PerspectiveCamera, SpotLight } from "@react-three/drei";
@@ -21,6 +20,7 @@ import {
   cameraPosition,
   orbitProps,
 } from "./config";
+import { colors } from "./datas/ColorTheme";
 
 function App() {
   const [target, setTarget] = useState<"desk" | "rubiksCube" | "computer">(
@@ -37,7 +37,7 @@ function App() {
       if (cameraIsRotating) {
         return false;
       }
-      target === "desk" && setTarget(newTarget);
+      setTarget(newTarget);
       return target === "desk";
     },
     [target, cameraIsRotating]
@@ -75,14 +75,13 @@ function App() {
     return () => window.removeEventListener("resize", handleResize);
   }, []);
 
-  useEffect(() => {
-    console.log("App monté avec valeur du contexte : chacale !");
-  }, []);
   return (
     <Canvas shadows>
-      <PerspectiveCamera makeDefault fov={90} position={cameraPosition} />
-      <axesHelper args={[10]} />
+      <color attach="background" args={[colors.background3D]} />
       <Environment />
+
+      <PerspectiveCamera makeDefault fov={90} position={cameraPosition} />
+      <axesHelper args={[20]} />
 
       <RubiksCubeComponent
         dim={RCdim}
@@ -97,14 +96,12 @@ function App() {
         cameraIsRotating={cameraIsRotating}
       />
 
-      <Context.Provider value="chacale !">
-        <Computer
-          position={computerPosition}
-          scale={computerScale}
-          isFocused={target === "computer"}
-          focusMe={() => switchTarget("computer")}
-        />
-      </Context.Provider>
+      <Computer
+        position={computerPosition}
+        scale={computerScale}
+        isFocused={target === "computer"}
+        changeFocus={switchTarget}
+      />
       <OrbitControls
         regress
         onStart={handleControlStart}
@@ -127,15 +124,15 @@ function App() {
         }
         target={orbitProps[target].target}
       />
-      <ambientLight intensity={0.8} />
+      <ambientLight intensity={0.7} />
       <SpotLight
         castShadow
         intensity={1}
         distance={0}
-        position={[0, 70, 0]}
-        angle={Math.PI / 5}
-        penumbra={0.5}
-        decay={0.1}
+        position={[0, 400, 0]}
+        angle={Math.PI / 3}
+        penumbra={0.8}
+        decay={0}
       />
     </Canvas>
   );

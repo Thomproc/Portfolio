@@ -1,16 +1,15 @@
-import { useContext, useEffect, useState } from "react";
+import { useState } from "react";
 import styles from "./NavBar.module.css";
-import { Context } from "../../datas/Context";
 
-export default function NavBar() {
-  const context = useContext(Context);
-  useEffect(() => {
-    console.log("NavItem monté avec la valeur du contexte :", context);
-  }, [context]);
-
+export default function NavBar({
+  changeFocus,
+}: {
+  changeFocus: (value: "computer" | "rubiksCube" | "desk") => boolean;
+}) {
   const [selectedItem, setSelectedItem] = useState<
     "Accueil" | "Projets" | "Competences" | "Contact"
   >("Accueil");
+
   return (
     <div className={styles.navContainer}>
       <div className={styles.navBar}>
@@ -52,9 +51,7 @@ export default function NavBar() {
         {/* {(value) => ( */}
         <div
           className={styles.navItem}
-          onClick={(_event) => {
-            console.log(context);
-          }}
+          onClick={(_event) => changeFocus("desk")}
         >
           MOIIIIIIIII ;)
         </div>

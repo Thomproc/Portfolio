@@ -5,18 +5,17 @@ import { computerPosition } from "../config";
 import Homepage from "./website/Homepage";
 import styles from "./Computer.module.css";
 import NavBar from "./website/NavBar";
-import { useEffect } from "react";
 
 export default function Computer({
   scale,
   position,
   isFocused,
-  focusMe,
+  changeFocus,
 }: {
   scale: number;
   position: [number, number, number];
   isFocused: boolean;
-  focusMe: () => boolean;
+  changeFocus: (value: "computer" | "rubiksCube" | "desk") => boolean;
 }) {
   const computer = useLoader(GLTFLoader, "/computer.glb");
   computer.scene.traverse(function (node) {
@@ -25,13 +24,9 @@ export default function Computer({
     }
   });
 
-  useEffect(() => {
-    console.log("Computer monté");
-  }, []);
-
   return (
     <group
-      onClick={() => !isFocused && focusMe()}
+      onClick={() => !isFocused && changeFocus("computer")}
       scale={scale}
       position={position}
     >
@@ -43,9 +38,9 @@ export default function Computer({
         zIndexRange={isFocused ? undefined : [computerPosition[2]]}
         position={isFocused ? [0, 0, 0] : [0, 0, -0.037]}
         transform
-        onClick={focusMe}
+        onClick={() => changeFocus("computer")}
       >
-        <NavBar />
+        <NavBar changeFocus={changeFocus} />
         <div className={styles.content}>
           <Homepage />
         </div>

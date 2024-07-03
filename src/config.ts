@@ -3,7 +3,7 @@ import { Vector3 } from "three";
 // Rubik's Cube
 export const RCdim = 3; // Rubik's cube de : n X n X n
 export const RCsizeCube = 1.8; // Taille d'un cube du rubik's cube : ne peut pas être inférieure à 1
-export const RCrotationSpeed = 8; // Vitesse de rotation de la face du rubik's cube
+export const RCrotationSpeed = 7; // Vitesse de rotation de la face du rubik's cube
 // Propriétés du rubik's cube dans l'environnement
 export const RCposition: [number, number, number] = [
   23,
@@ -18,6 +18,16 @@ export const RCfocusedRotationY = 0;
 // Ordinateur
 export const computerPosition: [number, number, number] = [0, 15, -8];
 export const computerScale = 40;
+
+//Environnement
+export const envScale = 50;
+export const envRotationY = Math.PI / 2;
+
+export const floorRotationX = -Math.PI / 2;
+export const floorPositionY = -0.9;
+
+export const deskReflectorRotationX = -Math.PI / 2;
+export const deskReflectorPosition: [number, number, number] = [0.15, 0.001, 0];
 
 // Camera
 export const cameraPosition = new Vector3(0, 20, 25);

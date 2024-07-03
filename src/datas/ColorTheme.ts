@@ -4,15 +4,25 @@
 // const tertiary = "#176451";
 
 const text = "#f3eeeb";
-const bg = "#181921";
+const background2D = "#181921";
 const primary = "#e6b594";
 const secondary = "#364b76";
 const accent = "#4eb57e";
 
-export const cssColors = {
+const background3D = "#000000";
+const fog = "#000000";
+const floor = "#014055";
+
+const deskReflector = "#B5AE9A";
+
+export const colors = {
   text,
-  bg,
+  background2D,
   primary,
   secondary,
   accent,
+  background3D,
+  floor,
+  fog,
+  deskReflector,
 };
