@@ -9,6 +9,7 @@ export default function Introduction() {
         <div className={"text-primary"}>
           Développeur d'applications Web et Mobile
         </div>
+        <button>Contactez-moi !</button>
       </div>
       {/* <div className={styles["roller"]}>
           <div>créatif</div>

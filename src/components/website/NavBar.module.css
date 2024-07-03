@@ -1,21 +1,36 @@
-.navContainer {
+.center {
   position: sticky;
   top: 0;
   display: flex;
   justify-content: center;
-  height: 4em;
   z-index: 20;
-  min-width: 200px;
+}
+
+.navContainer {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  align-self: center;
+  height: 4em;
+  width: 100%;
+  min-width: 300px;
 
   background: rgb(77 77 77 / 29%);
   backdrop-filter: blur(5px);
+  :first-child,
+  :last-child {
+    display: flex;
+    justify-content: center;
+    width: 10%;
+  }
 }
 
 .navBar {
   display: flex;
+  max-width: 700px;
+  flex-grow: 1;
   justify-content: space-evenly;
   align-items: center;
-  width: 50%;
 }
 
 .navItem {
