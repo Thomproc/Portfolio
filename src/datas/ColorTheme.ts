@@ -10,8 +10,8 @@ const secondary = "#364b76";
 const accent = "#4eb57e";
 
 const background3D = "#000000";
-const fog = "#000000";
-const floor = "#014055";
+const fog = "#060606";
+const floor = "#B9B9B9";
 
 const deskReflector = "#B5AE9A";
 

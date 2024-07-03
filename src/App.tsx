@@ -124,12 +124,12 @@ function App() {
         }
         target={orbitProps[target].target}
       />
-      <ambientLight intensity={0.7} />
+      <ambientLight intensity={0.6} />
       <SpotLight
         castShadow
         intensity={1}
         distance={0}
-        position={[0, 400, 0]}
+        position={[0, 500, 0]}
         angle={Math.PI / 3}
         penumbra={0.8}
         decay={0}
