@@ -1,9 +1,8 @@
-// const bg = "#141414";
 // const primary = "#CE8147";
 // const secondary = "#b17d55";
 // const tertiary = "#176451";
 
-const text = "#f3eeeb";
+const textColor = "#f3eeeb";
 const background2D = "#181921";
 const primary = "#e6b594";
 const secondary = "#364b76";
@@ -16,7 +15,7 @@ const floor = "#B9B9B9";
 const deskReflector = "#B5AE9A";
 
 export const colors = {
-  text,
+  textColor,
   background2D,
   primary,
   secondary,

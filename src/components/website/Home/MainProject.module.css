@@ -1,0 +1,26 @@
+.main-project {
+  display: block;
+  padding: 2% 3%;
+}
+
+.container {
+  display: flex;
+  justify-content: space-between;
+  padding: 0 5%;
+
+  img {
+    width: 30%;
+    object-fit: contain;
+  }
+}
+
+.presentation {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+
+.buttons {
+  display: flex;
+  width: 100%;
+}

@@ -1,5 +1,5 @@
 import styles from "./Projects.module.css";
-import { projects } from "../../datas/Projects";
+import { projects } from "../../../datas/Projects";
 import Card from "./Card";
 export default function Projects() {
   return (

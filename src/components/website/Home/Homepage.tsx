@@ -1,8 +1,8 @@
 import { useEffect } from "react";
-import { colors } from "../../datas/ColorTheme";
 import styles from "./Homepage.module.css";
-import Projects from "./Projects";
+import { colors } from "../../../datas/ColorTheme";
 import HeroSection from "./HeroSection/HeroSection";
+import MainProject from "./MainProject";
 
 export default function Homepage() {
   useEffect(() => {
@@ -14,7 +14,7 @@ export default function Homepage() {
   return (
     <div className={styles.homepage}>
       <HeroSection />
-      {/* <Projects /> */}
+      <MainProject />
     </div>
   );
 }

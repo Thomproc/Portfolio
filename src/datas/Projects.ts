@@ -5,7 +5,7 @@ const fuelToday = {
   technologies: ["Java", "XML", "Android Studio"],
   image: "fuel_today.png",
   description:
-    "Application mobile utilisant le GPS du téléphone et une API du gouvernement afin de rechercher une station service selon les préférences utilisateurs (carburant, service(s) disponible(s), distance). Une fois la station désirée choisie, Google Maps s'ouvrira pour vous y rendre.",
+    "Application mobile utilisant le GPS du téléphone et une API du gouvernement afin de rechercher une station service selon les préférences utilisateurs (carburant, service(s) disponible(s), distance). Une fois la station désirée choisie, vous serez automatiquement redirigé vers Google Maps pour vous y rendre !",
   github: "Aucun...",
 };
 
@@ -25,6 +25,7 @@ const jupiTerror = {
     "Space Invaders revisté par mes soins et jouable dans un navigateur web.",
   github: "Aucun...",
 };
+
 export const projects: {
   [key in "scolaire" | "personnel" | "professionnel"]: Project[];
 } = {

@@ -54,7 +54,7 @@ export let orbitProps = {
     minPolarAngle: Math.PI / 2,
     maxPolarAngle: Math.PI / 2,
     distance: getComputerCameraDistance,
-    target: new Vector3(0, computerPosition[1], computerPosition[2]),
+    target: new Vector3(0, computerPosition[1], computerPosition[2] - 0.2),
   },
 };
 

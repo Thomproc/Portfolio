@@ -1,0 +1,15 @@
+.introduction {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  font-size: 1.3em;
+}
+
+.introduction > div {
+  width: min-content;
+}
+
+.introduction-name {
+  text-transform: uppercase;
+  font-size: 3em;
+}

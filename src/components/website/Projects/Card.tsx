@@ -1,4 +1,4 @@
-import { Project } from "../../models/Project";
+import { Project } from "../../../models/Project";
 import styles from "./Card.module.css";
 
 export default function Card({ project }: { project: Project }) {

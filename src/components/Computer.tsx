@@ -2,7 +2,7 @@ import { useLoader } from "@react-three/fiber";
 import { GLTFLoader } from "three/examples/jsm/loaders/GLTFLoader.js";
 import { Html } from "@react-three/drei";
 import { computerPosition } from "../config";
-import Homepage from "./website/Homepage";
+import Homepage from "./website/Home/Homepage";
 import styles from "./Computer.module.css";
 import NavBar from "./website/NavBar";
 
