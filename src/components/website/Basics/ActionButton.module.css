@@ -1,10 +1,4 @@
-.container {
-  display: flex;
-  align-items: center;
-  width: 100%;
-}
-
-.container > button {
+button {
   height: 2.5em;
   width: var(--width);
 

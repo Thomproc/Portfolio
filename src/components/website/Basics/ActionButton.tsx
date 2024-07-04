@@ -12,18 +12,16 @@ export default function ActionButton({
   btnWidth: String;
 }) {
   return (
-    <div className={styles.container}>
-      <button
-        data-text={text}
-        style={
-          {
-            "--textColor": textColor,
-            "--color": color,
-            "--width": btnWidth,
-          } as any
-        }
-        className={styles["my-button"]}
-      />
-    </div>
+    <button
+      data-text={text}
+      style={
+        {
+          "--textColor": textColor,
+          "--color": color,
+          "--width": btnWidth,
+        } as any
+      }
+      className={styles["my-button"]}
+    />
   );
 }

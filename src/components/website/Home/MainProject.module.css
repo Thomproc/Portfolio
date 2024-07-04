@@ -1,23 +1,27 @@
 .main-project {
   display: block;
   padding: 2% 3%;
+  max-width: 1300px;
 }
 
 .container {
   display: flex;
-  justify-content: space-between;
-  padding: 0 5%;
+  gap: 15%;
+  padding-left: 5%;
 
   img {
-    width: 30%;
+    width: 20%;
+    max-width: 300px;
+    min-width: 50px;
     object-fit: contain;
   }
 }
 
 .presentation {
   display: flex;
+  width: 60%;
   flex-direction: column;
-  justify-content: space-between;
+  justify-content: space-evenly;
 }
 
 .buttons {
