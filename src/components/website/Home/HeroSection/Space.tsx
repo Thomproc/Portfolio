@@ -14,21 +14,21 @@ export default function Space() {
             color="#4bb2d1"
             diameter="25%"
             duration="11s"
-            image_path="./hero_images/React.png"
+            image_path="./Logos/React.png"
           />
           <Satellite
             offset="-54%"
             color="#6f9b81"
             diameter="24%"
             duration="17s"
-            image_path="./hero_images/NodeJS.png"
+            image_path="./Logos/NodeJS.png"
           />
           <Satellite
             offset="-100%"
             color="#304C89"
             diameter="18%"
             duration="9s"
-            image_path="./hero_images/Flutter.png"
+            image_path="./Logos/Flutter.png"
           />
         </div>
       </div>
