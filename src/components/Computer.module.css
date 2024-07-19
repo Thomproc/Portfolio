@@ -1,24 +1,33 @@
+.computer,
+.computer-focused {
+  overflow-x: hidden;
+  container-type: size;
+  background-color: var(--background2D);
+}
+
 .computer {
   width: 300px;
   height: 200px;
   font-size: 0.3rem;
   scrollbar-width: thin;
-  overflow-x: hidden;
-  container-type: size;
-  background-color: var(--background2D);
 }
 
 .computer-focused {
   height: 100dvh;
   width: 100dvw;
-  overflow-x: hidden;
-  container-type: size;
-  background-color: var(--background2D);
+}
+
+.shadow {
+  position: absolute;
+  top: 0;
+  width: 100%;
+  height: fit-content;
+  box-shadow: inset 0px 0px 19px 10px rgb(40 40 40);
+  z-index: 1;
 }
 
 .content {
-  display: flex;
-  flex-direction: column;
+  display: grid;
 }
 
 .content > * {

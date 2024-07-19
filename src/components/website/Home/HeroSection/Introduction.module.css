@@ -1,7 +1,5 @@
 .introduction {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
+  display: grid;
   font-size: 1.3em;
 }
 

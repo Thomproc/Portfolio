@@ -22,9 +22,7 @@ export default function NavBar({
         <div className={styles.navBar}>
           <div
             className={
-              selectedItem === "Accueil"
-                ? styles.navItemSelected
-                : styles.navItem
+              selectedItem === "Accueil" ? "text-primary" : styles.navItem
             }
             onClick={(_event) => setSelectedItem("Accueil")}
           >
@@ -32,9 +30,7 @@ export default function NavBar({
           </div>
           <div
             className={
-              selectedItem === "Competences"
-                ? styles.navItemSelected
-                : styles.navItem
+              selectedItem === "Competences" ? "text-primary" : styles.navItem
             }
             onClick={(_event) => setSelectedItem("Competences")}
           >
@@ -42,9 +38,7 @@ export default function NavBar({
           </div>
           <div
             className={
-              selectedItem === "Projets"
-                ? styles.navItemSelected
-                : styles.navItem
+              selectedItem === "Projets" ? "text-primary" : styles.navItem
             }
             onClick={(_event) => setSelectedItem("Projets")}
           >
@@ -52,9 +46,7 @@ export default function NavBar({
           </div>
           <div
             className={
-              selectedItem === "Contact"
-                ? styles.navItemSelected
-                : styles.navItem
+              selectedItem === "Contact" ? "text-primary" : styles.navItem
             }
             onClick={(_event) => setSelectedItem("Contact")}
           >

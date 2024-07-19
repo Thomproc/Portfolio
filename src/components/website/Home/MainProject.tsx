@@ -9,23 +9,25 @@ export default function MainProject() {
   return (
     <div className={styles["main-project"]}>
       <h1>Projet du moment</h1>
-      <div className={styles.container}>
+      <div className={styles["name_and_technologies"]}>
+        <h2>{mainProject.name} </h2>
+        <div className={styles["technologies"]}>
+          {mainProject.technologies.map((tech, index) => (
+            <img src={"./Logos/" + tech} alt={tech} key={index} />
+          ))}
+        </div>
+      </div>
+      {/* <i>
+        <u>{mainProject.date.toDateString()}</u>
+      </i> */}
+      <div className={styles["presentation_and_image"]}>
         <div className={styles.presentation}>
-          <div className={styles["name_and_technologies"]}>
-            <h2>{mainProject.name} </h2>
-            <div className={styles["technologies"]}>
-              {mainProject.technologies.map((tech, index) => (
-                <img src={"./Logos/" + tech} alt={tech} key={index} />
-              ))}
-            </div>
-          </div>
-          <i>
-            <u>{mainProject.date.toDateString()}</u>
-          </i>
-          <br />
           {mainProject.description}
           <div>
-            &#128073; Lien vers le dépôt GitHub : {mainProject.github}
+            &#128073; Lien vers le dépôt GitHub :{" "}
+            <a href={mainProject.github} target="_blank">
+              {mainProject.github}
+            </a>
             <div className={styles.buttons}>
               <ActionButton
                 text="Voir en ligne"

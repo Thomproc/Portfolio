@@ -40,9 +40,11 @@ export default function Computer({
         transform
         onClick={() => changeFocus("computer")}
       >
-        <NavBar changeFocus={changeFocus} />
-        <div className={styles.content}>
-          <Homepage />
+        <div className={styles.shadow}>
+          <NavBar changeFocus={changeFocus} />
+          <div className={styles.content}>
+            <Homepage />
+          </div>
         </div>
       </Html>
     </group>

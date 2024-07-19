@@ -4,7 +4,6 @@
   align-items: center;
   min-height: calc(200px + 4em);
   max-height: 100cqh;
-  box-shadow: inset 0px 0px 19px 10px rgb(40 40 40);
   overflow: hidden;
   padding-left: 5%;
 }

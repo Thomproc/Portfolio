@@ -27,7 +27,8 @@ const jupiTerror: Project = {
   ],
   image: "jupiTerror.png",
   description:
-    "Space Invaders revisté par mes soins et jouable dans un navigateur web.",
+    "Space Invaders revisté par mes soins et jouable dans un navigateur web ! Dans le cadre de ma première année de Master, j'ai dû concevoir un clone du jeu Space Invaders en 3D. Pour cela j'ai respecté le cahier des charges fournit par l'encadrant qui incluait l'utilisation de primitives 3D animées, d'effets post-processing, la création de plusieurs niveaux, une \"IA\" pour les ennemis, l'utilisation de sons, plusieurs angles de vues possibles (vue d'ensemble statique ou point de vue du vaisseau). ",
+
   github: "Aucun...",
 };
 
