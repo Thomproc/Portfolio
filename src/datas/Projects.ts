@@ -35,7 +35,7 @@ const jupiTerror: Project = {
 export const projects: {
   [key in "scolaire" | "personnel" | "professionnel"]: Project[];
 } = {
-  scolaire: [fuelToday, jupiTerror],
+  scolaire: [jupiTerror, fuelToday],
   personnel: [],
   professionnel: [],
 };
