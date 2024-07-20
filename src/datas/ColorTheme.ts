@@ -6,7 +6,7 @@ const textColor = "#f3eeeb";
 const background2D = "#181921";
 const primary = "#e6b594";
 const secondary = "#364b76";
-const accent = "#4eb57e";
+const accent = "#86baca";
 
 const background3D = "#000000";
 const fog = "#060606";
