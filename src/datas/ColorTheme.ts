@@ -1,7 +1,3 @@
-// const primary = "#CE8147";
-// const secondary = "#b17d55";
-// const tertiary = "#176451";
-
 const textColor = "#f3eeeb";
 const background2D = "#181921";
 const primary = "#e6b594";

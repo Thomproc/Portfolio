@@ -1,0 +1,33 @@
+.shadow {
+  position: absolute;
+  top: 0;
+  width: 100%;
+  height: fit-content;
+  box-shadow: inset 0px 0px 19px 10px rgb(40 40 40);
+  z-index: 1;
+}
+
+.content {
+  display: grid;
+  &::before {
+    content: "";
+    position: absolute;
+    inset: 0;
+    background-image: radial-gradient(
+        rgb(from var(--accent) r g b / 0.4) 0.05em,
+        transparent 0.05em
+      ),
+      radial-gradient(
+        rgb(from var(--secondary) r g b / 0.7) 0.05em,
+        var(--background2D) 0.05em
+      );
+    background-size: 2em 2em;
+    background-position: 0 0, 1em 1em;
+    mask-image: radial-gradient(white, transparent 100%);
+  }
+}
+
+.content > * {
+  position: relative;
+  top: -4em;
+}

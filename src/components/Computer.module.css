@@ -17,24 +17,6 @@
   width: 100dvw;
 }
 
-.shadow {
-  position: absolute;
-  top: 0;
-  width: 100%;
-  height: fit-content;
-  box-shadow: inset 0px 0px 19px 10px rgb(40 40 40);
-  z-index: 1;
-}
-
-.content {
-  display: grid;
-}
-
-.content > * {
-  position: relative;
-  top: -4em;
-}
-
 @media screen and (min-width: 1300px) {
   .computer-focused {
     font-size: 1rem;

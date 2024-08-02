@@ -1,6 +1,7 @@
 import styles from "./Introduction.module.css";
 import ActionButton from "../../Basics/ActionButton";
 import { colors } from "../../../../datas/ColorTheme";
+import ERoutes from "../../RouterConfig";
 
 export default function Introduction() {
   return (
@@ -15,6 +16,7 @@ export default function Introduction() {
           color={colors.primary}
           textColor={colors.background2D}
           btnWidth="50%"
+          target={ERoutes.CONTACT}
         />
       </div>
     </div>

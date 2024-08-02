@@ -39,6 +39,9 @@
 }
 
 .navItem {
+  color: rgb(from var(--text) r g b / 0.6);
+  transition: all 0.2s;
+  text-decoration: none;
   &:hover {
     color: rgb(from var(--primary) r g b / 0.8);
   }

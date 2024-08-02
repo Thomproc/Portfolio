@@ -1,15 +1,14 @@
-import { useState } from "react";
 import styles from "./NavBar.module.css";
+import { ERoutes } from "../../../components/website/RouterConfig";
+import { useLocation, useNavigate } from "react-router-dom";
 
 export default function NavBar({
   changeFocus,
 }: {
   changeFocus: (value: "computer" | "rubiksCube" | "desk") => boolean;
 }) {
-  const [selectedItem, setSelectedItem] = useState<
-    "Accueil" | "Projets" | "Competences" | "Contact"
-  >("Accueil");
-
+  const location = useLocation();
+  const navigate = useNavigate();
   return (
     <div className={styles.center}>
       <div className={styles.navContainer}>
@@ -22,33 +21,49 @@ export default function NavBar({
         <div className={styles.navBar}>
           <div
             className={
-              selectedItem === "Accueil" ? "text-primary" : styles.navItem
+              location.pathname === ERoutes.HOME
+                ? "text-primary"
+                : styles.navItem
             }
-            onClick={(_event) => setSelectedItem("Accueil")}
+            onClick={(_event) => {
+              navigate(ERoutes.HOME);
+            }}
           >
             Accueil
           </div>
           <div
             className={
-              selectedItem === "Competences" ? "text-primary" : styles.navItem
+              location.pathname === ERoutes.SKILLS
+                ? "text-primary"
+                : styles.navItem
             }
-            onClick={(_event) => setSelectedItem("Competences")}
+            onClick={(_event) => {
+              navigate(ERoutes.SKILLS);
+            }}
           >
             Compétences
           </div>
           <div
             className={
-              selectedItem === "Projets" ? "text-primary" : styles.navItem
+              location.pathname === ERoutes.PROJECTS
+                ? "text-primary"
+                : styles.navItem
             }
-            onClick={(_event) => setSelectedItem("Projets")}
+            onClick={(_event) => {
+              navigate(ERoutes.PROJECTS);
+            }}
           >
             Projets
           </div>
           <div
             className={
-              selectedItem === "Contact" ? "text-primary" : styles.navItem
+              location.pathname === ERoutes.CONTACT
+                ? "text-primary"
+                : styles.navItem
             }
-            onClick={(_event) => setSelectedItem("Contact")}
+            onClick={(_event) => {
+              navigate(ERoutes.CONTACT);
+            }}
           >
             Contact
           </div>

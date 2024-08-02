@@ -44,18 +44,31 @@
 
 @keyframes orbit-animation {
   from {
-    transform: rotateX(70deg) rotateZ(0turn);
+    transform: rotateX(70deg) rotateY(var(--orbitRotation)) rotateZ(0turn);
   }
   to {
-    transform: rotateX(70deg) rotateZ(1turn);
+    transform: rotateX(70deg) rotateY(var(--orbitRotation)) rotateZ(1turn);
   }
 }
 
 @keyframes face-user {
-  from {
-    transform: rotateX(-90deg) translate(-100%, 0%) rotateY(-1turn);
+  0% {
+    transform: rotateX(-90deg) translate(-100%, 0%) rotateY(-1turn)
+      rotateZ(calc(-1 * var(--orbitRotation)));
+    opacity: 0.8;
   }
-  to {
-    transform: rotateX(-90deg) translate(-100%, 0%) rotateY(0turn);
+  25% {
+    opacity: 0.5;
+  }
+  50% {
+    opacity: 0.8;
+  }
+  75% {
+    opacity: 1;
+  }
+  100% {
+    transform: rotateX(-90deg) translate(-100%, 0%) rotateY(0turn)
+      rotateZ(calc(-1 * var(--orbitRotation)));
+    opacity: 0.8;
   }
 }

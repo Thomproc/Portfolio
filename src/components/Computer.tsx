@@ -2,9 +2,8 @@ import { useLoader } from "@react-three/fiber";
 import { GLTFLoader } from "three/examples/jsm/loaders/GLTFLoader.js";
 import { Html } from "@react-three/drei";
 import { computerPosition } from "../config";
-import Homepage from "./website/Home/Homepage";
 import styles from "./Computer.module.css";
-import NavBar from "./website/NavBar";
+import Main from "./website/Main";
 
 export default function Computer({
   scale,
@@ -40,12 +39,7 @@ export default function Computer({
         transform
         onClick={() => changeFocus("computer")}
       >
-        <div className={styles.shadow}>
-          <NavBar changeFocus={changeFocus} />
-          <div className={styles.content}>
-            <Homepage />
-          </div>
-        </div>
+        <Main changeFocus={changeFocus} />
       </Html>
     </group>
   );

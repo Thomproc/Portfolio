@@ -1,63 +1,12 @@
-import { colors } from "../../../datas/ColorTheme";
 import { projects } from "../../../datas/Projects";
-import ActionButton from "../Basics/ActionButton";
+import CardProject from "../Basics/CardProject";
 import styles from "./MainProject.module.css";
-
-const mainProject = projects.scolaire[0];
 
 export default function MainProject() {
   return (
     <div className={styles["main-project"]}>
       <h1>Projet du moment</h1>
-
-      <div className={styles["card"]}>
-        <div className={styles["foreground-style"]}>
-          <div className={styles["top-section"]}>
-            <div className={styles["title"]}>
-              <div className={styles["folder-effect"]} />
-              <h2>{mainProject.name} </h2>
-            </div>
-
-            <div className={styles["technologies"]}>
-              {mainProject.technologies.map((tech, index) => (
-                <img src={"./Logos/" + tech} alt={tech} key={index} />
-              ))}
-            </div>
-          </div>
-
-          <div className={styles["presentation_and_image"]}>
-            <div className={styles["presentation"]}>
-              {mainProject.description}
-              <div>
-                &#128073; Lien vers le dépôt GitHub :{" "}
-                <a href={mainProject.github} target="_blank">
-                  {mainProject.github}
-                </a>
-                <div className={styles["buttons"]}>
-                  <ActionButton
-                    text="Voir en ligne"
-                    color={colors.secondary}
-                    textColor={colors.textColor}
-                    btnWidth="35%"
-                  />
-                  <ActionButton
-                    text="Voir mes projets"
-                    color={colors.primary}
-                    textColor={colors.background2D}
-                    btnWidth="35%"
-                  />
-                </div>
-              </div>
-            </div>
-            <div className={styles["image-container"]}>
-              <img
-                src={"./Projects_images/" + mainProject.image}
-                alt={mainProject.name}
-              />
-            </div>
-          </div>
-        </div>
-      </div>
+      <CardProject mainProject={projects.scolaire[0]} />
     </div>
   );
 }

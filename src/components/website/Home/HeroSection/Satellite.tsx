@@ -4,12 +4,14 @@ export default function Satellite({
   offset,
   color,
   diameter,
+  rotation,
   duration,
   image_path,
 }: {
   offset: string;
   color: string;
   diameter: string;
+  rotation: string;
   duration: string;
   image_path: string;
 }) {
@@ -22,6 +24,7 @@ export default function Satellite({
           "--color": color,
           "--diameter": diameter,
           "--duration": duration,
+          "--orbitRotation": rotation,
         } as any
       }
     >
