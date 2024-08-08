@@ -1,24 +1,31 @@
-.container {
-  display: grid;
-  inset: 0;
-}
-
 .row {
+  padding-right: 0;
   display: flex;
+  width: 100%;
+  gap: 7%;
+  overflow-x: scroll;
 }
 
 .modal-on {
   position: absolute;
-  height: 500px;
-  width: 400px;
-  background-color: yellowgreen;
+  top: 50%;
   scale: 1;
-  opacity: 1;
+  transition: scale 500ms;
+}
 
-  transition: scale 500ms opacity 500ms;
+.modal-on-background {
+  position: absolute;
+  height: calc(100dvh - 4em);
+  width: 100dvw;
+  opacity: 0.6;
+  background-color: black;
+  transition: opacity 500ms;
 }
 
 .modal-off {
   scale: 0;
+}
+
+.modal-off-background {
   opacity: 0;
 }

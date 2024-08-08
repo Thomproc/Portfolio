@@ -5,7 +5,7 @@
   min-height: calc(200px + 4em);
   max-height: 100cqh;
   overflow: hidden;
-  padding-left: 5%;
+  padding-left: 2%;
 }
 
 /*Format mobile */
@@ -15,7 +15,6 @@
     flex-direction: column;
     justify-content: space-evenly;
     text-align: center;
-    min-height: calc(200px + 4em);
 
     padding: 0;
     padding-top: 4em;

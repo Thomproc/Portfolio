@@ -1,9 +1,8 @@
-.grid-item {
+.project {
   display: flex;
-  width: 100%;
-  aspect-ratio: 16/9;
+  aspect-ratio: 4/2;
   position: relative;
-  width: 90%;
+  width: 100%;
   border: #ffffff solid 2px;
   border-radius: 10px;
   overflow: hidden;
@@ -11,23 +10,22 @@
   text-align: center;
 }
 
-.grid-item img {
+.project img {
   width: 100%;
   object-fit: contain;
   filter: brightness(0.7);
   transition: filter 0.5s, scale 0.8s;
 }
 
-.grid-item-text {
+.project-name {
   position: absolute;
   top: 50%;
   left: 50%;
   transform: translate(-50%, -50%);
-  font-size: 0.5em;
   font-weight: bold;
 }
 
-.grid-item:hover {
+.project:hover {
   cursor: pointer;
   .grid-item-text {
     display: none;

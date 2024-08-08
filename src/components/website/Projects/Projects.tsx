@@ -3,12 +3,13 @@ import styles from "./Projects.module.css";
 import { projects } from "../../../datas/Projects";
 import Card from "./Card";
 import CardProject from "../Basics/CardProject";
+import { Project } from "../../../models/Project";
 
 export default function Projects() {
-  const [open, setOpen] = useState<String | null>(null);
+  const [modalProject, setModalProject] = useState<Project | null>(null);
 
   return (
-    <div className={styles["container"]}>
+    <>
       {/* <ul>Professionnel</ul>
       <div className={styles["row"]}>
         {projects.professionnel.map((project, index) => {
@@ -16,22 +17,39 @@ export default function Projects() {
         })}
       </div> */}
 
-      <ul>Scolaires</ul>
+      <h1>Scolaires</h1>
       <div className={styles["row"]}>
         {projects.scolaire.map((project, index) => {
-          return <Card key={index} project={project} handleClick={setOpen} />;
+          return (
+            <Card key={index} project={project} handleClick={setModalProject} />
+          );
         })}
       </div>
-      <ul>Personnels</ul>
+      <h1>Personnels</h1>
       <div className={styles["row"]}>
         {projects.personnel.map((project, index) => {
-          return <Card key={index} project={project} handleClick={setOpen} />;
+          return (
+            <Card key={index} project={project} handleClick={setModalProject} />
+          );
         })}
       </div>
 
-      <div className={open ? styles["modal-on"] : styles["modal-off"]}>
-        <CardProject mainProject={projects.scolaire[0]} />
-      </div>
-    </div>
+      <div
+        className={
+          modalProject
+            ? styles["modal-on-background"]
+            : styles["modal-off-background"]
+        }
+        onClick={() => setModalProject(null)}
+      />
+
+      {modalProject ? (
+        <div className={styles["modal-on"]}>
+          <CardProject mainProject={modalProject} />
+        </div>
+      ) : (
+        <div className={styles["modal-off"]} />
+      )}
+    </>
   );
 }

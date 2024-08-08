@@ -6,15 +6,12 @@ export default function Card({
   handleClick,
 }: {
   project: Project;
-  handleClick: (value: String | null) => void;
+  handleClick: (value: Project | null) => void;
 }) {
   return (
-    <div
-      className={styles["grid-item"]}
-      onClick={() => handleClick(project.name)}
-    >
+    <div className={styles["project"]} onClick={() => handleClick(project)}>
       <img src={"Projects_images/" + project.image} alt={project.image} />
-      <div className={styles["grid-item-text"]}>{project.name}</div>
+      <div className={styles["project-name"]}>{project.name}</div>
     </div>
   );
 }
