@@ -9,7 +9,7 @@ export default function Projects() {
   const [modalProject, setModalProject] = useState<Project | null>(null);
 
   return (
-    <>
+    <div className={styles["projects"]}>
       {/* <ul>Professionnel</ul>
       <div className={styles["row"]}>
         {projects.professionnel.map((project, index) => {
@@ -50,6 +50,6 @@ export default function Projects() {
       ) : (
         <div className={styles["modal-off"]} />
       )}
-    </>
+    </div>
   );
 }

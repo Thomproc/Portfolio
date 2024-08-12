@@ -1,11 +1,12 @@
 .introduction {
-  display: grid;
+  display: flex;
+  width: 100%;
+  justify-content: center;
   font-size: 1.3em;
 }
 
 .introduction > div {
   width: min-content;
-  align-items: center;
 }
 
 .introduction-name {

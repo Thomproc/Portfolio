@@ -5,7 +5,7 @@ import Space from "./Space";
 export default function HeroSection() {
   return (
     <div
-      className={styles["hero-section"]}
+      className={styles["container"]}
       onMouseMove={(e) => {
         const satellites = document.getElementById("satellites")!;
         const heroSize = e.currentTarget.getBoundingClientRect();
@@ -16,8 +16,10 @@ export default function HeroSection() {
         }deg)`;
       }}
     >
-      <Introduction />
-      <Space />
+      <div className={styles["hero-section"]}>
+        <Introduction />
+        <Space />
+      </div>
     </div>
   );
 }

@@ -1,22 +1,42 @@
+.projects {
+  max-width: 1300px;
+}
+
 .row {
-  padding-right: 0;
-  display: flex;
-  width: 100%;
-  gap: 7%;
-  overflow-x: scroll;
+  overflow-x: auto;
+  white-space: nowrap;
+}
+
+.row > div:not(:first-child) {
+  margin-left: 2em;
+}
+
+.row::-webkit-scrollbar {
+  height: 0.5em;
+}
+
+.row::-webkit-scrollbar-track {
+  background: transparent;
+}
+
+.row::-webkit-scrollbar-thumb {
+  background-color: rgb(from var(--secondary) r g b / 0.3);
+  border-radius: 1em;
 }
 
 .modal-on {
-  position: absolute;
-  top: 50%;
+  position: fixed;
+  top: 50cqh;
+  left: 50cqw;
+  transform: translate(-50%, -50%);
+  transform-origin: 0 0;
   scale: 1;
   transition: scale 500ms;
 }
 
 .modal-on-background {
-  position: absolute;
-  height: calc(100dvh - 4em);
-  width: 100dvw;
+  position: fixed;
+  inset: 0;
   opacity: 0.6;
   background-color: black;
   transition: opacity 500ms;
