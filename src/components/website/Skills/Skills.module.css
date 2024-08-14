@@ -1,0 +1,58 @@
+.skills {
+  display: flex;
+  width: 100%;
+}
+
+.skill-container {
+  position: relative;
+  width: 100%;
+}
+
+.blob-container {
+  height: 100%;
+  filter: blur(0.7em) contrast(30);
+}
+
+.main-blob,
+.sub-blob {
+  aspect-ratio: 1;
+  background-color: #000;
+  border-radius: 50%;
+  box-shadow: 0 0 0 0.5em #f2f2f2;
+}
+
+.main-blob,
+.sub-blob,
+.skill-lvl-0,
+.skill-lvl-1 {
+  width: 50%;
+
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  text-align: center;
+}
+
+.skill-lvl-0,
+.skill-lvl-1 {
+  pointer-events: none;
+}
+
+.skill-lvl-1 {
+  opacity: 0;
+}
+
+.reveal {
+  animation: moving 0.8s ease-in-out forwards;
+}
+
+@keyframes moving {
+  from {
+    transform: translate(-50%, -50%) translate(0, 0);
+  }
+  to {
+    transform: translate(-50%, -50%) translate(var(--offsetX), var(--offsetY));
+    opacity: 1;
+  }
+}

@@ -10,29 +10,22 @@ export default function Projects() {
 
   return (
     <div className={styles["projects"]}>
-      {/* <ul>Professionnel</ul>
-      <div className={styles["row"]}>
-        {projects.professionnel.map((project, index) => {
-          return <Card key={index} project={project} />;
-        })}
-      </div> */}
-
-      <h1>Scolaires</h1>
-      <div className={styles["row"]}>
-        {projects.scolaire.map((project, index) => {
-          return (
-            <Card key={index} project={project} handleClick={setModalProject} />
-          );
-        })}
-      </div>
-      <h1>Personnels</h1>
-      <div className={styles["row"]}>
-        {projects.personnel.map((project, index) => {
-          return (
-            <Card key={index} project={project} handleClick={setModalProject} />
-          );
-        })}
-      </div>
+      {Object.entries(projects).map(([category, projectsInCategory]) => (
+        <div key={category}>
+          <h1>{category}</h1>
+          <div className={styles["row"]}>
+            {projectsInCategory.map((project, index) => {
+              return (
+                <Card
+                  key={index}
+                  project={project}
+                  handleClick={setModalProject}
+                />
+              );
+            })}
+          </div>
+        </div>
+      ))}
 
       <div
         className={

@@ -1,3 +1,9 @@
+export enum ECategories {
+  Professionnel = "Professionnel",
+  Scolaire = "Scolaire",
+  Personnel = "Personnel",
+}
+
 export enum ETypes {
   Mobile = "Mobile",
   Web = "Web",

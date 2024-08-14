@@ -5,7 +5,7 @@ export default function MainProject() {
   return (
     <>
       <h1>Projet du moment</h1>
-      <CardProject mainProject={projects.scolaire[0]} />
+      <CardProject mainProject={projects.Scolaire[0]} />
     </>
   );
 }

@@ -8,6 +8,7 @@ import NavBar from "./Header/NavBar";
 import Homepage from "./Home/Homepage";
 import Projects from "./Projects/Projects";
 import Footer from "./Footer/Footer";
+import Skills from "./Skills/Skills";
 
 export default function Main({
   changeFocus,
@@ -27,10 +28,7 @@ export default function Main({
         <div className={styles.content}>
           <Routes>
             <Route path={ERoutes.HOME} element={<Homepage />} />
-            <Route
-              path={ERoutes.SKILLS}
-              element={<div>NOTHING YET ! ;)</div>}
-            />
+            <Route path={ERoutes.SKILLS} element={<Skills />} />
             <Route path={ERoutes.PROJECTS} element={<Projects />} />
             <Route
               path={ERoutes.CONTACT}

@@ -1,4 +1,4 @@
-import { Project, ETypes, ETechnologies } from "../models/Project";
+import { Project, ECategories, ETypes, ETechnologies } from "../models/Project";
 
 const fuelToday: Project = {
   name: "Fuel Today",
@@ -33,9 +33,9 @@ const jupiTerror: Project = {
 };
 
 export const projects: {
-  [key in "scolaire" | "personnel" | "professionnel"]: Project[];
+  [key in ECategories]: Project[];
 } = {
-  scolaire: [
+  [ECategories.Scolaire]: [
     fuelToday,
     jupiTerror,
     fuelToday,
@@ -43,6 +43,6 @@ export const projects: {
     fuelToday,
     jupiTerror,
   ],
-  personnel: [],
-  professionnel: [],
+  [ECategories.Personnel]: [],
+  [ECategories.Professionnel]: [],
 };
