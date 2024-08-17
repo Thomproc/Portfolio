@@ -1,17 +1,72 @@
-export const skills = {
-  Backend: {
-    Langages: [],
-    BDD: [],
-    "Design patterns": [],
+export type TSkill = { name: string; children?: TSkill[] };
+export const skills: TSkill[] = [
+  {
+    name: "Backend",
+    children: [
+      {
+        name: "Langages",
+        children: [
+          {
+            name: "Python",
+          },
+        ],
+      },
+      {
+        name: "BDD",
+        children: [],
+      },
+      {
+        name: "Design patterns",
+        children: [],
+      },
+    ],
   },
-  Frontend: {
-    Langages: [],
-    Frameworks: [],
+  {
+    name: "Frontend",
+    children: [
+      {
+        name: "Langages",
+        children: [],
+      },
+      {
+        name: "Frameworks",
+        children: [],
+      },
+    ],
   },
-  Mobile: {
-    Android: ["Android Studio (Java)"],
-    Hybride: ["Flutter (Dart)"],
+  {
+    name: "Mobile",
+    children: [
+      {
+        name: "Android",
+        children: [],
+      },
+      {
+        name: "Hybride",
+        children: [],
+      },
+    ],
   },
-  "3D": ["Blender", "Unity"],
-  "Méthode de travail": ["Git", "Agile"],
-};
+  {
+    name: "3D",
+    children: [
+      {
+        name: "Blender",
+      },
+      {
+        name: "Unity",
+      },
+    ],
+  },
+  {
+    name: "Méthode de travail",
+    children: [
+      {
+        name: "Git",
+      },
+      {
+        name: "Agile",
+      },
+    ],
+  },
+];
