@@ -1,16 +1,20 @@
 import styles from "./Skills.module.css";
 import { skills } from "../../../datas/Skills";
-import Blobs from "./Blobs";
+import Blob from "./Blob";
 import Text from "./Text";
 import { useCallback, useState } from "react";
 
 export default function Skills() {
-  const [, setSkillsClicked] = useState<boolean[]>(
+  const [skillsClicked, setSkillsClicked] = useState<boolean[]>(
     new Array(skills.length).fill(false)
   );
 
-  const handleClick = useCallback((value: boolean[]) => {
-    setSkillsClicked(value);
+  const handleClick = useCallback((skillIndex: number) => {
+    setSkillsClicked((prevState) => {
+      const newState: boolean[] = [...prevState];
+      newState[skillIndex] = !newState[skillIndex];
+      return newState;
+    });
   }, []);
 
   return (
@@ -19,13 +23,20 @@ export default function Skills() {
         return (
           <div key={index} className={styles["skill-container"]}>
             {/* Blobs liquides */}
-            <Blobs handleClick={handleClick} skill={skill} index={index} />
+            <div className={styles["blob-container"]}>
+              <Blob
+                skill={skill}
+                rootBlob
+                revealText={() => handleClick(index)}
+              />
+            </div>
+
             {/* Text des blobs */}
-            {/* <Text
-              skillsClicked={skillsClicked[index]}
+            <Text
               skill={skill}
-              index={index}
-            /> */}
+              revealChildren={skillsClicked[index]}
+              rootText
+            />
           </div>
         );
       })}

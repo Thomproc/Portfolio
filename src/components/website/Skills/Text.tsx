@@ -1,58 +1,40 @@
+import { useState } from "react";
 import { TSkill } from "../../../datas/Skills";
 import styles from "./Skills.module.css";
 
-let key = 100;
 export default function Text({
-  skillsClicked,
   skill,
-  index,
+  revealChildren,
+  rootText,
 }: {
-  skillsClicked: boolean;
   skill: TSkill;
-  index: number;
+  revealChildren: boolean;
+  rootText?: boolean;
 }) {
-  const buildText = (
-    skill: TSkill,
-    depth: number,
-    rootIndex: number
-  ): JSX.Element[] => {
-    let childrenJSX: JSX.Element[] = [];
-    if (skill.children) {
-      skill.children.map((subSkill) => {
-        const newChildren = buildText(subSkill, depth + 1, rootIndex);
-        childrenJSX = childrenJSX.concat(newChildren);
-      });
-    }
-
-    key += 1;
-    console.log(skill.name, key);
-    if (depth === 0) {
-      childrenJSX.push(
-        <div key={key} className={styles["skill-lvl-0"]}>
-          {skill.name}
-        </div>
-      );
-      return childrenJSX;
-    }
-
-    childrenJSX.push(
-      <div
-        key={key}
-        className={`
-            ${styles["skill-lvl-1"]} 
-            ${skillsClicked && styles["reveal"]}
+  return (
+    <div
+      className={`
+        ${rootText ? styles["main-skill"] : styles["sub-skill"]} 
+        ${!rootText && revealChildren && styles["reveal"]}
         `}
-        style={
-          {
-            "--offsetX": (Math.cos(key * 300) * 150).toString() + "%",
-            "--offsetY": (Math.sin(key * 300) * 150).toString() + "%",
-          } as any
-        }
-      >
-        {skill.name}
-      </div>
-    );
-    return childrenJSX;
-  };
-  return buildText(skill, 0, index);
+      style={
+        {
+          "--offsetX": skill.offsetX,
+          "--offsetY": skill.offsetY,
+        } as any
+      }
+    >
+      {skill.name}
+      {skill.children?.map((subSkill, index) => {
+        return (
+          <Text
+            key={index}
+            skill={subSkill}
+            // revealAnimation={(revealAnimation || rootText) && revealChildren}
+            revealChildren={revealChildren}
+          />
+        );
+      })}
+    </div>
+  );
 }
