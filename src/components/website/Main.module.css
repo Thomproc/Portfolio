@@ -13,15 +13,15 @@
     position: absolute;
     inset: 0;
     background-image: radial-gradient(
-        rgb(from var(--accent) r g b / 0.4) 0.05em,
-        transparent 0.05em
+        rgb(from var(--accent) r g b / 0.4) 0.08em,
+        transparent 0.08em
       ),
       radial-gradient(
-        rgb(from var(--secondary) r g b / 0.7) 0.05em,
-        var(--background2D) 0.05em
+        rgb(from var(--secondary) r g b / 0.7) 0.08em,
+        var(--background2D) 0.08em
       );
-    background-size: 2em 2em;
-    background-position: 0 0, 1em 1em;
+    background-size: 1.5em 1.5em;
+    background-position: 0 0, 0.75em 0.75em;
     mask-image: radial-gradient(white, transparent 100%);
   }
 }

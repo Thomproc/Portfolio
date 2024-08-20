@@ -1,4 +1,3 @@
-import { useState } from "react";
 import { TSkill } from "../../../datas/Skills";
 import styles from "./Skills.module.css";
 
@@ -27,12 +26,7 @@ export default function Text({
       {skill.name}
       {skill.children?.map((subSkill, index) => {
         return (
-          <Text
-            key={index}
-            skill={subSkill}
-            // revealAnimation={(revealAnimation || rootText) && revealChildren}
-            revealChildren={revealChildren}
-          />
+          <Text key={index} skill={subSkill} revealChildren={revealChildren} />
         );
       })}
     </div>

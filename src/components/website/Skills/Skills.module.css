@@ -6,20 +6,19 @@
 .skill-container {
   position: relative;
   width: 100%;
+  min-height: 1000px;
 }
 
 .blob-container {
   height: 100%;
-  filter: blur(0.7em) contrast(30);
-  border: solid 1px #f2f2f2;
+  filter: blur(1.5em) contrast(30);
 }
 
 .main-blob,
 .sub-blob {
-  transform-style: preserve-3d;
   background-color: #000;
   border-radius: 50%;
-  box-shadow: 0 0 0 0.5em #f2f2f2;
+  box-shadow: 0 0 0 1em #f2f2f2;
 }
 
 .main-blob,
@@ -29,7 +28,8 @@
   position: absolute;
   top: 50%;
   left: 50%;
-  width: 70%;
+  width: 60%;
+  max-width: 200px;
   aspect-ratio: 1;
   transform: translate(-50%, -50%);
 }
@@ -53,16 +53,18 @@
 
 .reveal {
   display: flex;
-  animation: moving 1.3s ease-in-out forwards;
+  animation: moving 0.8s ease-in-out forwards;
 }
 
 @keyframes moving {
   from {
-    transform: translate(-50%, -50%) translate3d(0, 0, -1px);
+    transform: translate(-50%, -50%);
   }
   to {
-    transform: translate(-50%, -50%)
-      translate3d(var(--offsetX), var(--offsetY), -1px);
+    transform: translate(
+      calc(-50% + var(--offsetX)),
+      calc(-50% + var(--offsetY))
+    );
     opacity: 1;
   }
 }

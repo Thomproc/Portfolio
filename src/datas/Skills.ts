@@ -8,33 +8,43 @@ export type TSkill = {
 export const skills: TSkill[] = [
   {
     name: "Backend",
-    offsetX: "0",
-    offsetY: "0",
+    offsetX: "0%",
+    offsetY: "0%",
 
     children: [
       {
         name: "Langages",
-        offsetX: "100%",
-        offsetY: "150%",
+        offsetX: "0%",
+        offsetY: "200%",
         children: [
           {
             name: "Python",
-            offsetX: "10em",
-            offsetY: "5em",
+            offsetX: "0%",
+            offsetY: "220%",
+          },
+          {
+            name: "L2",
+            offsetX: "200%",
+            offsetY: "150%",
+          },
+          {
+            name: "L3",
+            offsetX: "-200%",
+            offsetY: "150%",
           },
         ],
       },
       {
         name: "BDD",
-        offsetX: "-12em",
-        offsetY: "-2em",
+        offsetX: "180%",
+        offsetY: "-100%",
 
         children: [],
       },
       {
         name: "Design patterns",
-        offsetX: "5em",
-        offsetY: "-13em",
+        offsetX: "-180%",
+        offsetY: "-100%",
 
         children: [],
       },
@@ -42,8 +52,8 @@ export const skills: TSkill[] = [
   },
   {
     name: "Frontend",
-    offsetX: "25em",
-    offsetY: "0em",
+    offsetX: "0%",
+    offsetY: "0%",
 
     children: [
       {
@@ -64,8 +74,8 @@ export const skills: TSkill[] = [
   },
   {
     name: "Mobile",
-    offsetX: "25em",
-    offsetY: "0em",
+    offsetX: "0%",
+    offsetY: "0%",
 
     children: [
       {
@@ -86,8 +96,8 @@ export const skills: TSkill[] = [
   },
   {
     name: "3D",
-    offsetX: "25em",
-    offsetY: "0em",
+    offsetX: "0%",
+    offsetY: "0%",
 
     children: [
       {
@@ -104,8 +114,8 @@ export const skills: TSkill[] = [
   },
   {
     name: "Méthode de travail",
-    offsetX: "25em",
-    offsetY: "0em",
+    offsetX: "0%",
+    offsetY: "0%",
 
     children: [
       {
