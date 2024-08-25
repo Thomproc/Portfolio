@@ -8,7 +8,7 @@ export type TSkill = {
 export const skills: TSkill[] = [
   {
     name: "Backend",
-    offsetX: "0%",
+    offsetX: "50%",
     offsetY: "0%",
 
     children: [
@@ -52,21 +52,21 @@ export const skills: TSkill[] = [
   },
   {
     name: "Frontend",
-    offsetX: "0%",
-    offsetY: "0%",
+    offsetX: "15%",
+    offsetY: "30%",
 
     children: [
       {
         name: "Langages",
-        offsetX: "25em",
-        offsetY: "0em",
+        offsetX: "180%",
+        offsetY: "100%",
 
         children: [],
       },
       {
         name: "Frameworks",
-        offsetX: "25em",
-        offsetY: "0em",
+        offsetX: "-180%",
+        offsetY: "100%",
 
         children: [],
       },
@@ -74,21 +74,21 @@ export const skills: TSkill[] = [
   },
   {
     name: "Mobile",
-    offsetX: "0%",
-    offsetY: "0%",
+    offsetX: "90%",
+    offsetY: "30%",
 
     children: [
       {
         name: "Android",
-        offsetX: "25em",
-        offsetY: "0em",
+        offsetX: "180%",
+        offsetY: "-100%",
 
         children: [],
       },
       {
         name: "Hybride",
-        offsetX: "25em",
-        offsetY: "0em",
+        offsetX: "-180%",
+        offsetY: "100%",
 
         children: [],
       },
@@ -96,37 +96,37 @@ export const skills: TSkill[] = [
   },
   {
     name: "3D",
-    offsetX: "0%",
-    offsetY: "0%",
+    offsetX: "85%",
+    offsetY: "80%",
 
     children: [
       {
         name: "Blender",
-        offsetX: "25em",
-        offsetY: "0em",
+        offsetX: "-180%",
+        offsetY: "-100%",
       },
       {
         name: "Unity",
-        offsetX: "25em",
-        offsetY: "0em",
+        offsetX: "180%",
+        offsetY: "100%",
       },
     ],
   },
   {
     name: "Méthode de travail",
-    offsetX: "0%",
-    offsetY: "0%",
+    offsetX: "25%",
+    offsetY: "80%",
 
     children: [
       {
         name: "Git",
-        offsetX: "25em",
-        offsetY: "0em",
+        offsetX: "-200%",
+        offsetY: "0%",
       },
       {
         name: "Agile",
-        offsetX: "25em",
-        offsetY: "0em",
+        offsetX: "200%",
+        offsetY: "0%",
       },
     ],
   },

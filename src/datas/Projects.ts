@@ -32,17 +32,23 @@ const jupiTerror: Project = {
   github: "Aucun...",
 };
 
+const twitter: Project = {
+  name: "Twitter",
+  context: "M1 Informatique",
+  date: new Date(2022, 0, 1),
+  type: ETypes.Web,
+  technologies: [],
+  image: "twitter.png",
+  description:
+    "Amélioration d'un projet afin de détecter des entités thématiques et spatiales dans un corpus de Tweets. Grâce à la librairie Spacy en Python j'ai pu mettre en place diverses règles grammaticales afin de détecter puis catégoriser une entité détectée.",
+
+  github: "Aucun...",
+};
+
 export const projects: {
   [key in ECategories]: Project[];
 } = {
-  [ECategories.Scolaire]: [
-    fuelToday,
-    jupiTerror,
-    fuelToday,
-    jupiTerror,
-    fuelToday,
-    jupiTerror,
-  ],
+  [ECategories.Scolaire]: [fuelToday, jupiTerror, twitter],
   [ECategories.Personnel]: [],
   [ECategories.Professionnel]: [],
 };
