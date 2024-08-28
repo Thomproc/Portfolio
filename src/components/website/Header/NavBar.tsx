@@ -68,11 +68,10 @@ export default function NavBar({
             Contact
           </div>
         </div>
-        <div
-          className={styles.navItem}
-          onClick={(_event) => changeFocus("desk")}
-        >
-          CV
+        <div className={styles.navItem}>
+          <a href={"./Hero_images/photo.jpeg"} download={"CV_Procureur_Thomas"}>
+            CV
+          </a>
         </div>
       </div>
     </div>

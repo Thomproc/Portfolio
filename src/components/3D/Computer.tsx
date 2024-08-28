@@ -1,9 +1,11 @@
 import { useLoader } from "@react-three/fiber";
 import { GLTFLoader } from "three/examples/jsm/loaders/GLTFLoader.js";
 import { Html } from "@react-three/drei";
-import { computerPosition } from "../config";
+import { computerPosition } from "../../config";
+
 import styles from "./Computer.module.css";
-import Main from "./website/Main";
+import { FocusContext } from "./../website/FocusContext";
+import Main from "../website/Main";
 
 export default function Computer({
   scale,
@@ -39,7 +41,9 @@ export default function Computer({
         transform
         onClick={() => changeFocus("computer")}
       >
-        <Main changeFocus={changeFocus} />
+        <FocusContext.Provider value={{ computerIsFocused: isFocused }}>
+          <Main changeFocus={changeFocus} />
+        </FocusContext.Provider>
       </Html>
     </group>
   );

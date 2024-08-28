@@ -26,9 +26,13 @@ export default function CardProject({ mainProject }: { mainProject: Project }) {
             {mainProject.description}
             <div>
               &#128073; Lien vers le dépôt GitHub :{" "}
-              <a href={mainProject.github} target="_blank">
-                {mainProject.github}
-              </a>
+              {mainProject.github ? (
+                <a href={mainProject.github} target="_blank">
+                  {mainProject.github}
+                </a>
+              ) : (
+                <b>Aucun lien...</b>
+              )}
               <div className={styles["buttons"]}>
                 <ActionButton
                   text="Voir en ligne"

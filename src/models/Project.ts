@@ -29,5 +29,5 @@ export type Project = {
   technologies: ETechnologies[];
   description: string;
   image: string;
-  github: string;
+  github?: string;
 };

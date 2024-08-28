@@ -1,0 +1,15 @@
+.contact {
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+form {
+  max-width: 50%;
+  display: grid;
+  align-items: center;
+  justify-items: start;
+  grid-template-columns: minmax(200px, 0.2fr) 1fr;
+  grid-template-rows: 1fr 1fr;
+}

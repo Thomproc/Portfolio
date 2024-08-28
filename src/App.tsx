@@ -3,9 +3,9 @@ import { useCallback, useEffect, useRef, useState } from "react";
 import { Canvas } from "@react-three/fiber";
 import { OrbitControls, PerspectiveCamera, SpotLight } from "@react-three/drei";
 
-import Environment from "./components/Environment";
-import Computer from "./components/Computer";
-import RubiksCubeComponent from "./components/RubiksCube";
+import Environment from "./components/3D/Environment";
+import Computer from "./components/3D/Computer";
+import RubiksCubeComponent from "./components/3D/RubiksCube";
 
 import {
   RCdim,

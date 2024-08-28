@@ -9,7 +9,6 @@ const fuelToday: Project = {
   image: "fuel_today.png",
   description:
     "Application mobile Android utilisant le GPS du téléphone et une API du gouvernement afin de rechercher une station service selon les préférences utilisateurs (carburant, service(s) disponible(s), distance). Une fois la station désirée choisie, vous serez automatiquement redirigé vers Google Maps pour vous y rendre !",
-  github: "Aucun...",
 };
 
 const jupiTerror: Project = {
@@ -29,7 +28,7 @@ const jupiTerror: Project = {
   description:
     "Space Invaders revisté par mes soins et jouable dans un navigateur web ! Dans le cadre de ma première année de Master, j'ai dû concevoir un clone du jeu Space Invaders en 3D. Pour cela j'ai respecté le cahier des charges fournit par l'encadrant qui incluait l'utilisation de primitives 3D animées, d'effets post-processing, la création de plusieurs niveaux, une \"IA\" pour les ennemis, l'utilisation de sons, plusieurs angles de vues possibles (vue d'ensemble statique ou point de vue du vaisseau). ",
 
-  github: "Aucun...",
+  github: "https://github.com/Thomproc/Space_invaders_threeJS",
 };
 
 const twitter: Project = {

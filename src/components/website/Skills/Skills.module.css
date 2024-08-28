@@ -1,16 +1,18 @@
 .skills {
   width: 100%;
   display: flex;
+  justify-content: center;
   align-items: center;
 }
 
 .skill-container {
   width: 100%;
+  max-width: 30cqw;
   position: relative;
 }
 
 .blob-container {
-  height: 100%;
+  min-height: var(--minHeight);
   filter: blur(1.5em) contrast(30);
 }
 
@@ -22,9 +24,13 @@
   top: 50%;
   left: 50%;
   width: 60%;
-  max-width: 10cqw;
   aspect-ratio: 1;
   transform: translate(-50%, -50%);
+}
+
+.main-blob,
+.main-skill {
+  max-width: 200px;
 }
 
 .main-blob,

@@ -1,7 +1,7 @@
 import { MeshReflectorMaterial } from "@react-three/drei";
 import { useLoader } from "@react-three/fiber";
 import { GLTFLoader } from "three/examples/jsm/loaders/GLTFLoader.js";
-import { colors } from "../datas/ColorTheme";
+import { colors } from "../../datas/ColorTheme";
 import {
   deskReflectorPosition,
   deskReflectorRotationX,
@@ -9,7 +9,7 @@ import {
   envScale,
   floorPositionY,
   floorRotationX,
-} from "../config";
+} from "../../config";
 
 export default function Environment() {
   const desk = useLoader(GLTFLoader, "./desk.glb");

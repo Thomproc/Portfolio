@@ -4,7 +4,7 @@ import { useFrame, useThree } from "@react-three/fiber";
 import { animated, useSpring } from "@react-spring/three";
 
 import Cube from "./Cube";
-import RubiksCube from "../models/RubiksCube";
+import RubiksCube from "../../models/RubiksCube";
 
 export default function RubiksCubeComponent({
   dim,

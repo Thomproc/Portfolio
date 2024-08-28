@@ -1,7 +1,7 @@
 import { useState, useMemo } from "react";
 import { Color, MeshLambertMaterial } from "three";
 import { RoundedBoxGeometry } from "three-stdlib";
-import { TCube } from "../models/Cube";
+import { TCube } from "../../models/Cube";
 import { Edges } from "@react-three/drei";
 
 export default function Cube({

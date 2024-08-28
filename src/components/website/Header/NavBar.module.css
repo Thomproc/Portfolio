@@ -45,4 +45,8 @@
   &:hover {
     color: rgb(from var(--primary) r g b / 0.8);
   }
+  a {
+    color: inherit;
+    text-decoration: inherit;
+  }
 }
