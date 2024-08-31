@@ -23,12 +23,12 @@ export const skills: TSkill[] = [
             offsetY: "220%",
           },
           {
-            name: "L2",
+            name: "C / C# / C++",
             offsetX: "200%",
             offsetY: "150%",
           },
           {
-            name: "L3",
+            name: "Java",
             offsetX: "-200%",
             offsetY: "150%",
           },
@@ -39,14 +39,29 @@ export const skills: TSkill[] = [
         offsetX: "180%",
         offsetY: "-100%",
 
-        children: [],
+        children: [
+          { name: "SQlite", offsetX: "240%", offsetY: "0%" },
+          { name: "PostgreSQL", offsetX: "0%", offsetY: "-240%" },
+        ],
       },
       {
         name: "Design patterns",
         offsetX: "-180%",
         offsetY: "-100%",
 
-        children: [],
+        children: [
+          { name: "API Rest", offsetX: "-240%", offsetY: "50%" },
+          {
+            name: "MVC",
+            offsetX: "0%",
+            offsetY: "-240%",
+          },
+          {
+            name: "ORM",
+            offsetX: "-200%",
+            offsetY: "-150%",
+          },
+        ],
       },
     ],
   },
@@ -61,14 +76,22 @@ export const skills: TSkill[] = [
         offsetX: "180%",
         offsetY: "100%",
 
-        children: [],
+        children: [
+          { name: "JS / TS", offsetX: "240%", offsetY: "-50%" },
+          { name: "HTML / CSS", offsetX: "200%", offsetY: "150%" },
+          {
+            name: "HTTP",
+            offsetX: "0%",
+            offsetY: "240%",
+          },
+        ],
       },
       {
         name: "Frameworks",
         offsetX: "-180%",
         offsetY: "100%",
 
-        children: [],
+        children: [{ name: "React", offsetX: "-240%", offsetY: "0%" }],
       },
     ],
   },
@@ -83,14 +106,16 @@ export const skills: TSkill[] = [
         offsetX: "180%",
         offsetY: "-100%",
 
-        children: [],
+        children: [
+          { name: "Android Studio (Java)", offsetX: "0%", offsetY: "-240%" },
+        ],
       },
       {
         name: "Hybride",
         offsetX: "-180%",
         offsetY: "100%",
 
-        children: [],
+        children: [{ name: "Flutter (Dart)", offsetX: "0%", offsetY: "240%" }],
       },
     ],
   },

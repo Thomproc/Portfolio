@@ -1,4 +1,4 @@
-button {
+.action-button {
   height: 2.5em;
   width: var(--width);
 

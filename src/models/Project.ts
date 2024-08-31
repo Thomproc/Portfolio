@@ -19,15 +19,20 @@ export enum ETechnologies {
   Blender = "Blender.png",
   AndroidStudio = "AndroidStudio.png",
   Java = "Java.png",
+  Flutter = "Flutter.png",
+  Python = "Python.png",
+  PostgreSQL = "PostgreSQL.png",
+  React = "React.png",
 }
 
 export type Project = {
   name: string;
-  context: string;
-  type: ETypes;
-  date: Date;
+  // context: string;
+  // type: ETypes;
+  // date: Date;
   technologies: ETechnologies[];
   description: string;
   image: string;
   github?: string;
+  website?: string;
 };

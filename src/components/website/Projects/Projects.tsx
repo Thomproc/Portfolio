@@ -10,22 +10,27 @@ export default function Projects() {
 
   return (
     <div className={styles["projects"]}>
-      {Object.entries(projects).map(([category, projectsInCategory]) => (
-        <div key={category}>
-          <h1>{category}</h1>
-          <div className={styles["row"]}>
-            {projectsInCategory.map((project, index) => {
-              return (
-                <Card
-                  key={index}
-                  project={project}
-                  handleClick={setModalProject}
-                />
-              );
-            })}
+      {Object.entries(projects).map(([category, projectsInCategory]) => {
+        if (projectsInCategory.length === 0) {
+          return;
+        }
+        return (
+          <div key={category}>
+            <h1>{category}</h1>
+            <div className={styles["row"]}>
+              {projectsInCategory.map((project, index) => {
+                return (
+                  <Card
+                    key={index}
+                    project={project}
+                    handleClick={setModalProject}
+                  />
+                );
+              })}
+            </div>
           </div>
-        </div>
-      ))}
+        );
+      })}
 
       <div
         className={
@@ -38,7 +43,7 @@ export default function Projects() {
 
       {modalProject ? (
         <div className={styles["modal-on"]}>
-          <CardProject mainProject={modalProject} />
+          <CardProject project={modalProject} />
         </div>
       ) : (
         <div className={styles["modal-off"]} />

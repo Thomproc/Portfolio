@@ -24,61 +24,59 @@ export default function Contact() {
 
   const sendEmail = (e: FormEvent) => {
     e.preventDefault();
-    if (fromName === "" || email === "" || message === "") {
-      return;
-    }
-    emailjs
-      .send("service_2ws4xnj", "template_gfhq1z8", mailParams)
-      .then((_res) => {
-        console.log("C est parti !", _res.text);
-      })
-      .catch((_err) => {
-        console.log("Erreur :(", _err.text);
-      });
+
+    // emailjs
+    //   .send("service_2ws4xnj", "template_gfhq1z8", mailParams)
+    //   .then((_res) => {
+    //     console.log("C est parti !", _res.text);
+    //   })
+    //   .catch((_err) => {
+    //     console.log("Erreur :(", _err.text);
+    //   });
   };
   return (
     <div className={styles.contact}>
-      <form onSubmit={sendEmail}>
-        <label htmlFor={EEmailParams.FROM_NAME}>Nom :</label>
-        <input
-          id={EEmailParams.FROM_NAME}
-          // name={EEmailParams.FROM_NAME}
-          type="text"
-          value={fromName}
-          onChange={(e) => setFromName(e.target.value)}
-          placeholder="Thomas PROCUREUR"
-          required
-        />
-
-        <label htmlFor={EEmailParams.EMAIL}>Adresse mail :</label>
-        <input
-          id={EEmailParams.EMAIL}
-          // name={EEmailParams.EMAIL}
-          type="text"
-          value={fromName}
-          onChange={(e) => setFromName(e.target.value)}
-          placeholder="votre_email@gmail.com"
-          required
-        />
-        {/* <li>
-          <label>Email : </label>
+      <form className={styles["my-form"]} onSubmit={sendEmail}>
+        <div className={styles["form-grid"]}>
+          <label htmlFor={EEmailParams.FROM_NAME}>Nom :</label>
           <input
-            name="email"
+            id={EEmailParams.FROM_NAME}
+            // name={EEmailParams.FROM_NAME}
+            type="text"
+            value={fromName}
+            onChange={(e) => setFromName(e.target.value)}
+            placeholder="Nom"
+            required
+          />
+
+          <label htmlFor={EEmailParams.EMAIL}>Adresse mail :</label>
+          <input
+            id={EEmailParams.EMAIL}
+            // name={EEmailParams.EMAIL}
             type="email"
             value={email}
             onChange={(e) => setEmail(e.target.value)}
+            placeholder="example@gmail.com"
+            required
           />
-        </li>
-        <li>
-          <label>Message : </label>
+
+          <label className={styles["message"]} htmlFor={EEmailParams.MESSAGE}>
+            Message :
+          </label>
           <textarea
-            name="message"
+            className={styles["message"]}
+            id={EEmailParams.MESSAGE}
+            // name={EEmailParams.MESSAGE}
             value={message}
             onChange={(e) => setMessage(e.target.value)}
+            placeholder="Salut ! Je vous contacte pour..."
+            required
           />
-        </li> */}
+        </div>
 
-        {/* <button type="submit">Envoyer</button> */}
+        <button type="submit" className={styles["send-button"]}>
+          Envoyer
+        </button>
       </form>
     </div>
   );

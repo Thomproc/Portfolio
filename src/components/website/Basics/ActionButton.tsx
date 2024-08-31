@@ -7,16 +7,20 @@ export default function ActionButton({
   color,
   textColor,
   btnWidth,
-  target,
+  targetTab,
+  targetLink,
 }: {
   text: string;
   color: string;
   textColor: string;
   btnWidth: String;
-  target: ERoutes;
-}) {
+  targetTab?: ERoutes;
+  targetLink?: string;
+} & (
+  | { targetTab: ERoutes; targetLink?: never }
+  | { targetLink: string; targetTab?: never }
+)) {
   const navigate = useNavigate();
-
   return (
     <button
       data-text={text}
@@ -27,8 +31,14 @@ export default function ActionButton({
           "--width": btnWidth,
         } as any
       }
-      className={styles["my-button"]}
-      onClick={() => navigate(target)}
+      className={styles["action-button"]}
+      onClick={() => {
+        if (targetTab) {
+          navigate(targetTab);
+        } else if (targetLink) {
+          window.open(targetLink, "_blank");
+        }
+      }}
     />
   );
 }

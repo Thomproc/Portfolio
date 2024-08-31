@@ -81,7 +81,7 @@ function App() {
       <Environment />
 
       <PerspectiveCamera makeDefault fov={90} position={cameraPosition} />
-      <axesHelper args={[20]} />
+      {/* <axesHelper args={[20]} /> */}
 
       <RubiksCubeComponent
         dim={RCdim}

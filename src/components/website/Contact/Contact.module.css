@@ -1,15 +1,55 @@
 .contact {
   width: 100%;
+  height: 100%;
   display: flex;
   justify-content: center;
   align-items: center;
 }
 
-form {
-  max-width: 50%;
+.my-form {
+  width: 100%;
+  max-width: 50em;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  border: solid 0.1em var(--secondary);
+  border-radius: 0.5em;
+  padding: 1em;
+  margin: 1em;
+  gap: 1em;
+  backdrop-filter: blur(1px);
+}
+
+.form-grid {
+  width: 100%;
   display: grid;
   align-items: center;
-  justify-items: start;
-  grid-template-columns: minmax(200px, 0.2fr) 1fr;
-  grid-template-rows: 1fr 1fr;
+  grid-template-columns: 20% auto;
+  grid-template-rows: repeat(auto-fit, minmax(auto, 1fr)) 10em;
+  gap: 1em 0em;
+  input,
+  textarea {
+    min-height: 2em;
+    font-size: 1.1em;
+  }
+}
+
+.send-button {
+  height: fit-content;
+  width: 50%;
+  max-width: 300px;
+  background-color: var(--primary);
+  border: none;
+  border-radius: 1em;
+  color: var(--background3D);
+  cursor: pointer;
+  font-size: 1em;
+}
+
+.message {
+  align-self: stretch;
+  grid-column: span 2;
+  resize: vertical;
+  max-height: 100px;
 }

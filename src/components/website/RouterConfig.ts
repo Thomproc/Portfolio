@@ -3,7 +3,6 @@ export enum ERoutes {
   PROJECTS = "/projects",
   SKILLS = "/skills",
   CONTACT = "/contact",
-  NOTFOUND = "*", // A CODER !!!
 }
 
 export default ERoutes;

@@ -23,6 +23,8 @@ export default function Skills() {
           >
             {/* Blobs liquides */}
             <div className={styles["blob-container"]}>
+              <div className={styles["animated-blob1"]} />
+              <div className={styles["animated-blob2"]} />
               <div className={styles["main-blob"]}>
                 {rootSkill !== null &&
                   rootSkill.children?.map((subSkill) => (

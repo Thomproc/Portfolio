@@ -1,5 +1,8 @@
 .projects {
-  position: relative;
+  /* display: flex;
+  flex-direction: column;
+  justify-content: center;
+  gap: 10em; */
 }
 
 .row {
@@ -45,9 +48,11 @@
 }
 
 .modal-off {
+  position: absolute;
   scale: 0;
 }
 
 .modal-off-background {
+  position: absolute;
   opacity: 0;
 }
