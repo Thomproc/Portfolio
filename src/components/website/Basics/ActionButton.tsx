@@ -1,4 +1,3 @@
-import { useNavigate } from "react-router-dom";
 import styles from "./ActionButton.module.css";
 import ERoutes from "../RouterConfig";
 
@@ -20,7 +19,6 @@ export default function ActionButton({
   | { targetTab: ERoutes; targetLink?: never }
   | { targetLink: string; targetTab?: never }
 )) {
-  const navigate = useNavigate();
   return (
     <button
       data-text={text}
@@ -34,7 +32,7 @@ export default function ActionButton({
       className={styles["action-button"]}
       onClick={() => {
         if (targetTab) {
-          navigate(targetTab);
+          // Scroller jusqu'aubon endroit
         } else if (targetLink) {
           window.open(targetLink, "_blank");
         }

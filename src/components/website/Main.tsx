@@ -1,7 +1,6 @@
 import { useEffect } from "react";
 import styles from "./Main.module.css";
 import { colors } from "../../datas/ColorTheme";
-import { BrowserRouter as Router, Route, Routes } from "react-router-dom";
 
 import ERoutes from "./RouterConfig";
 import NavBar from "./Header/NavBar";
@@ -24,17 +23,12 @@ export default function Main({
 
   return (
     <div className={styles.shadow}>
-      <Router>
-        <NavBar changeFocus={changeFocus} />
-        <div className={styles.content}>
-          <Routes>
-            <Route path={ERoutes.HOME} element={<Homepage />} />
-            <Route path={ERoutes.SKILLS} element={<Skills />} />
-            <Route path={ERoutes.PROJECTS} element={<Projects />} />
-            <Route path={ERoutes.CONTACT} element={<Contact />} />
-          </Routes>
-        </div>
-      </Router>
+      <NavBar changeFocus={changeFocus} />
+      <div className={styles.content}>
+        <Homepage />
+        <Skills />
+        <Projects />
+      </div>
       <Footer />
     </div>
   );

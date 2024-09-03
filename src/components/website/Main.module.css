@@ -27,8 +27,11 @@
 }
 
 .content > * {
+  width: 96%;
   padding: 0 3%;
   max-width: 1500px;
-  min-height: calc(100cqh - 4em);
+  /* min-height: calc(100cqh - 4em); */
+  position: relative;
+  top: -4em;
   z-index: 0;
 }

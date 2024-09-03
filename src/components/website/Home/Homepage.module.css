@@ -1,4 +1,4 @@
 .homepage {
-  position: relative;
-  top: -4em;
+  display: flex;
+  flex-direction: column;
 }

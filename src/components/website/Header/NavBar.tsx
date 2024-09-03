@@ -1,14 +1,11 @@
 import styles from "./NavBar.module.css";
 import { ERoutes } from "../../../components/website/RouterConfig";
-import { useLocation, useNavigate } from "react-router-dom";
 
 export default function NavBar({
   changeFocus,
 }: {
   changeFocus: (value: "computer" | "rubiksCube" | "desk") => boolean;
 }) {
-  const location = useLocation();
-  const navigate = useNavigate();
   return (
     <div className={styles.center}>
       <div className={styles.navContainer}>
@@ -21,48 +18,52 @@ export default function NavBar({
         <div className={styles.navBar}>
           <div
             className={
+              // Mise en valeur de la section selon le pourcentage de scrollage
               location.pathname === ERoutes.HOME
                 ? "text-primary"
                 : styles.navItem
             }
             onClick={(_event) => {
-              navigate(ERoutes.HOME);
+              // navigate(ERoutes.HOME);
             }}
           >
             Accueil
           </div>
           <div
             className={
+              // Mise en valeur de la section selon le pourcentage de scrollage
               location.pathname === ERoutes.SKILLS
                 ? "text-primary"
                 : styles.navItem
             }
             onClick={(_event) => {
-              navigate(ERoutes.SKILLS);
+              // navigate(ERoutes.SKILLS);
             }}
           >
             Compétences
           </div>
           <div
             className={
+              // Mise en valeur de la section selon le pourcentage de scrollage
               location.pathname === ERoutes.PROJECTS
                 ? "text-primary"
                 : styles.navItem
             }
             onClick={(_event) => {
-              navigate(ERoutes.PROJECTS);
+              // navigate(ERoutes.PROJECTS);
             }}
           >
             Projets
           </div>
           <div
             className={
+              // Mise en valeur de la section selon le pourcentage de scrollage
               location.pathname === ERoutes.CONTACT
                 ? "text-primary"
                 : styles.navItem
             }
             onClick={(_event) => {
-              navigate(ERoutes.CONTACT);
+              // navigate(ERoutes.CONTACT);
             }}
           >
             Contact
