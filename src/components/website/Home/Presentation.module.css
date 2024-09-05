@@ -1,34 +1,35 @@
 .presentation {
-  position: absolute;
-  bottom: 0;
-  left: -50%;
-  width: 200%;
-  height: 0.1em;
+  position: relative;
+  left: -100%;
+  width: 300%;
   display: flex;
   justify-content: center;
   align-items: center;
-  /* &::before,
+  &::before,
   &::after {
     position: absolute;
     left: 0;
+    top: 0%;
     content: "";
-    width: 30%;
-    height: 100%;
+    width: 41%;
+    height: 0.25em;
     background-color: var(--accent);
   }
   &::after {
     right: 0;
     left: auto;
-  } */
+  }
   & > div {
+    position: relative;
+    top: -5em;
     z-index: 1;
-    width: 40%;
-    padding: 1em;
-    backdrop-filter: blur(2px);
+    width: 17%;
+    padding: 0.5%;
+    backdrop-filter: blur(1px);
     border-radius: 1em;
-    /* border: solid 0.1em var(--accent); */
-    background-color: rgb(from var(--secondary) r g b / 0.1);
-    box-shadow: var(--accent) 0 0 5em 0em;
+    border: solid 0.1em var(--accent);
+    background-color: rgba(72, 72, 72, 0.098);
+    /* box-shadow: var(--accent) 0 0 5em 0em; */
     text-align: justify;
   }
 }

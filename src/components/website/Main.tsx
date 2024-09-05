@@ -1,4 +1,4 @@
-import { useEffect } from "react";
+import { useEffect, useRef } from "react";
 import styles from "./Main.module.css";
 import { colors } from "../../datas/ColorTheme";
 
@@ -8,7 +8,6 @@ import Homepage from "./Home/Homepage";
 import Projects from "./Projects/Projects";
 import Footer from "./Footer/Footer";
 import Skills from "./Skills/Skills";
-import Contact from "./Contact/Contact";
 
 export default function Main({
   changeFocus,
@@ -21,15 +20,36 @@ export default function Main({
     });
   }, []); // Permet de rendre accessible les variables de couleurs du typeScript au sein des CSS
 
+  const homePageRef = useRef<HTMLDivElement>(null);
+  const skillsRef = useRef<HTMLDivElement>(null);
+  const projectsRef = useRef<HTMLDivElement>(null);
+  const contactRef = useRef<HTMLDivElement>(null);
   return (
     <div className={styles.shadow}>
-      <NavBar changeFocus={changeFocus} />
+      <NavBar
+        changeFocus={changeFocus}
+        refs={{
+          [ERoutes.HOME]: homePageRef,
+          [ERoutes.SKILLS]: skillsRef,
+          [ERoutes.PROJECTS]: projectsRef,
+          [ERoutes.CONTACT]: contactRef,
+        }}
+      />
       <div className={styles.content}>
-        <Homepage />
-        <Skills />
-        <Projects />
+        <div id={ERoutes.HOME} ref={homePageRef}>
+          <Homepage />
+        </div>
+
+        <div id={ERoutes.SKILLS} ref={skillsRef}>
+          <Skills />
+        </div>
+        <div id={ERoutes.PROJECTS} ref={projectsRef}>
+          <Projects />
+        </div>
       </div>
-      <Footer />
+      <div id={ERoutes.CONTACT} ref={contactRef}>
+        <Footer />
+      </div>
     </div>
   );
 }

@@ -1,8 +1,10 @@
 .container {
   display: flex;
   justify-content: center;
-  min-height: calc(25cqh + 4em);
-  max-height: 100cqh;
+  min-height: var(--minHeight);
+  max-height: calc(100cqh - 4em);
+  /* position: relative;
+  top: -4em; */
   overflow: hidden;
 }
 
@@ -16,17 +18,20 @@
 /*Format mobile */
 @media screen and (max-width: 600px) {
   .hero-section {
-    display: flex;
     flex-direction: column;
     justify-content: start;
     text-align: center;
-    /* min-height: calc(650px + 4em); */
 
-    padding: 0;
-    padding-top: 4em;
+    /* padding: 0; */
+    /* padding-top: 4em; */
   }
 
   .hero-section button {
     padding: 0;
+  }
+
+  .container {
+    min-height: var(--minHeightMobile);
+    padding-top: 4em;
   }
 }

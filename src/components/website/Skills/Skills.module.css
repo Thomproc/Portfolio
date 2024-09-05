@@ -11,7 +11,7 @@
 }
 
 .blob-container {
-  min-height: var(--minHeight);
+  min-height: min(1100px, 90cqw);
   filter: blur(1.5em) contrast(30);
 }
 
@@ -36,10 +36,10 @@
 
 .animated-blob2,
 .animated-blob1 {
-  width: 35%;
-  max-width: 90px;
+  width: 20%;
+  max-width: 5.4em;
   transform-origin: 0% 0%;
-  animation: shape-transformation 5s infinite linear;
+  animation: shape-transformation 6s infinite linear;
 }
 
 .animated-blob2 {
@@ -48,15 +48,15 @@
 
 @keyframes shape-transformation {
   0% {
-    transform: rotate(0deg);
+    transform: rotate(var(--rotationStart));
   }
 
   50% {
-    transform: rotate(100deg);
+    transform: rotate(160deg);
   }
 
   100% {
-    transform: rotate(360deg);
+    transform: rotate(calc(var(--rotationStart) + 360deg));
   }
 }
 

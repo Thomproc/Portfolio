@@ -1,8 +1,8 @@
 export enum ERoutes {
-  HOME = "/",
-  PROJECTS = "/projects",
-  SKILLS = "/skills",
-  CONTACT = "/contact",
+  HOME = "home",
+  PROJECTS = "projects",
+  SKILLS = "skills",
+  CONTACT = "contact",
 }
 
 export default ERoutes;

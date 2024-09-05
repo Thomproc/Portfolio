@@ -7,8 +7,8 @@ export default function Homepage() {
   return (
     <div className={styles.homepage}>
       <HeroSection />
-      {/* <MainProject /> */}
       <Presentation />
+      {/* <MainProject /> */}
     </div>
   );
 }

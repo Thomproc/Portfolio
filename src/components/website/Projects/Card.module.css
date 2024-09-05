@@ -3,6 +3,7 @@
   aspect-ratio: 4/2;
   position: relative;
   width: 20%;
+  min-width: 20em;
   border: #ffffff solid 2px;
   border-radius: 10px;
   overflow: hidden;

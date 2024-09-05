@@ -1,4 +1,9 @@
 .projects {
+  display: flex;
+  flex-direction: column;
+  gap: 2em;
+  margin-left: 2em;
+  max-width: 90cqw;
 }
 
 .row {
@@ -19,7 +24,7 @@
 }
 
 .row::-webkit-scrollbar-thumb {
-  background-color: rgb(from var(--primary) r g b / 0.8);
+  background-color: rgb(from var(--accent) r g b / 0.8);
   border-radius: 1em;
 }
 

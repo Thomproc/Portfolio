@@ -33,6 +33,8 @@ export default function ActionButton({
       onClick={() => {
         if (targetTab) {
           // Scroller jusqu'aubon endroit
+          const element = document.getElementById(targetTab);
+          element?.scrollIntoView({ behavior: "smooth" });
         } else if (targetLink) {
           window.open(targetLink, "_blank");
         }

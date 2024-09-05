@@ -8,6 +8,7 @@
 .content {
   display: grid;
   justify-items: center;
+
   &::before {
     content: "";
     position: absolute;
@@ -30,7 +31,8 @@
   width: 96%;
   padding: 0 3%;
   max-width: 1500px;
-  /* min-height: calc(100cqh - 4em); */
+  /* min-height: calc(100cqh); */
+
   position: relative;
   top: -4em;
   z-index: 0;

@@ -3,6 +3,8 @@
   align-items: center;
   justify-content: center;
   height: 70cqw;
+  min-height: 150px;
+
   width: 100%;
   min-width: 100px;
   pointer-events: none;
