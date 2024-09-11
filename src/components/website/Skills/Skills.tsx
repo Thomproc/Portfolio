@@ -10,27 +10,20 @@ export default function Skills() {
     useState<boolean>(false);
   return (
     <>
-      <h1>Compétences</h1>
+      <div className={styles.title}>
+        <img
+          src="./Astro_skills.png"
+          alt="astronaute compétences"
+          className={styles.icon}
+        />
+        <h1>Compétences</h1>
+      </div>
       <div className={styles.skills}>
         <div className={styles["skill-container"]}>
           {/* Blobs liquides */}
           <div className={styles["blob-container"]}>
-            <div
-              className={styles["animated-blob1"]}
-              style={
-                {
-                  "--rotationStart": "0deg",
-                } as any
-              }
-            />
-            <div
-              className={styles["animated-blob2"]}
-              style={
-                {
-                  "--rotationStart": "0deg",
-                } as any
-              }
-            />
+            <div className={styles["animated-blob1"]} />
+            <div className={styles["animated-blob2"]} />
             <div className={styles["main-blob"]}>
               {rootSkill !== null &&
                 rootSkill.children?.map((subSkill) => (

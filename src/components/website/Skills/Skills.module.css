@@ -4,6 +4,14 @@
   align-items: center;
 }
 
+.title {
+  display: flex;
+}
+.icon {
+  height: 8em;
+  aspect-ratio: 1;
+  transform: translate(0, -25%);
+}
 .skill-container {
   width: 100%;
   max-width: 30cqw;
@@ -11,7 +19,7 @@
 }
 
 .blob-container {
-  min-height: min(1100px, 90cqw);
+  min-height: min(1200px, 90cqw);
   filter: blur(1.5em) contrast(30);
 }
 
@@ -31,13 +39,13 @@
 
 .main-blob,
 .main-skill {
-  max-width: 200px;
+  max-width: 15em;
 }
 
 .animated-blob2,
 .animated-blob1 {
-  width: 20%;
-  max-width: 5.4em;
+  width: 35%;
+  max-width: 6.5em;
   transform-origin: 0% 0%;
   animation: shape-transformation 6s infinite linear;
 }
@@ -48,7 +56,7 @@
 
 @keyframes shape-transformation {
   0% {
-    transform: rotate(var(--rotationStart));
+    transform: rotate(0deg);
   }
 
   50% {
@@ -56,7 +64,7 @@
   }
 
   100% {
-    transform: rotate(calc(var(--rotationStart) + 360deg));
+    transform: rotate(360deg);
   }
 }
 
@@ -112,6 +120,7 @@
   align-items: center;
   position: relative;
   padding: 0 20%;
+  animation: opacity 0.2s ease-in-out forwards;
 
   .root-skill {
     position: absolute;
@@ -127,5 +136,14 @@
 
   .title {
     color: rgb(from var(--textColor) r g b / 0.7);
+  }
+}
+
+@keyframes opacity {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
   }
 }

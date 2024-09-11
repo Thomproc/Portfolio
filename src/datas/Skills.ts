@@ -23,7 +23,7 @@ export const skills: TSkill[] = [
             offsetY: "220%",
           },
           {
-            name: "C / C# / C++",
+            name: "C",
             offsetX: "200%",
             offsetY: "150%",
           },

@@ -6,7 +6,7 @@ import CardProject from "../Basics/CardProject";
 import { Project } from "../../../models/Project";
 
 export default function Projects() {
-  const [modalProject, setModalProject] = useState<Project | null>(null);
+  const [selectedProject, setSelectedProject] = useState<Project | null>(null);
 
   return (
     <>
@@ -25,7 +25,7 @@ export default function Projects() {
                     <Card
                       key={index}
                       project={project}
-                      handleClick={setModalProject}
+                      handleClick={setSelectedProject}
                     />
                   );
                 })}
@@ -34,22 +34,7 @@ export default function Projects() {
           );
         })}
 
-        <div
-          className={
-            modalProject
-              ? styles["modal-on-background"]
-              : styles["modal-off-background"]
-          }
-          onClick={() => setModalProject(null)}
-        />
-
-        {modalProject ? (
-          <div className={styles["modal-on"]}>
-            <CardProject project={modalProject} />
-          </div>
-        ) : (
-          <div className={styles["modal-off"]} />
-        )}
+        <CardProject project={selectedProject || projects.Personnel[0]} />
       </div>
     </>
   );

@@ -32,7 +32,6 @@ export default function ActionButton({
       className={styles["action-button"]}
       onClick={() => {
         if (targetTab) {
-          // Scroller jusqu'aubon endroit
           const element = document.getElementById(targetTab);
           element?.scrollIntoView({ behavior: "smooth" });
         } else if (targetLink) {

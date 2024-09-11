@@ -39,12 +39,11 @@ export default function Main({
         <div id={ERoutes.HOME} ref={homePageRef}>
           <Homepage />
         </div>
-
-        <div id={ERoutes.SKILLS} ref={skillsRef}>
-          <Skills />
-        </div>
         <div id={ERoutes.PROJECTS} ref={projectsRef}>
           <Projects />
+        </div>
+        <div id={ERoutes.SKILLS} ref={skillsRef}>
+          <Skills />
         </div>
       </div>
       <div id={ERoutes.CONTACT} ref={contactRef}>

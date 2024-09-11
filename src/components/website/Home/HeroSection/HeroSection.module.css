@@ -5,7 +5,19 @@
   max-height: calc(100cqh - 4em);
   /* position: relative;
   top: -4em; */
-  overflow: hidden;
+  position: relative;
+  &::before {
+    content: "";
+    background-image: url("./hero_bg.jpg");
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center;
+    position: absolute;
+    width: 100dvw;
+    height: 100%;
+
+    z-index: -1;
+  }
 }
 
 .hero-section {
@@ -13,6 +25,7 @@
   justify-content: center;
   align-items: center;
   width: 100%;
+  overflow: hidden;
 }
 
 /*Format mobile */
@@ -24,6 +37,7 @@
 
     /* padding: 0; */
     /* padding-top: 4em; */
+    padding-top: 4em;
   }
 
   .hero-section button {
@@ -32,6 +46,5 @@
 
   .container {
     min-height: var(--minHeightMobile);
-    padding-top: 4em;
   }
 }

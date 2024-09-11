@@ -1,9 +1,10 @@
 .contact {
-  width: 100%;
-  height: 100%;
   display: flex;
-  justify-content: center;
+  flex-direction: column;
   align-items: center;
+  h1 {
+    text-align: center;
+  }
 }
 
 .my-form {
@@ -13,12 +14,11 @@
   flex-direction: column;
   justify-content: center;
   align-items: center;
-  border: solid 0.1em var(--secondary);
-  border-radius: 0.5em;
-  padding: 1em;
-  margin: 1em;
   gap: 1em;
-  backdrop-filter: blur(1px);
+  background-color: rgb(from var(--background3D) r g b / 0.9);
+  border-radius: 1em;
+  box-shadow: 0 0 2em 0.5em rgb(from var(--primary) r g b / 0.5);
+  padding: 1%;
 }
 
 .form-grid {
@@ -32,19 +32,36 @@
   textarea {
     min-height: 2em;
     font-size: 1.1em;
+    border: none;
+    border-bottom: solid 0.1em var(--secondary);
+    background-color: var(--background2D);
+    transition: all 0.1s;
+    &:focus {
+      outline: none;
+      border-color: var(--primary);
+    }
   }
 }
 
 .send-button {
-  height: fit-content;
+  min-height: 2em;
   width: 50%;
-  max-width: 300px;
-  background-color: var(--primary);
-  border: none;
-  border-radius: 1em;
-  color: var(--background3D);
-  cursor: pointer;
+  min-width: 5em;
+  max-width: 20em;
+  /* max-width: 8em; */
+  /* margin: 0 1%; */
+  background-color: transparent;
   font-size: 1em;
+
+  border: 0.1em solid var(--primary);
+  border-radius: 1em;
+  cursor: pointer;
+  transition: all 0.2s;
+
+  &:hover {
+    border-color: var(--primary);
+    box-shadow: 0 0 10px var(--primary);
+  }
 }
 
 .message {

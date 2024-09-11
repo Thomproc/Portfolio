@@ -13,11 +13,22 @@
     content: "";
     width: 41%;
     height: 0.25em;
-    background-color: var(--accent);
+  }
+  &::before {
+    background: linear-gradient(
+      to left,
+      rgb(from var(--primary) r g b / 0.7) 3%,
+      var(--accent) 40%
+    );
   }
   &::after {
     right: 0;
     left: auto;
+    background: linear-gradient(
+      to right,
+      rgb(from var(--primary) r g b / 0.7) 3%,
+      var(--accent) 40%
+    );
   }
   & > div {
     position: relative;
@@ -27,9 +38,24 @@
     padding: 0.5%;
     backdrop-filter: blur(1px);
     border-radius: 1em;
-    border: solid 0.1em var(--accent);
-    background-color: rgba(72, 72, 72, 0.098);
-    /* box-shadow: var(--accent) 0 0 5em 0em; */
+    border: solid 0.1em var(--primary);
+    background-color: var(--background2D);
+
+    box-shadow: rgba(from var(--primary) r g b / 0.5) 0 0 5em 1em;
     text-align: justify;
   }
 }
+
+/* .astronaut {
+  position: absolute;
+  top: 85%;
+  justify-content: center;
+  height: 110em;
+  left: 50%;
+  img {
+    height: 100%;
+    object-fit: contain;
+    transform: translate(-50%, 0);
+    mask-image: cross-fade();
+  }
+} */

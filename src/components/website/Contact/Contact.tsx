@@ -36,20 +36,24 @@ export default function Contact() {
   };
   return (
     <div className={styles.contact}>
+      <h1>
+        Une question ? Un projet ? <br />
+        Dîtes-moi tout !
+      </h1>
       <form className={styles["my-form"]} onSubmit={sendEmail}>
         <div className={styles["form-grid"]}>
-          <label htmlFor={EEmailParams.FROM_NAME}>Nom :</label>
+          <label htmlFor={EEmailParams.FROM_NAME}>Nom</label>
           <input
             id={EEmailParams.FROM_NAME}
             // name={EEmailParams.FROM_NAME}
             type="text"
             value={fromName}
             onChange={(e) => setFromName(e.target.value)}
-            placeholder="Nom"
+            placeholder="Votre nom"
             required
           />
 
-          <label htmlFor={EEmailParams.EMAIL}>Adresse mail :</label>
+          <label htmlFor={EEmailParams.EMAIL}>Adresse mail</label>
           <input
             id={EEmailParams.EMAIL}
             // name={EEmailParams.EMAIL}
@@ -61,7 +65,7 @@ export default function Contact() {
           />
 
           <label className={styles["message"]} htmlFor={EEmailParams.MESSAGE}>
-            Message :
+            Message
           </label>
           <textarea
             className={styles["message"]}

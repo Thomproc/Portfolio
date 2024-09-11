@@ -38,21 +38,6 @@ export default function NavBar({
           <div
             className={
               // Mise en valeur de l'item en orange selon le pourcentage de scrollage
-              location.pathname === ERoutes.SKILLS
-                ? "text-primary"
-                : styles.navItem
-            }
-            onClick={(_event) => {
-              refs[ERoutes.SKILLS].current?.scrollIntoView({
-                behavior: "smooth",
-              });
-            }}
-          >
-            Compétences
-          </div>
-          <div
-            className={
-              // Mise en valeur de l'item en orange selon le pourcentage de scrollage
               location.pathname === ERoutes.PROJECTS
                 ? "text-primary"
                 : styles.navItem
@@ -64,6 +49,21 @@ export default function NavBar({
             }}
           >
             Projets
+          </div>
+          <div
+            className={
+              // Mise en valeur de l'item en orange selon le pourcentage de scrollage
+              location.pathname === ERoutes.SKILLS
+                ? "text-primary"
+                : styles.navItem
+            }
+            onClick={(_event) => {
+              refs[ERoutes.SKILLS].current?.scrollIntoView({
+                behavior: "smooth",
+              });
+            }}
+          >
+            Compétences
           </div>
           <div
             className={

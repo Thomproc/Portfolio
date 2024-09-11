@@ -1,6 +1,5 @@
 import styles from "./Homepage.module.css";
 import HeroSection from "./HeroSection/HeroSection";
-import MainProject from "./MainProject";
 import Presentation from "./Presentation";
 
 export default function Homepage() {
@@ -8,7 +7,6 @@ export default function Homepage() {
     <div className={styles.homepage}>
       <HeroSection />
       <Presentation />
-      {/* <MainProject /> */}
     </div>
   );
 }
