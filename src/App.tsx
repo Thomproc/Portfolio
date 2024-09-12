@@ -74,7 +74,6 @@ function App() {
     window.addEventListener("resize", handleResize);
     return () => window.removeEventListener("resize", handleResize);
   }, []);
-
   return (
     <Canvas shadows>
       <color attach="background" args={[colors.background3D]} />

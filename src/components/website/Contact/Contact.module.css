@@ -1,7 +1,8 @@
 .contact {
+  position: relative;
   display: flex;
-  flex-direction: column;
-  align-items: center;
+  justify-content: center;
+  width: 60%;
   h1 {
     text-align: center;
   }
@@ -33,7 +34,7 @@
     min-height: 2em;
     font-size: 1.1em;
     border: none;
-    border-bottom: solid 0.1em var(--secondary);
+    border-bottom: solid 0.1em var(--accent);
     background-color: var(--background2D);
     transition: all 0.1s;
     &:focus {
@@ -48,9 +49,7 @@
   width: 50%;
   min-width: 5em;
   max-width: 20em;
-  /* max-width: 8em; */
-  /* margin: 0 1%; */
-  background-color: transparent;
+  background-color: rgb(from var(--background2D) r g b / 0.4);
   font-size: 1em;
 
   border: 0.1em solid var(--primary);
@@ -68,5 +67,22 @@
   align-self: stretch;
   grid-column: span 2;
   resize: vertical;
-  max-height: 100px;
+  max-height: 10em;
+}
+
+.astronaut {
+  position: absolute;
+  top: 50%;
+  left: 100%;
+  z-index: -1;
+  transform: translate(-50%, -50%);
+
+  height: 100%;
+
+  img {
+    object-fit: contain;
+    height: 100%;
+    aspect-ratio: 1;
+    mask-image: radial-gradient(white 40%, transparent 50%);
+  }
 }

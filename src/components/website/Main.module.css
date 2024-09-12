@@ -25,18 +25,18 @@
     background-size: 1.5em 1.5em;
     background-position: 0 0, 0.75em 0.75em;
     mask-image: radial-gradient(white, transparent 100%);
+    z-index: -1;
   }
 }
 
-.content > div {
+.content > section {
   width: 96%;
   padding: 0 3%;
   max-width: 1500px;
   scroll-snap-align: center;
 
-  /* min-height: calc(100cqh); */
+  min-height: calc(100cqh);
 
   position: relative;
   top: -4em;
-  z-index: 0;
 }

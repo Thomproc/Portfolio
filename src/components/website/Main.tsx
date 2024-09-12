@@ -36,19 +36,19 @@ export default function Main({
         }}
       />
       <div className={styles.content}>
-        <div id={ERoutes.HOME} ref={homePageRef}>
+        <section id={ERoutes.HOME} ref={homePageRef}>
           <Homepage />
-        </div>
-        <div id={ERoutes.PROJECTS} ref={projectsRef}>
+        </section>
+        <section id={ERoutes.PROJECTS} ref={projectsRef}>
           <Projects />
-        </div>
-        <div id={ERoutes.SKILLS} ref={skillsRef}>
+        </section>
+        <section id={ERoutes.SKILLS} ref={skillsRef}>
           <Skills />
-        </div>
+        </section>
       </div>
-      <div id={ERoutes.CONTACT} ref={contactRef}>
+      <section id={ERoutes.CONTACT} ref={contactRef}>
         <Footer />
-      </div>
+      </section>
     </div>
   );
 }

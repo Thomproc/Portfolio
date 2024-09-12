@@ -21,12 +21,12 @@ export default function NavBar({
         </div>
         <div className={styles.navBar}>
           <div
-            className={
-              // Mise en valeur de l'item en orange selon le pourcentage de scrollage
-              location.pathname === ERoutes.HOME
-                ? "text-primary"
-                : styles.navItem
-            }
+            // className={
+            // Mise en valeur de l'item en orange selon le pourcentage de scrollage
+            // location.pathname === ERoutes.HOME
+            //   ? "text-primary"
+            //   : styles.navItem
+            // }
             onClick={(_event) => {
               refs[ERoutes.HOME].current?.scrollIntoView({
                 behavior: "smooth",
@@ -36,12 +36,12 @@ export default function NavBar({
             Accueil
           </div>
           <div
-            className={
-              // Mise en valeur de l'item en orange selon le pourcentage de scrollage
-              location.pathname === ERoutes.PROJECTS
-                ? "text-primary"
-                : styles.navItem
-            }
+            // className={
+            // Mise en valeur de l'item en orange selon le pourcentage de scrollage
+            // location.pathname === ERoutes.PROJECTS
+            //   ? "text-primary"
+            //   : styles.navItem
+            // }
             onClick={(_event) => {
               refs[ERoutes.PROJECTS].current?.scrollIntoView({
                 behavior: "smooth",
@@ -51,12 +51,12 @@ export default function NavBar({
             Projets
           </div>
           <div
-            className={
-              // Mise en valeur de l'item en orange selon le pourcentage de scrollage
-              location.pathname === ERoutes.SKILLS
-                ? "text-primary"
-                : styles.navItem
-            }
+            // className={
+            // Mise en valeur de l'item en orange selon le pourcentage de scrollage
+            // location.pathname === ERoutes.SKILLS
+            //   ? "text-primary"
+            //   : styles.navItem
+            // }
             onClick={(_event) => {
               refs[ERoutes.SKILLS].current?.scrollIntoView({
                 behavior: "smooth",
@@ -66,15 +66,16 @@ export default function NavBar({
             Compétences
           </div>
           <div
-            className={
-              // Mise en valeur de l'item en orange selon le pourcentage de scrollage
-              location.pathname === ERoutes.CONTACT
-                ? "text-primary"
-                : styles.navItem
-            }
+            // className={
+            // Mise en valeur de l'item en orange selon le pourcentage de scrollage
+            // location.pathname === ERoutes.CONTACT
+            //   ? "text-primary"
+            //   : styles.navItem
+            // }
             onClick={(_event) => {
               refs[ERoutes.CONTACT].current?.scrollIntoView({
                 behavior: "smooth",
+                block: "end",
               });
             }}
           >

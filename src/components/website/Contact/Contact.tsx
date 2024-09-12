@@ -36,11 +36,11 @@ export default function Contact() {
   };
   return (
     <div className={styles.contact}>
-      <h1>
-        Une question ? Un projet ? <br />
-        Dîtes-moi tout !
-      </h1>
       <form className={styles["my-form"]} onSubmit={sendEmail}>
+        <h1>
+          Une question ? Un projet ? <br />
+          Dîtes-moi tout !
+        </h1>
         <div className={styles["form-grid"]}>
           <label htmlFor={EEmailParams.FROM_NAME}>Nom</label>
           <input
@@ -82,6 +82,9 @@ export default function Contact() {
           Envoyer
         </button>
       </form>
+      <div className={styles["astronaut"]}>
+        <img src="./anime_astronaut.jpg" alt="astronaute_anime" />
+      </div>
     </div>
   );
 }

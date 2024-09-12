@@ -6,6 +6,7 @@ import { computerPosition } from "../../config";
 import styles from "./Computer.module.css";
 import { FocusContext } from "./../website/FocusContext";
 import Main from "../website/Main";
+import { useEffect } from "react";
 
 export default function Computer({
   scale,
@@ -24,6 +25,10 @@ export default function Computer({
       node.castShadow = true;
     }
   });
+
+  useEffect(() => {
+    console.log("isFocused :", isFocused);
+  }, []);
 
   return (
     <group
