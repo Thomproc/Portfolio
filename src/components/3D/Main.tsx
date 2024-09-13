@@ -3,9 +3,9 @@ import { useCallback, useEffect, useRef, useState } from "react";
 import { Canvas } from "@react-three/fiber";
 import { OrbitControls, PerspectiveCamera, SpotLight } from "@react-three/drei";
 
-import Environment from "./components/3D/Environment";
-import Computer from "./components/3D/Computer";
-import RubiksCubeComponent from "./components/3D/RubiksCube";
+import Environment from "./Environment";
+import Computer from "./Computer";
+import RubiksCubeComponent from "./RubiksCube";
 
 import {
   RCdim,
@@ -19,21 +19,17 @@ import {
   computerScale,
   cameraPosition,
   orbitProps,
-} from "./config";
-import { colors } from "./datas/ColorTheme";
+} from "../../config";
+import { colors } from "../../datas/ColorTheme";
 
-function App() {
-  const [target, setTarget] = useState<"desk" | "rubiksCube" | "computer">(
-    "computer"
-  );
+export default function Main() {
+  const [target, setTarget] = useState<"desk" | "rubiksCube">("desk");
   const [cameraIsRotating, setCameraIsRotating] = useState(false);
-  const [computerCameraDistance, setComputerCameraDistance] = useState(
-    orbitProps.computer.distance
-  );
+
   const rotationTimeout = useRef<NodeJS.Timeout | null>(null);
 
   const switchTarget = useCallback(
-    (newTarget: "desk" | "rubiksCube" | "computer"): boolean => {
+    (newTarget: "desk" | "rubiksCube"): boolean => {
       if (cameraIsRotating) {
         return false;
       }
@@ -67,13 +63,6 @@ function App() {
     return () => window.removeEventListener("keyup", onKeyUp);
   }, []);
 
-  useEffect(() => {
-    const handleResize = () => {
-      setComputerCameraDistance(orbitProps.computer.distance());
-    };
-    window.addEventListener("resize", handleResize);
-    return () => window.removeEventListener("resize", handleResize);
-  }, []);
   return (
     <Canvas shadows>
       <color attach="background" args={[colors.background3D]} />
@@ -95,12 +84,7 @@ function App() {
         cameraIsRotating={cameraIsRotating}
       />
 
-      <Computer
-        position={computerPosition}
-        scale={computerScale}
-        isFocused={target === "computer"}
-        changeFocus={switchTarget}
-      />
+      <Computer position={computerPosition} scale={computerScale} />
       <OrbitControls
         regress
         onStart={handleControlStart}
@@ -111,16 +95,8 @@ function App() {
         maxAzimuthAngle={orbitProps[target].maxAzimuthAngle}
         minPolarAngle={orbitProps[target].minPolarAngle}
         maxPolarAngle={orbitProps[target].maxPolarAngle}
-        maxDistance={
-          target === "computer"
-            ? computerCameraDistance
-            : orbitProps[target].distance
-        }
-        minDistance={
-          target === "computer"
-            ? computerCameraDistance
-            : orbitProps[target].distance
-        }
+        maxDistance={orbitProps[target].distance}
+        minDistance={orbitProps[target].distance}
         target={orbitProps[target].target}
       />
       <ambientLight intensity={1} />
@@ -136,5 +112,3 @@ function App() {
     </Canvas>
   );
 }
-
-export default App;

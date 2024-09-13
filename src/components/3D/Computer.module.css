@@ -17,39 +17,3 @@
   width: 100dvw;
   scroll-snap-type: y proximity;
 }
-
-@media screen and (min-width: 1300px) {
-  .computer-focused {
-    font-size: 1.2rem;
-  }
-}
-
-@media screen and (max-width: 1300px) {
-  .computer-focused {
-    font-size: 1.1rem;
-  }
-}
-
-@media screen and (max-width: 1000px) {
-  .computer-focused {
-    font-size: 1rem;
-  }
-}
-
-@media screen and (max-width: 800px) {
-  .computer-focused {
-    font-size: 0.9rem;
-  }
-}
-
-@media screen and (max-width: 600px) {
-  .computer-focused {
-    font-size: 0.8rem;
-  }
-}
-
-@media screen and (max-width: 400px) {
-  .computer-focused {
-    font-size: 0.7rem;
-  }
-}

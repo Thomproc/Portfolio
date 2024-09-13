@@ -1,23 +1,16 @@
+import styles from "./Computer.module.css";
 import { useLoader } from "@react-three/fiber";
 import { GLTFLoader } from "three/examples/jsm/loaders/GLTFLoader.js";
 import { Html } from "@react-three/drei";
 import { computerPosition } from "../../config";
-
-import styles from "./Computer.module.css";
-import { FocusContext } from "./../website/FocusContext";
-import Main from "../website/Main";
-import { useEffect } from "react";
+import Homepage from "../2D/Home/Homepage";
 
 export default function Computer({
   scale,
   position,
-  isFocused,
-  changeFocus,
 }: {
   scale: number;
   position: [number, number, number];
-  isFocused: boolean;
-  changeFocus: (value: "computer" | "rubiksCube" | "desk") => boolean;
 }) {
   const computer = useLoader(GLTFLoader, "/computer.glb");
   computer.scene.traverse(function (node) {
@@ -26,29 +19,23 @@ export default function Computer({
     }
   });
 
-  useEffect(() => {
-    console.log("isFocused :", isFocused);
-  }, []);
-
   return (
     <group
-      onClick={() => !isFocused && changeFocus("computer")}
+      // onClick={() => navigate(EMainsRoutes.MAIN2D)}
       scale={scale}
       position={position}
     >
       <primitive object={computer.scene} />
       <Html
-        className={isFocused ? styles["computer-focused"] : styles["computer"]}
-        distanceFactor={isFocused ? undefined : 1}
-        occlude={isFocused ? undefined : "blending"}
-        zIndexRange={isFocused ? undefined : [computerPosition[2]]}
-        position={isFocused ? [0, 0, 0] : [0, 0, -0.037]}
+        className={styles["computer"]}
+        distanceFactor={1}
+        occlude={"blending"}
+        zIndexRange={[computerPosition[2]]}
+        position={[0, 0, -0.037]}
         transform
-        onClick={() => changeFocus("computer")}
+        // onClick={() => navigate(EMainsRoutes.MAIN2D)}
       >
-        <FocusContext.Provider value={{ computerIsFocused: isFocused }}>
-          <Main changeFocus={changeFocus} />
-        </FocusContext.Provider>
+        <Homepage />
       </Html>
     </group>
   );

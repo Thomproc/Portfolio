@@ -48,16 +48,4 @@ export let orbitProps = {
     distance: 10,
     target: new Vector3().fromArray(RCfocusedPosition),
   },
-  computer: {
-    minAzimuthAngle: 0,
-    maxAzimuthAngle: 0,
-    minPolarAngle: Math.PI / 2,
-    maxPolarAngle: Math.PI / 2,
-    distance: getComputerCameraDistance,
-    target: new Vector3(0, computerPosition[1], computerPosition[2] - 0.2),
-  },
 };
-
-function getComputerCameraDistance() {
-  return window.innerHeight / 2;
-}

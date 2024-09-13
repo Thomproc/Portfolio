@@ -1,7 +1,7 @@
 import styles from "./Introduction.module.css";
 import ActionButton from "../../Basics/ActionButton";
 import { colors } from "../../../../datas/ColorTheme";
-import ERoutes from "../../RouterConfig";
+import ERoutes from "../../../../RouterConfig";
 
 export default function Introduction() {
   return (

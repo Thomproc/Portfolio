@@ -1,5 +1,5 @@
 import styles from "./ActionButton.module.css";
-import ERoutes from "../RouterConfig";
+import ERoutes from "../../../RouterConfig";
 
 export default function ActionButton({
   text,
