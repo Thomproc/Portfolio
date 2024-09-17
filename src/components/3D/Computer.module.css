@@ -1,19 +1,9 @@
-.computer,
-.computer-focused {
-  overflow-x: hidden;
+.computer {
+  /* overflow-x: hidden; */
   container-type: size;
   background-color: var(--background2D);
-}
-
-.computer {
   width: 300px;
   height: 200px;
   font-size: 0.3rem;
-  scrollbar-width: thin;
-}
-
-.computer-focused {
-  height: 100dvh;
-  width: 100dvw;
-  scroll-snap-type: y proximity;
+  scrollbar-width: none;
 }

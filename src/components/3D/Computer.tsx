@@ -35,7 +35,7 @@ export default function Computer({
         transform
         // onClick={() => navigate(EMainsRoutes.MAIN2D)}
       >
-        <Homepage />
+        <Homepage in3DWorld={true} />
       </Html>
     </group>
   );

@@ -16,10 +16,11 @@
   width: 100%;
   max-width: 30cqw;
   position: relative;
+  top: -10em;
 }
 
 .blob-container {
-  min-height: min(1200px, 90cqw);
+  min-height: min(1200px, 95cqw);
   filter: blur(1.5em) contrast(30);
 }
 
@@ -32,7 +33,7 @@
   position: absolute;
   top: 50%;
   left: 50%;
-  width: 65%;
+  width: 62%;
   aspect-ratio: 1;
   transform: translate(-50%, -50%);
 }
@@ -44,7 +45,7 @@
 
 .animated-blob2,
 .animated-blob1 {
-  width: 35%;
+  width: 27%;
   max-width: 6.5em;
   transform-origin: 0% 0%;
   animation: shape-transformation 6s infinite linear;

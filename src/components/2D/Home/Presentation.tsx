@@ -19,9 +19,6 @@ export default function Presentation() {
           avec pour seuls outils mes phalanges distales (émoji main squelette).
         </div>
       </div>
-      {/* <div className={styles.astronaut}>
-        <img src="./astronaut.jpg" alt="astronaute" />
-      </div> */}
     </>
   );
 }

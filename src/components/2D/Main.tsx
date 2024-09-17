@@ -20,7 +20,7 @@ export default function Main() {
     <>
       <div className={styles.content}>
         <section ref={Routes2DRefs[ERoutes2D.HOME]}>
-          <Homepage />
+          <Homepage in3DWorld={false} />
         </section>
         <section ref={Routes2DRefs[ERoutes2D.PROJECTS]}>
           <Projects />

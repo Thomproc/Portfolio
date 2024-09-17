@@ -3,8 +3,6 @@
   justify-content: center;
   min-height: var(--minHeight);
   max-height: calc(100cqh - 4em);
-  /* position: relative;
-  top: -4em; */
   position: relative;
   &::before {
     content: "";
@@ -22,9 +20,9 @@
 
 .hero-section {
   display: flex;
-  justify-content: center;
+  /* justify-content: center; */
   align-items: center;
-  width: 100%;
+  width: 100cqw;
   overflow: hidden;
 }
 
@@ -32,9 +30,9 @@
 @media screen and (max-width: 600px) {
   .hero-section {
     flex-direction: column;
-    justify-content: start;
+    /* justify-content: center; */
     text-align: center;
-    padding-top: 4em;
+    padding-top: var(--paddingTop);
   }
 
   .hero-section button {
@@ -42,6 +40,7 @@
   }
 
   .container {
+    height: fit-content;
     min-height: var(--minHeightMobile);
   }
 }

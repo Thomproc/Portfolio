@@ -1,7 +1,11 @@
 .content {
-  display: grid;
-  justify-items: center;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
   gap: 8em;
+  scroll-snap-type: y proximity;
+  overflow: hidden;
+
   &::before {
     content: "";
     position: fixed;
@@ -24,43 +28,42 @@
 .content > section {
   width: 96%;
   max-width: 1500px;
-  min-height: calc(100cqh);
   padding: 0 3%;
   scroll-snap-align: center;
 }
 
 @media screen and (min-width: 1300px) {
   .content {
-    font-size: 1.2rem;
+    font-size: 1rem;
   }
 }
 
 @media screen and (max-width: 1300px) {
   .content {
-    font-size: 1.1rem;
+    font-size: 0.9rem;
   }
 }
 
 @media screen and (max-width: 1000px) {
   .content {
-    font-size: 1rem;
+    font-size: 0.8rem;
   }
 }
 
 @media screen and (max-width: 800px) {
   .content {
-    font-size: 0.9rem;
+    font-size: 0.7rem;
   }
 }
 
 @media screen and (max-width: 600px) {
   .content {
-    font-size: 0.8rem;
+    font-size: 0.6rem;
   }
 }
 
 @media screen and (max-width: 400px) {
   .content {
-    font-size: 0.7rem;
+    font-size: 0.5rem;
   }
 }

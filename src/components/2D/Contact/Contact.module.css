@@ -11,6 +11,7 @@
 .my-form {
   width: 100%;
   max-width: 50em;
+  min-width: fit-content;
   display: flex;
   flex-direction: column;
   justify-content: center;
@@ -19,20 +20,26 @@
   background-color: rgb(from var(--background3D) r g b / 0.9);
   border-radius: 1em;
   box-shadow: 0 0 2em 0.5em rgb(from var(--primary) r g b / 0.5);
-  padding: 1%;
+  padding: 0.5em;
 }
 
-.form-grid {
+.form-components {
   width: 100%;
-  display: grid;
-  align-items: center;
-  grid-template-columns: 20% auto;
-  grid-template-rows: repeat(auto-fit, minmax(auto, 1fr)) 10em;
-  gap: 1em 0em;
+  display: flex;
+  flex-direction: column;
+  gap: 0.5em;
+  & > div {
+    display: flex;
+    flex-wrap: wrap;
+  }
+  label {
+    min-width: 150px;
+  }
+
   input,
   textarea {
+    flex-grow: 1;
     min-height: 2em;
-    font-size: 1.1em;
     border: none;
     border-bottom: solid 0.1em var(--accent);
     background-color: var(--background2D);
@@ -64,12 +71,11 @@
 }
 
 .message {
-  align-self: stretch;
-  grid-column: span 2;
+  /* align-self: stretch; */
   resize: vertical;
   max-height: 10em;
 }
-
+/* 
 .astronaut {
   position: absolute;
   top: 50%;
@@ -85,4 +91,4 @@
     aspect-ratio: 1;
     mask-image: radial-gradient(white 40%, transparent 50%);
   }
-}
+} */
