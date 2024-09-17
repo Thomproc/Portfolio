@@ -19,15 +19,13 @@
 }
 
 .hero-section {
+  display: flex;
+  /* justify-content: center; */
+  align-items: center;
   width: 100cqw;
   overflow: hidden;
 }
-.hero-section > div {
-  display: flex;
-  align-items: center;
-  margin: auto;
-  max-width: 1500px;
-}
+
 /*Format mobile */
 @media screen and (max-width: 600px) {
   .hero-section {

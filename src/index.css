@@ -10,6 +10,7 @@
   text-rendering: optimizeLegibility;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
+  scroll-snap-type: y proximity;
 }
 
 body,
@@ -17,6 +18,7 @@ body,
   margin: 0;
   padding: 0;
   height: 100dvh;
+  width: 100dvw;
 }
 
 body,
