@@ -11,7 +11,7 @@
     position: fixed;
     inset: 0;
     background-image: url(./pattern.svg);
-    mask-image: radial-gradient(circle, #000000bd, #00000013 80%);
+    /* mask-image: radial-gradient(circle, #000000bd, #00000013 80%); */
     z-index: -1;
   }
 }
