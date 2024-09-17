@@ -15,14 +15,9 @@
     z-index: -1;
   }
 }
-
-.content > section {
-  width: 96%;
-  max-width: 1500px;
-  padding: 0 3%;
-  scroll-snap-align: center;
+.wrapped {
+  max-width: min(1500px, 90%);
 }
-
 @media screen and (min-width: 1300px) {
   .content {
     font-size: 1rem;

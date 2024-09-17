@@ -1,12 +1,12 @@
 import { useEffect } from "react";
-import styles from "./Main.module.css";
 import { colors } from "../../datas/ColorTheme";
+import styles from "./Main.module.css";
 
-import { Routes2DRefs, ERoutes2D } from "../../RouterConfig";
+import { ERoutes2D, Routes2DRefs } from "../../RouterConfig";
 
+import Footer from "./Footer/Footer";
 import Homepage from "./Home/Homepage";
 import Projects from "./Projects/Projects";
-import Footer from "./Footer/Footer";
 import Skills from "./Skills/Skills";
 
 export default function Main() {
@@ -22,10 +22,16 @@ export default function Main() {
         <section ref={Routes2DRefs[ERoutes2D.HOME]}>
           <Homepage in3DWorld={false} />
         </section>
-        <section ref={Routes2DRefs[ERoutes2D.PROJECTS]}>
+        <section
+          ref={Routes2DRefs[ERoutes2D.PROJECTS]}
+          className={styles.wrapped}
+        >
           <Projects />
         </section>
-        <section ref={Routes2DRefs[ERoutes2D.SKILLS]}>
+        <section
+          ref={Routes2DRefs[ERoutes2D.SKILLS]}
+          className={styles.wrapped}
+        >
           <Skills />
         </section>
       </div>
