@@ -10,17 +10,8 @@
     content: "";
     position: fixed;
     inset: 0;
-    background-image: radial-gradient(
-        rgb(from var(--accent) r g b / 0.4) 0.08em,
-        transparent 0.08em
-      ),
-      radial-gradient(
-        rgb(from var(--secondary) r g b / 0.7) 0.08em,
-        var(--background2D) 0.08em
-      );
-    background-size: 1.5em 1.5em;
-    background-position: 0 0, 0.75em 0.75em;
-    mask-image: radial-gradient(white, transparent 100%);
+    background-image: url(./pattern.svg);
+    mask-image: radial-gradient(circle, #000000bd, #00000013 80%);
     z-index: -1;
   }
 }
