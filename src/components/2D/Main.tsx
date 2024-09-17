@@ -22,16 +22,10 @@ export default function Main() {
         <section ref={Routes2DRefs[ERoutes2D.HOME]}>
           <Homepage in3DWorld={false} />
         </section>
-        <section
-          ref={Routes2DRefs[ERoutes2D.PROJECTS]}
-          className={styles.wrapped}
-        >
+        <section ref={Routes2DRefs[ERoutes2D.PROJECTS]}>
           <Projects />
         </section>
-        <section
-          ref={Routes2DRefs[ERoutes2D.SKILLS]}
-          className={styles.wrapped}
-        >
+        <section ref={Routes2DRefs[ERoutes2D.SKILLS]}>
           <Skills />
         </section>
       </div>

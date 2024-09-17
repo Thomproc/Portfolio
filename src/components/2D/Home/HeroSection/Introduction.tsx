@@ -16,7 +16,7 @@ export default function Introduction() {
           color={colors.primary}
           textColor={colors.background2D}
           btnWidth="50%"
-          targetTab={ERoutes.CONTACT}
+          targetRoute={ERoutes.CONTACT}
         />
       </div>
     </div>

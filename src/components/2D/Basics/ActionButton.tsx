@@ -1,23 +1,23 @@
 import styles from "./ActionButton.module.css";
-import ERoutes from "../../../RouterConfig";
+import { ERoutes2D, Routes2DRefs } from "../../../RouterConfig";
 
 export default function ActionButton({
   text,
   color,
   textColor,
   btnWidth,
-  targetTab,
+  targetRoute,
   targetLink,
 }: {
   text: string;
   color: string;
   textColor: string;
   btnWidth: String;
-  targetTab?: ERoutes;
+  targetRoute?: ERoutes2D;
   targetLink?: string;
 } & (
-  | { targetTab: ERoutes; targetLink?: never }
-  | { targetLink: string; targetTab?: never }
+  | { targetRoute: ERoutes2D; targetLink?: never }
+  | { targetLink: string; targetRoute?: never }
 )) {
   return (
     <button
@@ -31,9 +31,10 @@ export default function ActionButton({
       }
       className={styles["action-button"]}
       onClick={() => {
-        if (targetTab) {
-          const element = document.getElementById(targetTab);
-          element?.scrollIntoView({ behavior: "smooth" });
+        if (targetRoute) {
+          Routes2DRefs[targetRoute].current?.scrollIntoView({
+            behavior: "smooth",
+          });
         } else if (targetLink) {
           window.open(targetLink, "_blank");
         }

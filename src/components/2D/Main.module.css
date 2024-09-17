@@ -3,21 +3,24 @@
   flex-direction: column;
   align-items: center;
   gap: 8em;
-  scroll-snap-type: y proximity;
   overflow: hidden;
 
-  &::before {
+  /* &::before {
     content: "";
     position: fixed;
     inset: 0;
     background-image: url(./pattern.svg);
-    mask-image: radial-gradient(circle, #000000bd, #00000013 80%);
+    mask-image: radial-gradient(circle, #000000bd, #00000013 90%);
     z-index: -1;
-  }
+  } */
 }
-.wrapped {
-  max-width: min(1500px, 90%);
+
+.content > section:not(:first-child) {
+  width: 96%;
+  max-width: 1500px;
+  padding: 0 3%;
 }
+
 @media screen and (min-width: 1300px) {
   .content {
     font-size: 1rem;

@@ -60,6 +60,8 @@
   color: rgb(from var(--text) r g b / 0.6);
   transition: all 0.2s;
   text-decoration: none;
+  padding: 0.1em;
+  text-align: center;
 
   img {
     height: 1.5em;

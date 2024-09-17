@@ -42,6 +42,7 @@ export default function NavBar() {
             onClick={(_event) => {
               Routes2DRefs[ERoutes2D.HOME].current?.scrollIntoView({
                 behavior: "smooth",
+                block: "center",
               });
             }}
           >
@@ -57,6 +58,7 @@ export default function NavBar() {
             onClick={(_event) => {
               Routes2DRefs[ERoutes2D.PROJECTS].current?.scrollIntoView({
                 behavior: "smooth",
+                block: "center",
               });
             }}
           >
@@ -72,6 +74,7 @@ export default function NavBar() {
             onClick={(_event) => {
               Routes2DRefs[ERoutes2D.SKILLS].current?.scrollIntoView({
                 behavior: "smooth",
+                block: "center",
               });
             }}
           >

@@ -6,14 +6,17 @@
   & > div {
     position: relative;
     top: -5em;
-    width: 50%;
+    width: 40%;
+    max-width: 50em;
+    min-width: 30em;
     padding: 1em;
+    padding-top: 0;
     backdrop-filter: blur(1px);
     border-radius: 1em;
     border: solid 0.1em var(--primary);
     background-color: var(--background2D);
 
-    box-shadow: rgba(from var(--primary) r g b / 0.5) 0 0 5em 1em;
+    box-shadow: rgba(from var(--primary) r g b / 0.5) 0 0 2em 0.1em;
     text-align: justify;
 
     &::before,
