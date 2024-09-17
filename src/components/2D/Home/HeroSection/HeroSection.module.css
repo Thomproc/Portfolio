@@ -27,17 +27,18 @@
   align-items: center;
   margin: auto;
   max-width: 1500px;
+  height: 100%;
 }
+
 /*Format mobile */
 @media screen and (max-width: 600px) {
-  .hero-section {
+  .hero-section > div {
     flex-direction: column;
-    /* justify-content: center; */
     text-align: center;
     padding-top: var(--paddingTop);
   }
 
-  .hero-section button {
+  .hero-section > div button {
     padding: 0;
   }
 
