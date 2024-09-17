@@ -1,8 +1,9 @@
-<svg width="100%" height="100%" xmlns="http://www.w3.org/2000/svg">
+<svg xmlns="http://www.w3.org/2000/svg"
+     viewBox="0 0 300 300" preserveAspectRatio="xMaxYMax slice">
   <defs>
-    <pattern id="patt1" x="0" y="0" width="50" height="50" patternUnits="userSpaceOnUse">
-      <!-- <circle cx="2" cy="2" r="2" fill="#176d87"/> -->
-      <circle cx="25" cy="25" r="2" fill="#BBE6E4"  />
+    <pattern id="patt1" x="2" y="2" width="20" height="20" patternUnits="userSpaceOnUse">
+      <circle cx="0.5" cy="0.5" r="0.5" fill="#BBE6E4"  />
+      <circle cx="10.5" cy="10.5" r="0.5" fill="#176d87"/>
 
     </pattern>
   </defs>
