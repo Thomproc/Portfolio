@@ -25,8 +25,10 @@ export default function HeroSection({ in3DWorld }: { in3DWorld: boolean }) {
       }}
     >
       <div className={styles["hero-section"]}>
-        <Introduction />
-        <Space />
+        <div>
+          <Introduction />
+          <Space />
+        </div>
       </div>
     </div>
   );
