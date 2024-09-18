@@ -46,9 +46,9 @@ export default function CardProject({ project }: { project: Project }) {
             </div>
           </div>
           <div className={styles["image-container"]}>
-            <a href={"./Projects_images/" + project.image} target="_blank">
+            <a href={"./Images/Projects/" + project.image} target="_blank">
               <img
-                src={"./Projects_images/" + project.image}
+                src={"./Images/Projects/" + project.image}
                 alt={project.name}
               />
             </a>

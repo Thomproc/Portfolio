@@ -12,14 +12,14 @@ import {
 } from "../../config";
 
 export default function Environment() {
-  const desk = useLoader(GLTFLoader, "./desk.glb");
+  const desk = useLoader(GLTFLoader, "./3D_models/desk.glb");
   desk.scene.traverse(function (node) {
     if (node.isObject3D) {
       node.castShadow = true;
       node.receiveShadow = true;
     }
   });
-  const floor = useLoader(GLTFLoader, "./floor.glb");
+  const floor = useLoader(GLTFLoader, "././3D_models/floor.glb");
   floor.scene.traverse(function (node) {
     if (node.isObject3D) {
       node.receiveShadow = true;

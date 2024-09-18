@@ -10,7 +10,7 @@ export default function Card({
 }) {
   return (
     <div className={styles["project"]} onClick={() => handleClick(project)}>
-      <img src={"Projects_images/" + project.image} alt={project.image} />
+      <img src={"./Images/Projects/" + project.image} alt={project.image} />
       <div className={styles["project-name"]}>{project.name}</div>
     </div>
   );

@@ -12,7 +12,7 @@ export default function Computer({
   scale: number;
   position: [number, number, number];
 }) {
-  const computer = useLoader(GLTFLoader, "/computer.glb");
+  const computer = useLoader(GLTFLoader, "/3D_models/computer.glb");
   computer.scene.traverse(function (node) {
     if (node.isObject3D) {
       node.castShadow = true;

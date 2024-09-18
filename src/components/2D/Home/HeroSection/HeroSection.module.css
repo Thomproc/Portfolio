@@ -6,7 +6,7 @@
   position: relative;
   &::before {
     content: "";
-    background-image: url("./Hero_images/background.jpg");
+    background-image: url("./Images/HeroSection/background.jpg");
     background-repeat: no-repeat;
     background-size: cover;
     background-position: center;

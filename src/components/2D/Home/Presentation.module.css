@@ -1,49 +1,69 @@
-.presentation {
+.presentation-container {
   display: flex;
   justify-content: center;
   align-items: center;
+}
+.presentation {
+  position: relative;
+  top: -5em;
+  width: 30%;
+  max-width: 50em;
+  min-width: 40em;
+  padding: 1em;
+  border-radius: 1em;
+  border: solid 0.1em var(--primary);
+  background-color: var(--background2D);
 
+  /* box-shadow: rgba(from var(--primary) r g b / 0.5) 0 0 2em 0.1em; */
+
+  &::before,
+  &::after {
+    position: absolute;
+    top: 5em;
+    content: "";
+    width: calc((100cqw - 100%) / 2);
+    height: 0.25em;
+  }
+  &::before {
+    left: 0;
+    background: linear-gradient(
+      to left,
+      rgb(from var(--primary) r g b / 0.7) 3%,
+      var(--accent) 40%
+    );
+    transform: translate(-100%, 0);
+  }
+  &::after {
+    right: 0;
+    background: linear-gradient(
+      to right,
+      rgb(from var(--primary) r g b / 0.7) 3%,
+      var(--accent) 40%
+    );
+    transform: translate(100%, 0);
+  }
+}
+
+.propositions {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  row-gap: 0.5em;
+  justify-items: center;
+
+  img {
+    width: 25%;
+  }
   & > div {
+    margin-top: 1em;
     position: relative;
-    top: -5em;
-    width: 40%;
-    max-width: 50em;
-    min-width: 30em;
-    padding: 1em;
-    padding-top: 0;
-    backdrop-filter: blur(1px);
-    border-radius: 1em;
-    border: solid 0.1em var(--primary);
-    background-color: var(--background2D);
-
-    box-shadow: rgba(from var(--primary) r g b / 0.5) 0 0 2em 0.1em;
-    text-align: justify;
-
-    &::before,
-    &::after {
-      position: absolute;
-      top: 5em;
-      content: "";
-      width: calc((100cqw - 100%) / 2);
-      height: 0.25em;
-    }
     &::before {
-      left: 0;
-      background: linear-gradient(
-        to left,
-        rgb(from var(--primary) r g b / 0.7) 3%,
-        var(--accent) 40%
-      );
-      transform: translate(-100%, 0);
-    }
-    &::after {
-      right: 0;
-      background: linear-gradient(
-        to right,
-        rgb(from var(--primary) r g b / 0.7) 3%,
-        var(--accent) 40%
-      );
-      transform: translate(100%, 0);
+      position: absolute;
+      left: 50%;
+      transform: translate(-50%, -75%);
+      content: "";
+      width: 2em;
+      height: 1em;
+      border-top: solid 0.15em var(--accent);
     }
   }
 }
