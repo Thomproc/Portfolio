@@ -18,6 +18,10 @@ body,
   height: 100dvh;
 }
 
+* {
+  box-sizing: border-box;
+}
+
 body,
 button {
   font-family: "Montserrat Alternates", sans-serif;

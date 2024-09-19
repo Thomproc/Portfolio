@@ -3,7 +3,6 @@
   border: rgb(from var(--textColor) r g b / 0.6) solid 0.1em;
   text-align: center;
   position: relative;
-  /* overflow: hidden; */
 
   img {
     height: 100%;
@@ -17,31 +16,130 @@
   }
 }
 
+.project:hover {
+  cursor: pointer;
+  .description {
+    max-height: 15em;
+  }
+}
+
 .foreground {
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+  max-height: 100%;
   position: absolute;
+  bottom: 0;
+  padding: 0 1em;
+  text-align: start;
   background: linear-gradient(
     rgb(from var(--background3D) r g b / 0.6) 0,
     var(--background3D)
   );
-  width: 100%;
-  bottom: 0;
-  text-align: start;
-  padding: 10px;
+  backdrop-filter: blur(0.3em);
+  transition: all 0.2s;
 }
-/* .project:hover {
-  .foreground {
-    inset: 0;
-  }
-} */
+
+.title {
+  margin: 0.5em 0;
+}
 
 .technologies {
   display: flex;
   flex-wrap: wrap;
+  margin-bottom: 1em;
   gap: 0.5em;
+  font-size: 0.75em;
   & > div {
     color: rgb(from var(--textColor) r g b / 1);
     background-color: var(--background2D);
     border-radius: 1em;
-    padding: 3px 10px;
+    padding: 0.3em 1em;
   }
 }
+
+/* .description-container {
+  display: flex;
+  flex: 1;
+  position: relative;
+  background-color: aliceblue;
+  height: fit-content;
+  max-height: 0;
+  width: 100%;
+} */
+
+.description {
+  text-align: justify;
+  max-height: 0;
+  transition: max-height 0.5s;
+  overflow: hidden;
+}
+
+/* .project {
+  aspect-ratio: 2;
+  border: rgb(from var(--textColor) r g b / 0.6) solid 0.1em;
+  text-align: center;
+  position: relative;
+
+  img {
+    height: 100%;
+    max-width: 100%;
+    filter: brightness(0.7);
+    mask-image: linear-gradient(
+      to bottom,
+      rgba(0, 0, 0, 1) 70%,
+      rgba(0, 0, 0, 0) 100%
+    );
+  }
+}
+
+.project:hover {
+  cursor: pointer;
+  .description {
+    max-height: 15em;
+  }
+}
+
+.foreground {
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+  max-height: 100%;
+  position: absolute;
+  bottom: 0;
+  padding: 0 1em;
+  text-align: start;
+  background: linear-gradient(
+    rgb(from var(--background3D) r g b / 0.6) 0,
+    var(--background3D)
+  );
+  backdrop-filter: blur(0.3em);
+  transition: all 0.2s;
+}
+
+.title {
+  margin: 0.5em 0;
+}
+
+.technologies {
+  display: flex;
+  flex-wrap: wrap;
+  margin-bottom: 1em;
+  gap: 0.5em;
+  font-size: 0.75em;
+  & > div {
+    color: rgb(from var(--textColor) r g b / 1);
+    background-color: var(--background2D);
+    border-radius: 1em;
+    padding: 0.3em 1em;
+  }
+}
+
+.description {
+  position: absolute;
+  top: 0;
+  text-align: justify;
+  max-height: 0;
+  transition: max-height 0.5s;
+  overflow: hidden;
+} */
