@@ -11,7 +11,7 @@ export enum ETypes {
 
 export enum ETechnologies {
   NodeJS = "NodeJS.png",
-  TS = "TS.png",
+  TS = "TypeScript.png",
   JS = "JS.png",
   HTML = "HTML.png",
   CSS = "CSS.png",

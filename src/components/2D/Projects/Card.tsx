@@ -11,7 +11,15 @@ export default function Card({
   return (
     <div className={styles["project"]} onClick={() => handleClick(project)}>
       <img src={"./Images/Projects/" + project.image} alt={project.image} />
-      <div className={styles["project-name"]}>{project.name}</div>
+
+      <div className={styles["foreground"]}>
+        <div>{project.name}</div>
+        <div className={styles["technologies"]}>
+          {project.technologies.map((tech, index) => (
+            <div key={index}>{tech.split(".")[0]}</div>
+          ))}
+        </div>
+      </div>
     </div>
   );
 }
