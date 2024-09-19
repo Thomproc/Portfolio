@@ -37,12 +37,9 @@
     var(--background3D)
   );
   backdrop-filter: blur(0.3em);
-  transition: all 0.2s;
 }
 
 .title {
-  display: flex;
-  font-size: 1.3em;
   margin: 0.5em 0;
 }
 
@@ -63,13 +60,10 @@
 .description {
   text-align: justify;
   max-height: 0;
-  padding-top: 0;
-  transition: all 0.5s;
-  overflow: hidden;
-}
-
-.empty {
   height: 500px;
+  transition: all 0.5s ease-in-out;
+
+  overflow: hidden;
 }
 
 /* .description-container {

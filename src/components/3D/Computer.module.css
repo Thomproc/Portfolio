@@ -1,5 +1,4 @@
 .computer {
-  /* overflow-x: hidden; */
   container-type: size;
   background-color: var(--background2D);
   width: 300px;

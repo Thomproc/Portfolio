@@ -19,11 +19,7 @@ export default function Card({
             <div key={index}>{tech.split(".")[0]}</div>
           ))}
         </div>
-        <div className={styles["description"]}>
-          {project.description}
-
-          <div className={styles["empty"]} />
-        </div>
+        <div className={styles["description"]}>{project.description}</div>
       </div>
     </div>
   );
