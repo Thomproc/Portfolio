@@ -19,7 +19,7 @@
 .project:hover {
   cursor: pointer;
   .description {
-    max-height: 15em;
+    max-height: 20em;
   }
 }
 
@@ -41,6 +41,8 @@
 }
 
 .title {
+  display: flex;
+  font-size: 1.3em;
   margin: 0.5em 0;
 }
 
@@ -58,6 +60,18 @@
   }
 }
 
+.description {
+  text-align: justify;
+  max-height: 0;
+  padding-top: 0;
+  transition: all 0.5s;
+  overflow: hidden;
+}
+
+.empty {
+  height: 500px;
+}
+
 /* .description-container {
   display: flex;
   flex: 1;
@@ -67,13 +81,6 @@
   max-height: 0;
   width: 100%;
 } */
-
-.description {
-  text-align: justify;
-  max-height: 0;
-  transition: max-height 0.5s;
-  overflow: hidden;
-}
 
 /* .project {
   aspect-ratio: 2;
