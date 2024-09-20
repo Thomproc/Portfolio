@@ -1,8 +1,9 @@
 import { useState } from "react";
-import { projects } from "../../../datas/Projects";
-import { ECategories, Project } from "../../../models/Project";
-import Card from "./Card";
 import styles from "./Projects.module.css";
+import { projects } from "../../../datas/Projects";
+import Card from "./Card";
+import CardProject from "../Basics/CardProject";
+import { ECategories, Project } from "../../../models/Project";
 
 export default function Projects() {
   const [selectedCategory, setSelectedCategory] = useState<ECategories | null>(
@@ -11,7 +12,7 @@ export default function Projects() {
   const [selectedProject, setSelectedProject] = useState<Project | null>(null);
 
   return (
-    <div className={styles.container}>
+    <>
       <h1>Projets</h1>
       <div className={styles.projects}>
         <div className={styles["category-picker"]}>
@@ -72,6 +73,6 @@ export default function Projects() {
 
         {/* <CardProject project={selectedProject || projects.Personnel[0]} /> */}
       </div>
-    </div>
+    </>
   );
 }

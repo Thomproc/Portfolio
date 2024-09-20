@@ -5,14 +5,14 @@
   gap: 8em;
   overflow: hidden;
 
-  &::before {
+  /* &::before {
     content: "";
     position: fixed;
     inset: 0;
     background-image: url(./pattern.svg);
-    mask-image: radial-gradient(#000000b4, #00000013 70%);
+    mask-image: radial-gradient(circle, #000000bd, #00000013 90%);
     z-index: -1;
-  }
+  } */
 }
 
 .content > section:not(:first-child) {
