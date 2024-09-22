@@ -10,25 +10,26 @@ export enum ETypes {
 }
 
 export enum ETechnologies {
-  NodeJS = "NodeJS.png",
-  TS = "TypeScript.png",
-  JS = "JS.png",
-  HTML = "HTML.png",
-  CSS = "CSS.png",
-  ThreeJS = "ThreeJS.png",
-  Blender = "Blender.png",
-  AndroidStudio = "AndroidStudio.png",
-  Java = "Java.png",
-  Flutter = "Flutter.png",
-  Python = "Python.png",
-  PostgreSQL = "PostgreSQL.png",
-  React = "React.png",
+  NodeJS = "NodeJS",
+  TS = "TypeScript",
+  JS = "JS",
+  HTML = "HTML",
+  CSS = "CSS",
+  ThreeJS = "ThreeJS",
+  Blender = "Blender",
+  AndroidStudio = "AndroidStudio",
+  Java = "Java",
+  Flutter = "Flutter",
+  Python = "Python",
+  PostgreSQL = "PostgreSQL",
+  React = "React",
 }
 
 export type Project = {
   name: string;
   // context: string;
-  // type: ETypes;
+  abstract: string;
+  type: ETypes;
   // date: Date;
   technologies: ETechnologies[];
   description: string;

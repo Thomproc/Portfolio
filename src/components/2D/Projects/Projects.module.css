@@ -1,6 +1,7 @@
 .projects {
   display: grid;
   row-gap: 1em;
+  width: 100%;
 }
 .category-picker {
   display: flex;
@@ -21,6 +22,15 @@
 
 .cards-container {
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(25em, 1fr));
+  grid-template-columns: repeat(auto-fit, minmax(400px, 1fr));
+  object-fit: contain;
+
   gap: 1em;
+}
+
+/*Format mobile */
+@media screen and (max-width: 600px) {
+  .cards-container {
+    grid-template-columns: repeat(auto-fit, 100%);
+  }
 }

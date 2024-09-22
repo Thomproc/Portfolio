@@ -18,12 +18,14 @@
 
   background: rgb(77 77 77 / 29%);
   backdrop-filter: blur(5px);
-  & > :first-child,
   & > :last-child {
     display: flex;
     justify-content: center;
     align-items: center;
     gap: 0.8em;
+  }
+  & > :first-child,
+  & > :last-child {
     width: 10%;
     min-width: 5em;
     max-width: 8em;
