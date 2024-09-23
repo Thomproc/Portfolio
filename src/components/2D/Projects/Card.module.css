@@ -1,6 +1,6 @@
 .project {
   aspect-ratio: 1.8;
-  border: rgb(from var(--textColor) r g b / 0.6) solid 0.1em;
+  border: rgb(from var(--textColor) r g b / 0.5) solid 0.1em;
   text-align: center;
   position: relative;
   overflow: hidden;
@@ -121,7 +121,7 @@
     background: var(--background2D);
     border: none;
     cursor: pointer;
-    /* font-weight: 600; */
+    font-weight: 600;
 
     &:hover {
       box-shadow: 0 0 10px var(--accent);
@@ -134,7 +134,6 @@
 
   & > button:nth-child(2) {
     background: none;
-    /* color: var(--accent); */
   }
 }
 

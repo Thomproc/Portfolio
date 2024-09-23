@@ -8,7 +8,7 @@ const fuelToday: Project = {
   technologies: [ETechnologies.AndroidStudio, ETechnologies.Java],
   image: "fuel_today.png",
   abstract:
-    "Application mobile permettant de filtrer les stations-service à proximité afin de trouver celles au meilleur prix.",
+    "Application mobile permettant de filtrer les stations-service à proximité afin de trouver celle au meilleur prix.",
   description: `FuelToday est une application mobile développée dans le cadre de mes études en utilisant Android Studio et Java. 
                 Cette application permet aux utilisateurs de trouver des stations-service à proximité en fonction de leur localisation, grâce à l’utilisation du GPS intégré au téléphone. En définissant un rayon de recherche personnalisé, l’application effectue une requête vers une API gratuite pour récupérer les informations sur les stations-service environnantes.`,
   // "Application mobile Android utilisant le GPS du téléphone et une API du gouvernement afin de rechercher une station service selon les préférences utilisateurs (carburant, service(s) disponible(s), distance). Une fois la station désirée choisie, vous serez automatiquement redirigé vers Google Maps pour vous y rendre !",

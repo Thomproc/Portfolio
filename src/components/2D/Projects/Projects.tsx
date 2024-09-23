@@ -71,7 +71,7 @@ export default function Projects() {
               })}
         </div>
 
-        {/* <CardProject project={selectedProject || projects.Personnel[0]} /> */}
+        <CardProject project={selectedProject || projects.Personnel[0]} />
       </div>
     </>
   );
