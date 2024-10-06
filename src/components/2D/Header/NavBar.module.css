@@ -16,42 +16,37 @@
   width: 100%;
   min-width: 300px;
 
-  background: rgb(77 77 77 / 29%);
+  background: rgb(from var(--background) r g b / 0.3);
   backdrop-filter: blur(5px);
   & > :last-child {
     display: flex;
     justify-content: center;
     align-items: center;
-    gap: 0.8em;
+    gap: 8px;
   }
   & > :first-child,
   & > :last-child {
-    width: 10%;
-    min-width: 5em;
-    max-width: 8em;
-    margin: 0 1%;
-
-    border: 0.1em solid var(--primary);
-    border-radius: 1em;
+    max-width: 200px;
     cursor: pointer;
 
     &:hover {
-      border-color: var(--primary);
-      box-shadow: 0 0 10px var(--primary);
+      border-color: var(--accent2);
+      box-shadow: 0 0 12px var(--accent2);
     }
   }
 
   & > :not(:first-child):not(:last-child) :hover {
-    color: rgb(from var(--primary) r g b / 0.8);
+    color: rgb(from var(--accent2) r g b / 0.8);
   }
 }
 
 .navBar {
   display: flex;
   max-width: 700px;
-  flex-grow: 1;
+  flex: 2;
   justify-content: space-evenly;
   align-items: center;
+  color: var(--text3);
 
   & > * {
     cursor: pointer;
@@ -59,11 +54,17 @@
 }
 
 .navItem {
-  color: rgb(from var(--text) r g b / 0.6);
-  transition: all 0.2s;
+  height: 100%;
+  display: flex;
+  flex: 1;
+  justify-content: center;
+  align-items: center;
+  background: rgb(from var(--background2) r g b / 0.5);
+
+  color: var(--text);
   text-decoration: none;
-  padding: 0.1em;
   text-align: center;
+  transition: all 0.2s;
 
   img {
     height: 1.5em;

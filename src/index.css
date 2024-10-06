@@ -1,10 +1,9 @@
 :root {
-  font-optical-sizing: auto;
-  font-weight: 400;
-
   color-scheme: light dark;
-  color: var(--textColor);
+  color: var(--text);
 
+  font-weight: 400;
+  font-optical-sizing: auto;
   font-synthesis: none;
   text-rendering: optimizeLegibility;
   -webkit-font-smoothing: antialiased;
@@ -22,15 +21,49 @@ body,
   box-sizing: border-box;
 }
 
-body,
-button {
+body {
   font-family: "Montserrat Alternates", sans-serif;
 }
 
-.text-primary {
-  color: var(--primary);
+.text-accent {
+  color: var(--accent);
 }
 
-h1 {
-  font-size: 1.96em;
+/* Format Ordinateur */
+@media screen and (min-width: 1200px) {
+  & > * {
+    font-size: 1rem;
+  }
+}
+
+@media screen and (max-width: 1200px) {
+  & > * {
+    font-size: 0.9rem;
+  }
+}
+
+@media screen and (max-width: 1000px) {
+  & > * {
+    font-size: 0.8rem;
+  }
+}
+
+/* Format Tablette */
+@media screen and (max-width: 768px) {
+  & > * {
+    font-size: 0.7rem;
+  }
+}
+
+@media screen and (max-width: 600px) {
+  & > * {
+    font-size: 0.6rem;
+  }
+}
+
+/* Format Mobile */
+@media screen and (max-width: 375px) {
+  & > * {
+    font-size: 0.5rem;
+  }
 }

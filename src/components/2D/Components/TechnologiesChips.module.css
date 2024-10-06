@@ -1,0 +1,29 @@
+.technologies {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-wrap: wrap;
+  gap: 0.5em;
+
+  & > div {
+    padding: 0.5em 0.75em;
+
+    background: linear-gradient(var(--background2), var(--background2))
+        padding-box,
+      conic-gradient(
+          from -80deg,
+          var(--background2) 25deg,
+          var(--primary2) 40deg,
+          var(--primary) 160deg,
+          var(--primary2) 180deg,
+
+          var(--background2) 205deg,
+          var(--primary2) 220deg,
+          var(--primary) 340deg,
+          var(--primary2) 360deg
+        )
+        border-box;
+    border-radius: 12px;
+    border: 1px solid transparent;
+  }
+}

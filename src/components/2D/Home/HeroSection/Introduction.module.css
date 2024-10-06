@@ -1,15 +1,23 @@
 .introduction {
   display: flex;
-  width: 100%;
   justify-content: center;
-  font-size: 1.3em;
-}
+  width: 100%;
+  padding: 0 1em;
 
-.introduction > div {
-  width: min-content;
-}
+  & > div {
+    width: min-content;
+  }
 
-.introduction-name {
-  text-transform: uppercase;
-  font-size: 3em;
+  .title {
+    font-size: 4.5em;
+    font-weight: bold;
+    text-transform: uppercase;
+  }
+
+  .sub-title {
+    font-size: 1.5em;
+    font-weight: 550;
+    color: var(--text3);
+    margin: 1em 0;
+  }
 }

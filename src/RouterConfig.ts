@@ -5,6 +5,7 @@ export enum ERoutes2D {
   PROJECTS = "projects",
   SKILLS = "skills",
   CONTACT = "contact",
+  PROJECT = "/project",
 }
 
 export enum EMainsRoutes {

@@ -1,8 +1,11 @@
 .computer {
   container-type: size;
-  background-color: var(--background2D);
+  background-color: var(--background);
   width: 300px;
   height: 200px;
-  font-size: 0.3rem;
   scrollbar-width: none;
+
+  * {
+    font-size: 4px;
+  }
 }

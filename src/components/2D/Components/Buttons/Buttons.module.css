@@ -1,0 +1,14 @@
+.cta,
+.cta2 {
+  padding: 0.7em 1.4em;
+}
+
+.cta {
+  color: var(--background);
+  background: var(--accent);
+  box-shadow: 0 4px 8px 0 var(--accent);
+}
+
+.cta2 {
+  border: solid 1px var(--accent2);
+}

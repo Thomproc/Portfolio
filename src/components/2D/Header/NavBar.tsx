@@ -1,33 +1,25 @@
-import { useNavigate } from "react-router-dom";
+import { useLocation, useNavigate } from "react-router-dom";
 import styles from "./NavBar.module.css";
 import { Routes2DRefs, ERoutes2D, EMainsRoutes } from "../../../RouterConfig";
-import { useState } from "react";
 
-enum EEnvironnement {
-  SITE = "SITE",
-  WORLD = "WORLD",
-}
 export default function NavBar() {
   const navigate = useNavigate();
-  const [environnement, setEnvironnement] = useState<EEnvironnement>(
-    EEnvironnement.SITE
-  );
+  const location = useLocation();
+
   return (
     <div className={styles.center}>
       <div className={styles.navContainer}>
         <div
           className={styles.navItem}
           onClick={(_event) => {
-            if (environnement === EEnvironnement.SITE) {
-              setEnvironnement(EEnvironnement.WORLD);
+            if (location.pathname === EMainsRoutes.MAIN2D) {
               navigate(EMainsRoutes.MAIN3D);
               return;
             }
-            setEnvironnement(EEnvironnement.SITE);
             navigate(EMainsRoutes.MAIN2D);
           }}
         >
-          {environnement === EEnvironnement.SITE
+          {location.pathname === EMainsRoutes.MAIN2D
             ? "Mon univers..."
             : "Mon environnement..."}
         </div>
@@ -36,7 +28,7 @@ export default function NavBar() {
             // className={
             // Mise en valeur de l'item en orange selon le pourcentage de scrollage
             // location.pathname === ERoutes2D.HOME
-            //   ? "text-primary"
+            //   ? "text-accent"
             //   : styles.navItem
             // }
             onClick={(_event) => {
@@ -52,7 +44,7 @@ export default function NavBar() {
             // className={
             // Mise en valeur de l'item en orange selon le pourcentage de scrollage
             // location.pathname === ERoutes2D.PROJECTS
-            //   ? "text-primary"
+            //   ? "text-accent"
             //   : styles.navItem
             // }
             onClick={(_event) => {
@@ -68,7 +60,7 @@ export default function NavBar() {
             // className={
             // Mise en valeur de l'item en orange selon le pourcentage de scrollage
             // location.pathname === ERoutes2D.SKILLS
-            //   ? "text-primary"
+            //   ? "text-accent"
             //   : styles.navItem
             // }
             onClick={(_event) => {
@@ -84,7 +76,7 @@ export default function NavBar() {
             // className={
             // Mise en valeur de l'item en orange selon le pourcentage de scrollage
             // location.pathname === ERoutes2D.CONTACT
-            //   ? "text-primary"
+            //   ? "text-accent"
             //   : styles.navItem
             // }
             onClick={(_event) => {

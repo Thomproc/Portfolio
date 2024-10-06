@@ -9,6 +9,14 @@ export enum ETypes {
   Web = "Web",
 }
 
+export enum EContext {
+  M1 = "M1 Informatique",
+  M2 = "M2 Informatique",
+  Licence = "Licence Informatique",
+  Personnel = "Intérêt Personnel",
+  Freelance = "Freelance",
+}
+
 export enum ETechnologies {
   NodeJS = "NodeJS",
   TS = "TypeScript",
@@ -27,10 +35,10 @@ export enum ETechnologies {
 
 export type Project = {
   name: string;
-  // context: string;
+  context: EContext;
   abstract: string;
   type: ETypes;
-  // date: Date;
+  date: Date;
   technologies: ETechnologies[];
   description: string;
   image: string;

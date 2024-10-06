@@ -19,8 +19,11 @@ export default function ActionButton({
   | { targetRoute: ERoutes2D; targetLink?: never }
   | { targetLink: string; targetRoute?: never }
 )) {
-  return (
-    <button
+  return <button> {text} </button>;
+}
+
+{
+  /* <button
       data-text={text}
       style={
         {
@@ -39,6 +42,5 @@ export default function ActionButton({
           window.open(targetLink, "_blank");
         }
       }}
-    />
-  );
+    /> */
 }

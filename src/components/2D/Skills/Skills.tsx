@@ -55,7 +55,7 @@ export default function Skills() {
                 />
               ))}
             {rootSkill && !showRootSkillsPicker ? (
-              <div className={"text-primary"}> {rootSkill.name}</div>
+              <div className={"text-accent"}> {rootSkill.name}</div>
             ) : (
               <div className={styles["picker"]}>
                 <div className={styles.title}>Compétences</div>
@@ -64,7 +64,7 @@ export default function Skills() {
                     key={index}
                     className={`
                       ${styles["root-skill"]}
-                      ${rootSkill === skills[index] && "text-primary"}
+                      ${rootSkill === skills[index] && "text-accent"}
                       `}
                     onClick={() => setRootSkill(skills[index])}
                     style={

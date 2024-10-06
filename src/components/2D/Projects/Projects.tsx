@@ -2,9 +2,8 @@ import { useState } from "react";
 import styles from "./Projects.module.css";
 import { projects } from "../../../datas/Projects";
 import Card from "./Card";
-import CardProject from "../Basics/CardProject";
 import { ECategories, Project } from "../../../models/Project";
-
+import ModalProject from "./ModalProject";
 export default function Projects() {
   const [selectedCategory, setSelectedCategory] = useState<ECategories | null>(
     null
@@ -13,7 +12,7 @@ export default function Projects() {
 
   return (
     <>
-      <h1>Projets</h1>
+      <h2>Projets</h2>
       <div className={styles.projects}>
         <div className={styles["category-picker"]}>
           <button
@@ -70,9 +69,12 @@ export default function Projects() {
                 });
               })}
         </div>
-
-        <CardProject project={selectedProject || projects.Personnel[0]} />
       </div>
+
+      <ModalProject
+        selectedProject={selectedProject}
+        setSelectedProject={setSelectedProject}
+      />
     </>
   );
 }

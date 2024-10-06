@@ -1,50 +1,53 @@
 .projects {
   display: grid;
   place-items: center;
-  row-gap: 1em;
 }
 
 .category-picker {
   width: 80%;
-  height: 2em;
   display: flex;
-  background-color: rgb(from var(--background3D) r g b / 0.6);
-  border-radius: 1em;
-  border: solid 0.1em rgb(from var(--textColor) r g b / 0.4);
+  align-items: center;
+  background-color: var(--background2);
+  border-radius: 8px;
+  border: solid 1px var(--text2);
+  margin: 2em 0;
 
-  button {
+  & > button {
+    height: 100%;
     display: flex;
     flex: 1;
     justify-content: center;
-    cursor: pointer;
-    background: none;
-    border: none;
-    font-size: 1.2em;
+    align-items: center;
+    padding: 0.5em 0;
+    border-radius: 0;
 
-    &:hover {
-      box-shadow: 0 0 0.5em 0.1em rgb(from var(--primary) r g b / 0.5);
+    transition: all 0.2s;
+
+    &:not(.active-category):hover {
+      /* box-shadow: 0 0 12px 0px rgb(from var(--accent) r g b / 0.5); */
+      background-color: rgb(from var(--background) r g b / 0.7);
     }
   }
 
   & > button:not(:last-child) {
-    border-right: solid 0.1em rgb(from var(--textColor) r g b / 0.4);
+    border-right: solid 1px var(--text2);
   }
 
   & > button:first-child {
-    border-top-left-radius: 1em;
-    border-bottom-left-radius: 1em;
+    border-top-left-radius: 8px;
+    border-bottom-left-radius: 8px;
   }
 
   & > button:last-child {
-    border-top-right-radius: 1em;
-    border-bottom-right-radius: 1em;
+    border-top-right-radius: 8px;
+    border-bottom-right-radius: 8px;
   }
 }
 
 .active-category {
-  color: var(--primary);
-  font-weight: 500;
-  box-shadow: 0 0 0.5em 0.1em rgb(from var(--primary) r g b / 0.5);
+  background-color: var(--background);
+  text-decoration: underline var(--primary);
+  text-underline-offset: 0.25em;
 }
 
 .cards-container {
@@ -52,12 +55,12 @@
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(400px, 1fr));
   object-fit: contain;
-  gap: 0.5em;
+  gap: 20px;
 }
 
 /*Format mobile */
-@media screen and (max-width: 600px) {
+/* @media screen and (max-width: 600px) {
   .cards-container {
     grid-template-columns: repeat(auto-fit, 100%);
   }
-}
+} */
