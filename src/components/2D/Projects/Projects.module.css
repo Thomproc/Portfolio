@@ -4,7 +4,7 @@
 }
 
 .category-picker {
-  width: 80%;
+  width: 50%;
   display: flex;
   align-items: center;
   background-color: var(--background2);
@@ -20,11 +20,9 @@
     align-items: center;
     padding: 0.5em 0;
     border-radius: 0;
-
     transition: all 0.2s;
 
     &:not(.active-category):hover {
-      /* box-shadow: 0 0 12px 0px rgb(from var(--accent) r g b / 0.5); */
       background-color: rgb(from var(--background) r g b / 0.7);
     }
   }

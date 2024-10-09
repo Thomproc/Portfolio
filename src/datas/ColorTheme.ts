@@ -26,6 +26,7 @@ export const colors = {
   text3,
   primary2,
   accent2,
+
   background3D,
   floor,
   fog,

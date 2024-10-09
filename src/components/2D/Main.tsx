@@ -18,9 +18,9 @@ export default function Main() {
         <section ref={Routes2DRefs[ERoutes2D.PROJECTS]}>
           <Projects />
         </section>
-        {/* <section ref={Routes2DRefs[ERoutes2D.SKILLS]}>
+        <section ref={Routes2DRefs[ERoutes2D.SKILLS]}>
           <Skills />
-        </section> */}
+        </section>
       </div>
       {/* <section ref={Routes2DRefs[ERoutes2D.CONTACT]}>
         <Footer />

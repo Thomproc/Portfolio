@@ -1,157 +1,111 @@
+export enum ESkills {
+  BACKEND = "Backend",
+  FRONTEND = "Frontend",
+  MOBILE = "Mobile",
+  THREED = "3D",
+}
+
+export enum ESkillsAreas {
+  BACKEND = "backend",
+  FRONTEND = "frontend",
+  MOBILE = "mobile",
+  THREED = "threeD",
+}
+
+export enum ESkillsColors {
+  BACKEND = "#3198ff",
+  FRONTEND = "#e385d8",
+  MOBILE = "#5d9f53",
+  THREED = "#c78030",
+}
+
+export enum EDirection {
+  VERTICAL = "vertical",
+  HORIZONTAL = "horizontal",
+}
+
 export type TSkill = {
   name: string;
-  offsetX: string;
-  offsetY: string;
-  children?: TSkill[];
+  color: String;
+  area: String;
+  direction: EDirection;
+  categories: {
+    name: string;
+    content: string[];
+  }[];
 };
 
 export const skills: TSkill[] = [
   {
-    name: "Backend",
-    offsetX: "50%",
-    offsetY: "0%",
-
-    children: [
+    name: ESkills.BACKEND,
+    color: ESkillsColors.BACKEND,
+    area: ESkillsAreas.BACKEND,
+    direction: EDirection.HORIZONTAL,
+    categories: [
       {
         name: "Langages",
-        offsetX: "0%",
-        offsetY: "200%",
-        children: [
-          {
-            name: "Python",
-            offsetX: "0%",
-            offsetY: "220%",
-          },
-          {
-            name: "C",
-            offsetX: "200%",
-            offsetY: "150%",
-          },
-          {
-            name: "Java",
-            offsetX: "-200%",
-            offsetY: "150%",
-          },
-        ],
+        content: ["Python", "C", "Java"],
       },
       {
-        name: "BDD",
-        offsetX: "180%",
-        offsetY: "-100%",
-
-        children: [
-          { name: "SQlite", offsetX: "240%", offsetY: "0%" },
-          { name: "PostgreSQL", offsetX: "0%", offsetY: "-240%" },
-        ],
+        name: "Base de Données",
+        content: ["SQLite", "PostgreSQL"],
       },
       {
         name: "Design patterns",
-        offsetX: "-180%",
-        offsetY: "-100%",
-
-        children: [
-          { name: "API Rest", offsetX: "-240%", offsetY: "50%" },
-          {
-            name: "MVC",
-            offsetX: "0%",
-            offsetY: "-240%",
-          },
-          {
-            name: "ORM",
-            offsetX: "-200%",
-            offsetY: "-150%",
-          },
-        ],
+        content: ["Modèles Vues Contrôleur", "Object Relationnal Mapping"],
       },
     ],
   },
   {
-    name: "Frontend",
-    offsetX: "15%",
-    offsetY: "30%",
-
-    children: [
+    name: ESkills.FRONTEND,
+    color: ESkillsColors.FRONTEND,
+    area: ESkillsAreas.FRONTEND,
+    direction: EDirection.HORIZONTAL,
+    categories: [
       {
         name: "Langages",
-        offsetX: "180%",
-        offsetY: "100%",
-
-        children: [
-          { name: "JS / TS", offsetX: "240%", offsetY: "-50%" },
-          { name: "HTML / CSS", offsetX: "200%", offsetY: "150%" },
-          {
-            name: "HTTP",
-            offsetX: "0%",
-            offsetY: "240%",
-          },
-        ],
+        content: ["JavaScript", "TypeScript", "HTML", "CSS"],
       },
       {
         name: "Frameworks",
-        offsetX: "-180%",
-        offsetY: "100%",
-
-        children: [{ name: "React", offsetX: "-240%", offsetY: "0%" }],
+        content: ["React"],
+      },
+      {
+        name: "Maquettes",
+        content: ["Figma"],
       },
     ],
   },
   {
-    name: "Mobile",
-    offsetX: "90%",
-    offsetY: "30%",
+    name: ESkills.MOBILE,
+    color: ESkillsColors.MOBILE,
+    area: ESkillsAreas.MOBILE,
+    direction: EDirection.VERTICAL,
 
-    children: [
+    categories: [
       {
         name: "Android",
-        offsetX: "180%",
-        offsetY: "-100%",
-
-        children: [
-          { name: "Android Studio (Java)", offsetX: "0%", offsetY: "-240%" },
-        ],
+        content: ["Android Studio (Java)"],
       },
       {
         name: "Hybride",
-        offsetX: "-180%",
-        offsetY: "100%",
-
-        children: [{ name: "Flutter (Dart)", offsetX: "0%", offsetY: "240%" }],
+        content: ["Flutter (Dart)"],
       },
     ],
   },
   {
-    name: "3D",
-    offsetX: "85%",
-    offsetY: "80%",
-
-    children: [
+    name: ESkills.THREED,
+    color: ESkillsColors.THREED,
+    area: ESkillsAreas.THREED,
+    direction: EDirection.HORIZONTAL,
+    categories: [
       {
         name: "Blender",
-        offsetX: "-180%",
-        offsetY: "-100%",
+        content: ["Logiciel de création ...."],
       },
       {
-        name: "Unity",
-        offsetX: "180%",
-        offsetY: "100%",
-      },
-    ],
-  },
-  {
-    name: "Méthode de travail",
-    offsetX: "25%",
-    offsetY: "80%",
-
-    children: [
-      {
-        name: "Git",
-        offsetX: "-200%",
-        offsetY: "0%",
-      },
-      {
-        name: "Agile",
-        offsetX: "200%",
-        offsetY: "0%",
+        name: "Spline",
+        content: ["Logiciel de création ...."],
       },
     ],
   },
