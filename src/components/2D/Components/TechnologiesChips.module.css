@@ -8,22 +8,22 @@
   & > div {
     padding: 0.5em 0.75em;
 
-    background: linear-gradient(var(--background2), var(--background2))
+    background: linear-gradient(var(--background_dark), var(--background_dark))
         padding-box,
       conic-gradient(
           from -80deg,
-          var(--background2) 25deg,
-          var(--primary2) 40deg,
+          var(--background_dark) 25deg,
+          var(--primary_dark) 40deg,
           var(--primary) 160deg,
-          var(--primary2) 180deg,
+          var(--primary_dark) 180deg,
 
-          var(--background2) 205deg,
-          var(--primary2) 220deg,
+          var(--background_dark) 205deg,
+          var(--primary_dark) 220deg,
           var(--primary) 340deg,
-          var(--primary2) 360deg
+          var(--primary_dark) 360deg
         )
         border-box;
-    border-radius: 12px;
+    border-radius: 8px;
     border: 1px solid transparent;
   }
 }

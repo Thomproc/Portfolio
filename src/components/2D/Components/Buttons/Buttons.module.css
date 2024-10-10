@@ -4,11 +4,21 @@
 }
 
 .cta {
-  color: var(--background);
-  background: var(--accent);
-  box-shadow: 0 4px 8px 0 var(--accent);
+  color: var(--accent);
+  background: rgb(from var(--background) r g b / 0.3);
+  backdrop-filter: blur(2px);
+  border: solid 1px var(--accent);
+  box-shadow: 0 0 16px -4px var(--accent);
+  transition: all 0.2s;
+
+  &:hover {
+    box-shadow: 0 0 16px 0px var(--accent);
+  }
 }
 
 .cta2 {
-  border: solid 1px var(--accent2);
+  color: var(--accent_dark);
+  /* text-decoration: underline var(--accent) 1px;
+  text-underline-offset: 0.7em; */
+  /* border: solid 1px var(--accent); */
 }

@@ -13,7 +13,7 @@
     gap: 1em;
     padding: 0.25em 0.75em;
     border-radius: 0.75em;
-    background-color: var(--background2);
+    background-color: var(--background_dark);
   }
 }
 
@@ -34,11 +34,11 @@
 @media screen and (max-width: 700px) {
   .skills {
     grid-template-areas:
-      "title title title title"
-      "backend backend backend backend"
-      "threeD threeD threeD threeD"
-      "mobile mobile mobile mobile"
-      "frontend frontend frontend frontend";
+      "title"
+      "backend"
+      "threeD"
+      "mobile"
+      "frontend";
   }
 }
 

@@ -30,13 +30,13 @@
     cursor: pointer;
 
     &:hover {
-      border-color: var(--accent2);
-      box-shadow: 0 0 12px var(--accent2);
+      border-color: var(--accent);
+      box-shadow: 0 0 12px var(--accent);
     }
   }
 
   & > :not(:first-child):not(:last-child) :hover {
-    color: rgb(from var(--accent2) r g b / 0.8);
+    color: rgb(from var(--accent) r g b / 0.8);
   }
 }
 
@@ -59,7 +59,7 @@
   flex: 1;
   justify-content: center;
   align-items: center;
-  background: rgb(from var(--background2) r g b / 0.5);
+  background: rgb(from var(--background_dark) r g b / 0.5);
 
   color: var(--text);
   text-decoration: none;

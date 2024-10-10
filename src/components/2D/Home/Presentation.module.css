@@ -11,7 +11,7 @@
   min-width: 40em;
   padding: 1em;
   padding-top: 0;
-  border-radius: 12px;
+  border-radius: 20px;
   background-color: rgb(from var(--background) r g b / 0.3);
   box-shadow: var(--primary) 0 0 92px -28px;
   backdrop-filter: blur(5px);
@@ -29,7 +29,7 @@
     &::before {
       content: "";
       position: absolute;
-      background-color: var(--primary);
+      background-color: var(--secondary);
       bottom: 0;
       left: 50%;
       width: 20%;

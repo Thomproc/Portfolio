@@ -78,7 +78,7 @@ const gestion_comptes: Project = {
   technologies: [ETechnologies.Flutter, ETechnologies.PostgreSQL],
   image: "compte.jpg",
   abstract:
-    "Une application mobile permettant la visualitaion et la répartition des dépenses entre deux utilisateurs.",
+    "Une application mobile pour visualiser la répartition des dépenses entre deux utilisateurs.",
   description: `
   Cette application mobile gère la répartition des dépenses entre deux utilisateurs afin de déterminer celui qui doit rembourser l'autre. 
   Elle permet d'ajouter, modifier, supprimer et consulter des transactions tout en calculant automatiquement la balance des comptes. 
@@ -100,7 +100,7 @@ const portfolio: Project = {
   ],
   image: "portfolio.png",
   abstract:
-    "Le portfolio du dev, c'est comme le CV d'un RH : il doit être parfait, mais on sait tous qu'il n’y a pas de vrai contrôle qualité ! Le portfolio du dev, c'est pas comme un CV de RH : pas de place pour les 'compétences en management' si tu n'as jamais géré un bug ! ",
+    "Le portfolio du dev, c'est comme le CV d'un RH : il doit être parfait, mais on sait tous qu'il n’y a pas de vrai contrôle qualité !",
   description: `
   J'ai développé un portfolio en ligne pour mettre en valeur mes compétences et mes projets, dans le cadre de mon lancement en tant que freelance.
   Ce dernier permet aux visiteurs de découvrir mes réalisations et mes compétences techniques à travers une interface moderne et intuitive.

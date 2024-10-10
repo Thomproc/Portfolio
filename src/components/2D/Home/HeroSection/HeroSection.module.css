@@ -39,7 +39,6 @@
   height: 100%;
 }
 
-/*Format mobile */
 @media screen and (max-width: 600px) {
   .hero-section > div {
     flex-direction: column;
