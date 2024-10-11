@@ -20,7 +20,6 @@
   align-items: center;
   gap: 0.75em;
   margin: 0.5em 1em;
-  color: var(--text2);
 }
 
 .banner {
@@ -28,7 +27,7 @@
   display: flex;
   flex-direction: column;
   justify-content: center;
-  gap: 1em;
+  gap: 1.75em;
 
   padding: 0.75em;
   margin-bottom: 2.5em;
@@ -44,10 +43,6 @@
     object-fit: cover;
     z-index: -1;
     filter: brightness(0.2);
-  }
-
-  span {
-    font-size: 1.25em;
   }
 
   &::before {
@@ -115,16 +110,41 @@
 
 .leftArrow,
 .rightArrow {
+  position: relative;
   height: 100%;
   padding: 0 0.5em;
   display: grid;
   place-items: center;
+  color: rgb(from var(--accent) r g b / 0.8);
   cursor: pointer;
+
+  &::before,
+  & > svg {
+    transition: all 0.2s;
+  }
+
+  &::before {
+    content: "";
+    position: absolute;
+    z-index: -1;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    border-radius: 50%;
+    box-shadow: 0 0 12px 5px var(--accent_dark);
+  }
+
+  &:hover::before {
+    box-shadow: 0 0 12px 8px rgb(from var(--accent_dark) r g b / 1);
+  }
+  &:hover > svg {
+    scale: 0.9;
+  }
 }
 
 .leftArrow {
-  border-right: solid 1px var(--secondary_dark);
+  border-right: solid 1px rgb(from var(--text2) r g b / 0.4);
 }
 .rightArrow {
-  border-left: solid 1px var(--secondary_dark);
+  border-left: solid 1px rgb(from var(--text2) r g b / 0.5);
 }

@@ -38,7 +38,7 @@
 
 .project:hover:not(:has(.web-buttons > button:hover)) {
   .see-more {
-    text-decoration: underline 0.1em var(--accent_dark);
+    text-decoration: underline 0.1em var(--secondary);
     text-underline-offset: 0.25em;
   }
 }
@@ -101,6 +101,10 @@
   right: 0;
   pointer-events: none;
   opacity: 0;
+
+  & > svg {
+    color: var(--secondary);
+  }
 }
 
 @keyframes opacity {

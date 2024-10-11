@@ -4,7 +4,12 @@ import { ETypes, Project } from "../../../models/Project";
 import BtnCTA from "../Components/Buttons/BtnCTA";
 import BtnCTA2 from "../Components/Buttons/BtnCTA2";
 import TechnologiesChips from "../Components/TechnologiesChips";
-import { ComputerOutlined, PhoneAndroidOutlined } from "@mui/icons-material";
+import {
+  ComputerRounded,
+  PhoneAndroidRounded,
+  ArrowBackRounded,
+  ArrowForwardRounded,
+} from "@mui/icons-material";
 
 export default function ModalProject({
   selectedProject,
@@ -21,9 +26,9 @@ export default function ModalProject({
             <div className={styles.banner}>
               <div className={styles.datas + " label"}>
                 {selectedProject.type === ETypes.Web ? (
-                  <ComputerOutlined />
+                  <ComputerRounded />
                 ) : (
-                  <PhoneAndroidOutlined />
+                  <PhoneAndroidRounded />
                 )}
 
                 <div>
@@ -55,10 +60,10 @@ export default function ModalProject({
             </div>
             <div className={styles.carousel}>
               <div className={styles.leftArrow}>
-                <img src="./Designs/ArrowLeft.svg" alt="left arrow" />
+                <ArrowBackRounded />
               </div>
               <div className={styles.rightArrow}>
-                <img src="./Designs/ArrowRight.svg" alt="right arrow" />
+                <ArrowForwardRounded />
               </div>
             </div>
           </>

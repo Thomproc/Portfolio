@@ -3,7 +3,7 @@ const text = "#F7F7F7";
 // const primary = "#7CA3DF";
 // const accent = "#F6B02C";
 const primary = "#6699CC";
-const secondary = "#d297ff";
+const secondary = "#a174c4";
 const accent = "#ffbe5c";
 
 const background_dark = "#0F0F0F";
@@ -12,7 +12,7 @@ const text3 = "#B7B7B7";
 // const primary_dark = "#072859";
 const accent_dark = "#d29c4b";
 const primary_dark = "#00396b";
-const secondary_dark = "#462b5c";
+const secondary_dark = "#533b67";
 
 const background3D = "#000000";
 const fog = "#060606";
