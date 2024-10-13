@@ -11,7 +11,7 @@ export default function Introduction() {
             Développeur d'applications Web et Mobile
           </div>
         </div>
-        <BtnCTA text={"Contactez-moi"} />
+        <BtnCTA text={"Me contacter"} />
       </div>
     </div>
   );

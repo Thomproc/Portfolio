@@ -15,16 +15,16 @@ export default function Main() {
         <section ref={Routes2DRefs[ERoutes2D.HOME]}>
           <Homepage in3DWorld={false} />
         </section>
-        <section ref={Routes2DRefs[ERoutes2D.PROJECTS]}>
-          <Projects />
-        </section>
         <section ref={Routes2DRefs[ERoutes2D.SKILLS]}>
           <Skills />
         </section>
+        <section ref={Routes2DRefs[ERoutes2D.PROJECTS]}>
+          <Projects />
+        </section>
       </div>
-      {/* <section ref={Routes2DRefs[ERoutes2D.CONTACT]}>
+      <section ref={Routes2DRefs[ERoutes2D.CONTACT]}>
         <Footer />
-      </section> */}
+      </section>
     </>
   );
 }

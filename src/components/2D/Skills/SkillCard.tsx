@@ -28,7 +28,9 @@ export default function SkillCard({ skill }: { skill: TSkill }) {
             </div>
             <div className={styles["content"]}>
               {category.content.map((content, index) => (
-                <span key={index}>{content}</span>
+                <span className="paragraph" key={index}>
+                  {content}
+                </span>
               ))}
             </div>
           </div>

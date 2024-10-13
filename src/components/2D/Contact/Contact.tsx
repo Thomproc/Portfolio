@@ -37,13 +37,13 @@ export default function Contact() {
   return (
     <div className={styles.contact}>
       <form className={styles["my-form"]} onSubmit={sendEmail}>
-        <h1>
-          Une question ? Un projet ? <br />
-          Dîtes-moi tout !
-        </h1>
+        <h2>Envoyer un message</h2>
+
         <div className={styles["form-components"]}>
           <div>
-            <label htmlFor={EEmailParams.FROM_NAME}>Nom</label>
+            <label className="paragraph" htmlFor={EEmailParams.FROM_NAME}>
+              Nom
+            </label>
             <input
               id={EEmailParams.FROM_NAME}
               // name={EEmailParams.FROM_NAME}
@@ -55,7 +55,9 @@ export default function Contact() {
             />
           </div>
           <div>
-            <label htmlFor={EEmailParams.EMAIL}>Adresse mail</label>
+            <label className="paragraph" htmlFor={EEmailParams.EMAIL}>
+              Adresse mail
+            </label>
             <input
               id={EEmailParams.EMAIL}
               // name={EEmailParams.EMAIL}
@@ -67,7 +69,10 @@ export default function Contact() {
             />
           </div>
           <div>
-            <label className={styles["message"]} htmlFor={EEmailParams.MESSAGE}>
+            <label
+              className={styles["message"] + " paragraph"}
+              htmlFor={EEmailParams.MESSAGE}
+            >
               Message
             </label>
             <textarea

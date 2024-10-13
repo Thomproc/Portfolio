@@ -1,6 +1,6 @@
 .skills {
   display: grid;
-  gap: 0.5em;
+  gap: 0.75em;
   grid-template-areas:
     "backend backend backend"
     "mobile title threeD"
@@ -43,6 +43,7 @@
 }
 
 .title {
+  width: 100%;
   grid-area: title;
   background: linear-gradient(
     to bottom right,
@@ -54,4 +55,27 @@
   background-clip: text;
   -webkit-text-fill-color: transparent;
   align-self: center;
+
+  position: relative;
+  &::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 50%;
+    z-index: -1;
+    height: 100%;
+    width: 150%;
+    transform: translate(-50%, 0);
+
+    background: linear-gradient(
+          to right,
+          var(--background_dark),
+          var(--background),
+          var(--background_dark)
+        )
+        padding-box,
+      radial-gradient(var(--primary) 60%, var(--secondary_dark)) border-box;
+    border-top: 1px solid transparent;
+    border-bottom: 1px solid transparent;
+  }
 }

@@ -65,8 +65,4 @@
   text-decoration: none;
   text-align: center;
   transition: all 0.2s;
-
-  img {
-    height: 1.5em;
-  }
 }

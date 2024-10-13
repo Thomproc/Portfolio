@@ -1,6 +1,7 @@
 import { useLocation, useNavigate } from "react-router-dom";
 import styles from "./NavBar.module.css";
 import { Routes2DRefs, ERoutes2D, EMainsRoutes } from "../../../RouterConfig";
+import FileDownloadOutlinedIcon from "@mui/icons-material/FileDownloadOutlined";
 
 export default function NavBar() {
   const navigate = useNavigate();
@@ -95,7 +96,7 @@ export default function NavBar() {
           className={styles.navItem}
         >
           CV
-          <img src="./Icons/download.svg" alt="download SVG" />
+          <FileDownloadOutlinedIcon />
         </a>
       </div>
     </div>

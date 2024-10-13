@@ -12,7 +12,9 @@ export default function Projects() {
 
   return (
     <>
-      <h2>Projets</h2>
+      <div className={styles.banner}>
+        <h1>Projets</h1>
+      </div>
       <div className={styles.projects}>
         <div className={styles["category-picker"]}>
           <button

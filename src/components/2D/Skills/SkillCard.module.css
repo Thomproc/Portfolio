@@ -1,6 +1,6 @@
 .card {
   grid-area: var(--area);
-  box-shadow: 0 0 1em -0.5em rgb(from var(--color) r g b / 0.5);
+  box-shadow: 0 0 2em -0.75em rgb(from var(--color) r g b / 0.5);
   h2 {
     color: var(--color);
     text-align: center;
@@ -46,8 +46,9 @@
   display: flex;
   justify-content: space-evenly;
   align-items: center;
+  flex-wrap: wrap;
 
-  gap: 0.25em;
+  gap: 0.75em;
   padding: 0.25em 0.25em;
 
   border-radius: 0.75em;
@@ -67,13 +68,15 @@
     }
   }
 
-  /* .main-column {
+  .main-column {
     display: grid;
+    grid-template-rows: 1fr;
     grid-template-columns: repeat(var(--nbCategories), 1fr);
     padding: 0.75em 0;
 
     & > *:not(:last-child) {
-      border-right: solid 1px var(--text2);
+      border-right: solid 1px rgb(from var(--color) r g b / 0.2);
+      border-bottom: none;
     }
-  } */
+  }
 }
