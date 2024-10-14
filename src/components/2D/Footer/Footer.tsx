@@ -5,6 +5,7 @@ export default function Footer() {
   return (
     <div className={styles.container}>
       <Contact />
+
       {/* Créditer les modèles et icones / images, [space beween], réseaux sociaux,
       mail
       <br />

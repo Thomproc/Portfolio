@@ -9,13 +9,13 @@
   }
 
   .title {
-    font-size: 4.5em;
+    font-size: clamp(3em, 6vw, 4.5em);
     font-weight: bold;
     text-transform: uppercase;
   }
 
   .sub-title {
-    font-size: 1.5em;
+    font-size: clamp(1.25em, 5vw, 1.5em);
     font-weight: 550;
     color: var(--text3);
     margin: 1em 0;

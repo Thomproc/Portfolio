@@ -6,10 +6,9 @@
 .presentation {
   position: relative;
   top: -5em;
-  width: 30%;
-  max-width: 50em;
-  min-width: 40em;
-  padding: 1em;
+  width: 80%;
+  max-width: 800px;
+  padding: 0.75em;
   padding-top: 0;
   border-radius: 20px;
   background-color: rgb(from var(--background) r g b / 0.3);
@@ -41,5 +40,11 @@
   span {
     font-size: 1em;
     color: var(--text3);
+  }
+}
+
+@media screen and (max-width: 500px) {
+  .presentation {
+    width: 100%;
   }
 }

@@ -2,7 +2,7 @@ import {
   CodeRounded,
   StorageRounded,
   IntegrationInstructionsOutlined,
-  ExtensionRounded,
+  ExtensionOutlined,
   ShapeLineOutlined,
   AndroidOutlined,
   OnDeviceTrainingOutlined,
@@ -85,7 +85,7 @@ export const skills: TSkill[] = [
       },
       {
         name: "Frameworks",
-        icon: ExtensionRounded,
+        icon: ExtensionOutlined,
         content: ["React"],
       },
       {

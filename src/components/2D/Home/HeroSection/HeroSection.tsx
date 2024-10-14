@@ -9,8 +9,8 @@ export default function HeroSection({ in3DWorld }: { in3DWorld: boolean }) {
       style={
         {
           "--minHeight": in3DWorld ? "180px" : "600px",
-          "--minHeightMobile": in3DWorld ? "none" : "350px",
-          "--paddingTop": in3DWorld ? "0px" : "8em",
+          "--minHeightMobile": in3DWorld ? "none" : "600px",
+          "--paddingTop": in3DWorld ? "0px" : "5em",
         } as any
       }
       onMouseMove={(e) => {
