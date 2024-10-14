@@ -36,8 +36,9 @@ export default function Contact() {
   };
   return (
     <div className={styles.contact}>
+      <h1>Contact</h1>
       <form className={styles["my-form"]} onSubmit={sendEmail}>
-        <h2>Envoyer un message</h2>
+        {/* <h2>Envoyer un message</h2> */}
 
         <div className={styles["form-components"]}>
           <div>

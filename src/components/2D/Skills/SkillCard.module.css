@@ -38,6 +38,10 @@
   padding: 0 0.75em;
 
   text-align: center;
+
+  svg {
+    color: var(--color);
+  }
 }
 
 .content {
@@ -72,11 +76,11 @@
     display: grid;
     grid-template-rows: 1fr;
     grid-template-columns: repeat(var(--nbCategories), 1fr);
-    padding: 0.75em 0;
 
     & > *:not(:last-child) {
       border-right: solid 1px rgb(from var(--color) r g b / 0.2);
       border-bottom: none;
+      padding-bottom: 0;
     }
   }
 }

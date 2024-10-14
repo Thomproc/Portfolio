@@ -1,25 +1,24 @@
 .contact {
-  position: relative;
-  display: flex;
-  justify-content: center;
   width: min(100%, 60em);
-  h2 {
-    text-align: center;
-  }
+  margin: auto;
+  padding: 0.75em;
+  text-align: center;
 }
 
 .my-form {
   width: 100%;
   max-width: 50em;
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-items: center;
+  display: grid;
+  /* flex-direction: column; */
+  /* justify-content: center; */
+  justify-items: center;
+  /* align-items: center; */
   gap: 1em;
-  background-color: var(--background_dark);
-  border-radius: 20px;
-  box-shadow: 0 0 50px -10px rgb(from var(--primary) r g b / 0.5);
   padding: 0.5em;
+  margin: auto;
+  border-radius: 20px;
+  background-color: var(--background_dark);
+  box-shadow: 0 0 50px -10px rgb(from var(--primary) r g b / 0.5);
 }
 
 .form-components {
@@ -32,6 +31,7 @@
     flex-wrap: wrap;
   }
   label {
+    text-align: left;
     min-width: 150px;
   }
 
@@ -70,24 +70,6 @@
 }
 
 .message {
-  /* align-self: stretch; */
   resize: vertical;
   max-height: 10em;
 }
-/* 
-.astronaut {
-  position: absolute;
-  top: 50%;
-  left: 100%;
-  z-index: -1;
-  transform: translate(-50%, -50%);
-
-  height: 100%;
-
-  img {
-    object-fit: contain;
-    height: 100%;
-    aspect-ratio: 1;
-    mask-image: radial-gradient(white 40%, transparent 50%);
-  }
-} */

@@ -1,3 +1,15 @@
+import {
+  CodeRounded,
+  StorageRounded,
+  IntegrationInstructionsOutlined,
+  ExtensionRounded,
+  ShapeLineOutlined,
+  AndroidOutlined,
+  OnDeviceTrainingOutlined,
+  ViewInArOutlined,
+  AnimationRounded,
+} from "@mui/icons-material";
+
 export enum ESkills {
   BACKEND = "Backend",
   FRONTEND = "Frontend",
@@ -26,11 +38,12 @@ export enum EDirection {
 
 export type TSkill = {
   name: string;
-  color: String;
-  area: String;
+  color: string;
+  area: string;
   direction: EDirection;
   categories: {
     name: string;
+    icon: React.ElementType;
     content: string[];
   }[];
 };
@@ -44,14 +57,17 @@ export const skills: TSkill[] = [
     categories: [
       {
         name: "Langages",
+        icon: CodeRounded,
         content: ["Python", "C", "Java"],
       },
       {
         name: "Base de Données",
+        icon: StorageRounded,
         content: ["SQLite", "PostgreSQL"],
       },
       {
         name: "Design patterns",
+        icon: IntegrationInstructionsOutlined,
         content: ["Modèles Vues Contrôleur", "Object Relationnal Mapping"],
       },
     ],
@@ -64,14 +80,17 @@ export const skills: TSkill[] = [
     categories: [
       {
         name: "Langages",
+        icon: CodeRounded,
         content: ["JavaScript", "TypeScript", "HTML", "CSS"],
       },
       {
         name: "Frameworks",
+        icon: ExtensionRounded,
         content: ["React"],
       },
       {
         name: "Maquettes",
+        icon: ShapeLineOutlined,
         content: ["Figma"],
       },
     ],
@@ -85,10 +104,12 @@ export const skills: TSkill[] = [
     categories: [
       {
         name: "Android",
+        icon: AndroidOutlined,
         content: ["Android Studio (Java)"],
       },
       {
         name: "Hybride",
+        icon: OnDeviceTrainingOutlined,
         content: ["Flutter (Dart)"],
       },
     ],
@@ -101,10 +122,12 @@ export const skills: TSkill[] = [
     categories: [
       {
         name: "Blender",
+        icon: ViewInArOutlined,
         content: ["Logiciel de création ...."],
       },
       {
         name: "Spline",
+        icon: AnimationRounded,
         content: ["Logiciel de création ...."],
       },
     ],

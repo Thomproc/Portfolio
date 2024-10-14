@@ -23,7 +23,7 @@ export default function SkillCard({ skill }: { skill: TSkill }) {
         {skill.categories.map((category, index) => (
           <div key={index} className={styles["column"]}>
             <div>
-              <div className="label">ICONE</div>
+              <category.icon />
               <h3>{category.name}</h3>
             </div>
             <div className={styles["content"]}>
