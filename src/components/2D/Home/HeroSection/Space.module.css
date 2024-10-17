@@ -3,7 +3,7 @@
   align-items: center;
   justify-content: center;
   height: 70cqw;
-  min-height: 250px;
+  /* min-height: 250px; */
 
   width: 100%;
   pointer-events: none;
@@ -13,7 +13,7 @@
   position: relative;
   display: flex;
   width: 40%;
-  max-width: 250px;
+  max-width: 20em;
   min-width: 10em;
 
   perspective: 900px;

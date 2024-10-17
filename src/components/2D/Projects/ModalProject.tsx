@@ -2,7 +2,6 @@ import styles from "./ModalProject.module.css";
 import { Modal } from "@mui/material";
 import { ETypes, Project } from "../../../models/Project";
 import BtnCTA from "../Components/Buttons/BtnCTA";
-import BtnCTA2 from "../Components/Buttons/BtnCTA2";
 import TechnologiesChips from "../Components/TechnologiesChips";
 import {
   ComputerRounded,
@@ -47,8 +46,19 @@ export default function ModalProject({
               <h1>{selectedProject.name}</h1>
               <span className="paragraph">{selectedProject.abstract}</span>
               <div className={styles.buttons}>
-                <BtnCTA text={"Dépôt Github"} />
-                <BtnCTA2 text={"Voir en ligne"} />
+                {selectedProject.github && (
+                  <BtnCTA
+                    text={"Dépôt Github"}
+                    targetLink={selectedProject.github}
+                  />
+                )}
+                {selectedProject.website && (
+                  <BtnCTA
+                    secondaryStyle
+                    text={"Voir en ligne"}
+                    targetLink={selectedProject.website}
+                  />
+                )}
               </div>
             </div>
             <div className={styles.content}>

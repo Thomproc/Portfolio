@@ -18,9 +18,27 @@ export default function Card({
         <span className={styles["description"] + " paragraph"}>
           {project.abstract}
           <div className={styles["web-buttons"]}>
-            {/* {project.github && <button> Voir sur GitHub</button>} */}
-            <button> Voir sur GitHub</button>
-            {project.website && <button> Voir en ligne</button>}
+            {project.github && (
+              <button
+                onClick={(e) => {
+                  e.stopPropagation();
+                  window.open(project.github, "_blank");
+                }}
+              >
+                Voir sur GitHub
+              </button>
+            )}
+
+            {project.website && (
+              <button
+                onClick={(e) => {
+                  e.stopPropagation();
+                  window.open(project.website, "_blank");
+                }}
+              >
+                Voir en ligne
+              </button>
+            )}
           </div>
           <div className={styles["see-more"] + " label"}>
             <i>En savoir plus</i>
