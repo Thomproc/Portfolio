@@ -86,9 +86,6 @@ export default function Contact() {
           Envoyer
         </button>
       </form>
-      {/* <div className={styles["astronaut"]}>
-        <img src="./anime_astronaut.jpg" alt="astronaute_anime" />
-      </div> */}
     </div>
   );
 }

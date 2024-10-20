@@ -1,9 +1,14 @@
 .technologies {
   display: flex;
   align-items: center;
-  justify-content: center;
-  flex-wrap: wrap;
+  /* justify-content: center; */
+  /* flex-wrap: wrap; */
+  overflow-x: scroll;
   gap: 0.5em;
+
+  &::-webkit-scrollbar {
+    scrollbar-width: 10px;
+  }
 
   & > div {
     padding: 0.5em 0.75em;

@@ -10,6 +10,14 @@ import {
   ArrowForwardRounded,
 } from "@mui/icons-material";
 
+const settings = {
+  dots: true,
+  infinite: true,
+  speed: 500,
+  slidesToShow: 1,
+  slidesToScroll: 1,
+};
+
 export default function ModalProject({
   selectedProject,
   setSelectedProject,
@@ -29,7 +37,6 @@ export default function ModalProject({
                 ) : (
                   <PhoneAndroidRounded />
                 )}
-
                 <div>
                   <i>
                     {selectedProject.context +

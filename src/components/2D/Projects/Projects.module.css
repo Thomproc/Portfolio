@@ -84,21 +84,21 @@
 .cards-container {
   position: relative;
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(400px, 1fr));
+  grid-template-columns: repeat(auto-fit, minmax(430px, 1fr));
   object-fit: contain;
   gap: 20px;
 }
 
-@media screen and (max-width: 845px) {
+@media screen and (max-width: 910px) {
   .cards-container {
-    grid-template-columns: 400px;
+    grid-template-columns: 430px;
   }
   .category-picker {
-    min-width: 400px;
+    min-width: 430px;
   }
 }
 
-@media screen and (max-width: 400px) {
+@media screen and (max-width: 430px) {
   .cards-container {
     grid-template-columns: 100%;
   }

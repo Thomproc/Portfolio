@@ -1,7 +1,7 @@
 import { Project } from "../../../models/Project";
 import styles from "./Card.module.css";
 import { ArrowRightOutlined } from "@mui/icons-material";
-import Header from "./Header";
+import TechnologiesChips from "../Components/TechnologiesChips";
 
 export default function Card({
   project,
@@ -14,7 +14,10 @@ export default function Card({
     <div className={styles["project"]} onClick={() => handleClick(project)}>
       <img src={"./Images/Projects/" + project.image} alt={project.image} />
       <div className={styles["foreground"]}>
-        <Header project={project} />
+        <div className={styles.header}>
+          <h3>{project.name}</h3>
+          <TechnologiesChips project={project} />
+        </div>
         <span className={styles["description"] + " paragraph"}>
           {project.abstract}
           <div className={styles["web-buttons"]}>

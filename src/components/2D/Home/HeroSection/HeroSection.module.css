@@ -4,6 +4,7 @@
   min-height: var(--minHeight);
   max-height: calc(100cqh - 4em);
   position: relative;
+
   &::before {
     content: "";
     background-image: url("./Images/HeroSection/background.jpg");

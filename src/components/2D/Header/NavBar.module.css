@@ -50,6 +50,7 @@
 
   & > * {
     cursor: pointer;
+    -webkit-tap-highlight-color: transparent;
   }
 }
 
@@ -65,4 +66,6 @@
   text-decoration: none;
   text-align: center;
   transition: all 0.2s;
+
+  -webkit-tap-highlight-color: transparent;
 }
