@@ -1,4 +1,4 @@
-import Contact from "../Contact/Contact";
+import Contact from "./Contact";
 import styles from "./Footer.module.css";
 
 export default function Footer() {

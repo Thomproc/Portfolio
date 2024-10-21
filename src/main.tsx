@@ -1,7 +1,7 @@
 import React from "react";
 import ReactDOM from "react-dom/client";
 import { useEffect } from "react";
-import { colors } from "./datas/ColorTheme";
+import { colors } from "./Themes/ColorTheme.ts";
 import "./index.css";
 import { BrowserRouter, Route, Routes } from "react-router-dom";
 import Main2D from "./components/2D/Main.tsx";

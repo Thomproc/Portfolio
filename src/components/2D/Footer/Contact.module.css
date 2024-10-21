@@ -1,0 +1,27 @@
+.contact {
+  width: min(100%, 60em);
+  margin: auto;
+  padding: 0.75em;
+  text-align: center;
+}
+
+.my-form {
+  display: grid;
+  gap: 1em;
+  max-width: 800px;
+  padding: 1em;
+  margin: auto;
+  margin-top: 2em;
+  border-radius: 20px;
+  background-color: var(--background_dark);
+  box-shadow: 0 0 50px -10px rgb(from var(--primary) r g b / 0.8);
+}
+
+.send-button {
+  color: var(--accent);
+  &:hover {
+    .my-form {
+      box-shadow: 0 0 50px -10px rgb(from var(--accent) r g b / 0.8);
+    }
+  }
+}

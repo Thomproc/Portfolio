@@ -83,16 +83,16 @@
 }
 
 .carousel {
+  margin: auto;
+  width: 90%;
   height: 280px;
+  max-width: 100%;
   background-color: rgb(from var(--background_dark) r g b / 0.5);
-
   display: flex;
-  justify-content: space-between;
+  flex-direction: column;
   align-items: center;
-  margin-top: 1.25em;
-  padding: 1.25em 0;
-  /* position: relative; */
-  /* 
+  justify-content: center;
+
   &::before {
     content: "";
     position: absolute;
@@ -105,10 +105,10 @@
     filter: blur(40px);
     border-radius: 50%;
     pointer-events: none;
-  } */
+  }
 }
 
-.leftArrow,
+/* .leftArrow,
 .rightArrow {
   position: relative;
   height: 100%;
@@ -148,4 +148,4 @@
 }
 .rightArrow {
   border-left: solid 1px rgb(from var(--text2) r g b / 0.5);
-}
+} */

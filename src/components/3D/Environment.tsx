@@ -1,7 +1,7 @@
 import { MeshReflectorMaterial } from "@react-three/drei";
 import { useLoader } from "@react-three/fiber";
 import { GLTFLoader } from "three/examples/jsm/loaders/GLTFLoader.js";
-import { colors } from "../../datas/ColorTheme";
+import { colors } from "../../Themes/ColorTheme";
 import {
   deskReflectorPosition,
   deskReflectorRotationX,

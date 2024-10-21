@@ -10,6 +10,10 @@ import {
   ArrowForwardRounded,
 } from "@mui/icons-material";
 
+import Slider from "react-slick";
+import "slick-carousel/slick/slick.css";
+import "slick-carousel/slick/slick-theme.css";
+
 const settings = {
   dots: true,
   infinite: true,
@@ -75,14 +79,26 @@ export default function ModalProject({
               </div>
               <span className="paragraph">{selectedProject.description}</span>
             </div>
-            <div className={styles.carousel}>
-              <div className={styles.leftArrow}>
+            {/* <div className={styles.leftArrow}>
                 <ArrowBackRounded />
               </div>
               <div className={styles.rightArrow}>
                 <ArrowForwardRounded />
-              </div>
-            </div>
+              </div> */}
+
+            <Slider {...settings} className={styles.carousel}>
+              <h3>1</h3>
+
+              <h3>2</h3>
+
+              <h3>3</h3>
+
+              <h3>4</h3>
+
+              <h3>5</h3>
+
+              <h3>6</h3>
+            </Slider>
           </>
         )}
       </div>

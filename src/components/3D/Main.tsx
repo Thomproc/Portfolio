@@ -20,7 +20,7 @@ import {
   cameraPosition,
   orbitProps,
 } from "../../config";
-import { colors } from "../../datas/ColorTheme";
+import { colors } from "../../Themes/ColorTheme";
 
 export default function Main() {
   const [target, setTarget] = useState<"desk" | "rubiksCube">("desk");
