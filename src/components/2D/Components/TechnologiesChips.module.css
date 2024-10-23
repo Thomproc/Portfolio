@@ -1,9 +1,8 @@
 .technologies {
   display: flex;
+
   align-items: center;
-  /* justify-content: center; */
-  /* flex-wrap: wrap; */
-  overflow-x: scroll;
+  overflow-x: auto;
   gap: 0.5em;
 
   &::-webkit-scrollbar {
@@ -13,7 +12,8 @@
   & > div {
     padding: 0.5em 0.75em;
 
-    background: linear-gradient(var(--background_dark), var(--background_dark))
+    background:
+      linear-gradient(var(--background_dark), var(--background_dark))
         padding-box,
       conic-gradient(
           from -80deg,
@@ -31,4 +31,15 @@
     border-radius: 8px;
     border: 1px solid transparent;
   }
+}
+
+/* @media screen and (max-width: 750px) {
+  .technologies {
+    margin-bottom: 2em;
+  }
+} */
+
+.technologies-wrap {
+  flex-wrap: wrap;
+  justify-content: center;
 }

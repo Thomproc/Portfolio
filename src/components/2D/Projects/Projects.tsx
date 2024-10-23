@@ -3,10 +3,10 @@ import styles from "./Projects.module.css";
 import { projects } from "../../../datas/Projects";
 import Card from "./Card";
 import { ECategories, Project } from "../../../models/Project";
-import ModalProject from "./ModalProject";
+import ModalProject from "./Modal/ModalProject";
 export default function Projects() {
   const [selectedCategory, setSelectedCategory] = useState<ECategories | null>(
-    null
+    null,
   );
   const [selectedProject, setSelectedProject] = useState<Project | null>(null);
 

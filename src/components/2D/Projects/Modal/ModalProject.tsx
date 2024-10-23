@@ -1,26 +1,15 @@
 import styles from "./ModalProject.module.css";
 import { Modal } from "@mui/material";
-import { ETypes, Project } from "../../../models/Project";
-import BtnCTA from "../Components/Buttons/BtnCTA";
-import TechnologiesChips from "../Components/TechnologiesChips";
+import { ETypes, Project } from "../../../../models/Project";
+import BtnCTA from "../../Components/Buttons/BtnCTA";
+import TechnologiesChips from "../../Components/TechnologiesChips";
 import {
   ComputerRounded,
   PhoneAndroidRounded,
   ArrowBackRounded,
-  ArrowForwardRounded,
 } from "@mui/icons-material";
 
-import Slider from "react-slick";
-import "slick-carousel/slick/slick.css";
-import "slick-carousel/slick/slick-theme.css";
-
-const settings = {
-  dots: true,
-  infinite: true,
-  speed: 500,
-  slidesToShow: 1,
-  slidesToScroll: 1,
-};
+import Carousel from "./Carousel";
 
 export default function ModalProject({
   selectedProject,
@@ -35,20 +24,13 @@ export default function ModalProject({
         {selectedProject && (
           <>
             <div className={styles.banner}>
-              <div className={styles.datas + " label"}>
-                {selectedProject.type === ETypes.Web ? (
-                  <ComputerRounded />
-                ) : (
-                  <PhoneAndroidRounded />
-                )}
-                <div>
-                  <i>
-                    {selectedProject.context +
-                      " - " +
-                      selectedProject.date.toLocaleDateString()}
-                  </i>
-                </div>
+              <div
+                className={styles.close}
+                onClick={() => setSelectedProject(null)}
+              >
+                <ArrowBackRounded />
               </div>
+
               <img
                 src={"./Images/Projects/" + selectedProject.image}
                 alt={selectedProject.image}
@@ -74,31 +56,31 @@ export default function ModalProject({
             </div>
             <div className={styles.content}>
               <div className={styles.header}>
-                <h2>Présentation</h2>
-                <TechnologiesChips project={selectedProject} />
+                <div className={styles.title}>
+                  <div className={styles.datas + " label"}>
+                    {selectedProject.type === ETypes.Web ? (
+                      <ComputerRounded />
+                    ) : (
+                      <PhoneAndroidRounded />
+                    )}
+                    <i>
+                      {selectedProject.context +
+                        " - " +
+                        selectedProject.date.toLocaleDateString()}
+                    </i>
+                  </div>
+                  <h2>Présentation</h2>
+                </div>
+                <div className={styles["technologies-container"]}>
+                  <div className={styles["technologies-title"]}>
+                    Technologies
+                  </div>
+                  <TechnologiesChips project={selectedProject} wrap />
+                </div>
               </div>
               <span className="paragraph">{selectedProject.description}</span>
             </div>
-            {/* <div className={styles.leftArrow}>
-                <ArrowBackRounded />
-              </div>
-              <div className={styles.rightArrow}>
-                <ArrowForwardRounded />
-              </div> */}
-
-            <Slider {...settings} className={styles.carousel}>
-              <h3>1</h3>
-
-              <h3>2</h3>
-
-              <h3>3</h3>
-
-              <h3>4</h3>
-
-              <h3>5</h3>
-
-              <h3>6</h3>
-            </Slider>
+            <Carousel project={selectedProject} />
           </>
         )}
       </div>

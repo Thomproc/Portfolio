@@ -1,6 +1,7 @@
 .cta,
 .cta2 {
-  padding: 0.5em 1em;
+  padding: 8px 16px;
+  transition: all 0.2s;
 }
 
 .cta {
@@ -9,7 +10,6 @@
   backdrop-filter: blur(2px);
   border: solid 1px var(--accent);
   box-shadow: 0 0 16px -4px var(--accent);
-  transition: all 0.2s;
 
   &:hover {
     box-shadow: 0 0 16px 0px var(--accent);
@@ -18,4 +18,7 @@
 
 .cta2 {
   color: var(--accent_dark);
+  &:hover {
+    scale: 0.9;
+  }
 }
