@@ -2,12 +2,8 @@
   display: flex;
 
   align-items: center;
-  overflow-x: auto;
+  overflow: auto;
   gap: 0.5em;
-
-  &::-webkit-scrollbar {
-    scrollbar-width: 10px;
-  }
 
   & > div {
     padding: 0.5em 0.75em;
@@ -32,12 +28,6 @@
     border: 1px solid transparent;
   }
 }
-
-/* @media screen and (max-width: 750px) {
-  .technologies {
-    margin-bottom: 2em;
-  }
-} */
 
 .technologies-wrap {
   flex-wrap: wrap;

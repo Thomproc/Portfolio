@@ -2,6 +2,7 @@ import { FormEvent, useEffect, useState } from "react";
 import styles from "./Contact.module.css";
 import TextField from "@mui/material/TextField";
 import emailjs from "@emailjs/browser";
+import SocialMedias from "./SocialMedias";
 
 enum EEmailParams {
   FROM_NAME = "from_name",
@@ -39,29 +40,31 @@ export default function Contact() {
     <div className={styles.contact}>
       <h1>Contact</h1>
       <form className={styles["my-form"]} onSubmit={sendEmail}>
-        <TextField
-          variant="standard"
-          fullWidth
-          required
-          id={EEmailParams.FROM_NAME}
-          label="Votre nom"
-          value={fromName}
-          onChange={(event: React.ChangeEvent<HTMLInputElement>) => {
-            setFromName(event.target.value);
-          }}
-        />
-        <TextField
-          variant="standard"
-          fullWidth
-          required
-          id={EEmailParams.EMAIL}
-          type="email"
-          label="Adresse mail"
-          value={email}
-          onChange={(event: React.ChangeEvent<HTMLInputElement>) => {
-            setEmail(event.target.value);
-          }}
-        />
+        <div className={styles["input-row"]}>
+          <TextField
+            variant="standard"
+            fullWidth
+            required
+            id={EEmailParams.FROM_NAME}
+            label="Votre nom"
+            value={fromName}
+            onChange={(event: React.ChangeEvent<HTMLInputElement>) => {
+              setFromName(event.target.value);
+            }}
+          />
+          <TextField
+            variant="standard"
+            fullWidth
+            required
+            id={EEmailParams.EMAIL}
+            type="email"
+            label="Adresse mail"
+            value={email}
+            onChange={(event: React.ChangeEvent<HTMLInputElement>) => {
+              setEmail(event.target.value);
+            }}
+          />
+        </div>
         <TextField
           variant="standard"
           fullWidth
@@ -80,6 +83,7 @@ export default function Contact() {
           Envoyer
         </button>
       </form>
+      <SocialMedias />
     </div>
   );
 }

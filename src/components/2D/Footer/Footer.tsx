@@ -1,11 +1,10 @@
-import Contact from "./Contact";
 import styles from "./Footer.module.css";
+import Contact from "./Contact";
 
 export default function Footer() {
   return (
     <div className={styles.container}>
       <Contact />
-
       {/* Créditer les modèles et icones / images, [space beween], réseaux sociaux,
       mail
       <br />

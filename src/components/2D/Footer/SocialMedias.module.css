@@ -1,0 +1,46 @@
+.social-container {
+}
+
+.social-icons {
+  li {
+    display: inline-block;
+    margin: 0.15em;
+    position: relative;
+    font-size: 1.2em;
+  }
+
+  svg {
+    color: var(--text);
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    transition: all 265ms ease-out;
+  }
+
+  a {
+    &:before {
+      content: "";
+      width: 50px;
+      aspect-ratio: 1;
+      border-radius: 50%;
+      display: block;
+      background: linear-gradient(
+        45deg,
+        var(--primary),
+        var(--primary_dark) 80%
+      );
+      transition: all 265ms ease-out;
+    }
+
+    &:hover:before {
+      transform: scale(0);
+      transition: all 265ms ease-in;
+    }
+
+    &:hover svg {
+      transform: scale(1.8) translate(-25%, -25%);
+      transition: all 265ms ease-in;
+    }
+  }
+}
