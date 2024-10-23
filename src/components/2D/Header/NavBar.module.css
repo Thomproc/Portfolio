@@ -1,29 +1,24 @@
-.center {
+.container {
   position: fixed;
   top: 0;
-  width: 100%;
-  display: flex;
-  justify-content: center;
-  z-index: 10;
-}
-
-.navContainer {
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  align-self: center;
   height: 4em;
   width: 100%;
   min-width: 300px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
 
+  z-index: 10;
   background: rgb(from var(--background) r g b / 0.3);
   backdrop-filter: blur(5px);
+
   & > :last-child {
     display: flex;
     justify-content: center;
     align-items: center;
     gap: 8px;
   }
+
   & > :first-child,
   & > :last-child {
     max-width: 200px;
