@@ -1,4 +1,4 @@
-.container {
+.navBar {
   position: fixed;
   top: 0;
   height: 4em;
@@ -11,13 +11,6 @@
   z-index: 10;
   background: rgb(from var(--background) r g b / 0.3);
   backdrop-filter: blur(5px);
-
-  & > :last-child {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    gap: 8px;
-  }
 
   & > :first-child,
   & > :last-child {
@@ -33,34 +26,4 @@
   & > :not(:first-child):not(:last-child) :hover {
     color: rgb(from var(--accent) r g b / 0.8);
   }
-}
-
-.navBar {
-  display: flex;
-  max-width: 700px;
-  flex: 2;
-  justify-content: space-evenly;
-  align-items: center;
-  color: var(--text3);
-
-  & > * {
-    cursor: pointer;
-    -webkit-tap-highlight-color: transparent;
-  }
-}
-
-.navItem {
-  height: 100%;
-  display: flex;
-  flex: 1;
-  justify-content: center;
-  align-items: center;
-  background: rgb(from var(--background_dark) r g b / 0.5);
-
-  color: var(--text);
-  text-decoration: none;
-  text-align: center;
-  transition: all 0.2s;
-
-  -webkit-tap-highlight-color: transparent;
 }
