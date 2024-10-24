@@ -8,7 +8,6 @@ const useResponsiveWidth = () => {
 
   useEffect(() => {
     const handleResize = () => {
-      console.log("resize");
       setWidth(window.innerWidth);
     };
     window.addEventListener("resize", handleResize);
@@ -22,7 +21,7 @@ export default function NavBar() {
   const width = useResponsiveWidth();
   return (
     <div className={styles.navBar}>
-      {width < 600 ? <MobileNavBar /> : <ComputerNavBar />}
+      {width < 750 ? <MobileNavBar /> : <ComputerNavBar />}
     </div>
   );
 }

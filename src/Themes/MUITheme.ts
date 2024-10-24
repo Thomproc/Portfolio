@@ -3,6 +3,7 @@ import { colors } from "./ColorTheme";
 
 const theme = createTheme({
   palette: {
+    mode: "dark",
     primary: {
       main: colors.primary,
     },
@@ -14,6 +15,13 @@ const theme = createTheme({
     },
   },
   components: {
+    MuiDrawer: {
+      styleOverrides: {
+        paper: {
+          background: colors.background,
+        },
+      },
+    },
     MuiInputLabel: {
       styleOverrides: {
         root: {

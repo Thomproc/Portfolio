@@ -10,7 +10,7 @@ export default function ComputerNavBar() {
   return (
     <>
       <div
-        className={styles.secondaryNavItem}
+        className={styles.switch}
         onClick={(_event) => {
           if (location.pathname === EMainsRoutes.MAIN2D) {
             navigate(EMainsRoutes.MAIN3D);
@@ -19,61 +19,33 @@ export default function ComputerNavBar() {
           navigate(EMainsRoutes.MAIN2D);
         }}
       >
-        {location.pathname === EMainsRoutes.MAIN2D
-          ? "Mon univers..."
-          : "Mon environnement..."}
+        {location.pathname === EMainsRoutes.MAIN2D ? "Univers" : "Portfolio"}
       </div>
       <div className={styles.mainNavItem}>
         {/* <div className={styles.progress} /> */}
-
-        <div
-          onClick={(_event) => {
-            Routes2DRefs[ERoutes2D.HOME].current?.scrollIntoView({
-              behavior: "smooth",
-              block: "center",
-            });
-          }}
-        >
-          Accueil
-        </div>
-        <div
-          onClick={(_event) => {
-            Routes2DRefs[ERoutes2D.PROJECTS].current?.scrollIntoView({
-              behavior: "smooth",
-              block: "center",
-            });
-          }}
-        >
-          Projets
-        </div>
-        <div
-          onClick={(_event) => {
-            Routes2DRefs[ERoutes2D.SKILLS].current?.scrollIntoView({
-              behavior: "smooth",
-              block: "center",
-            });
-          }}
-        >
-          Compétences
-        </div>
-        <div
-          onClick={(_event) => {
-            Routes2DRefs[ERoutes2D.CONTACT].current?.scrollIntoView({
-              behavior: "smooth",
-              block: "end",
-            });
-          }}
-        >
-          Contact
-        </div>
+        {(Object.values(ERoutes2D) as Array<ERoutes2D>).map((value, index) => (
+          <div
+            key={index}
+            onClick={(_event) => {
+              Routes2DRefs[value].current?.scrollIntoView({
+                behavior: "smooth",
+                block: "start",
+              });
+            }}
+          >
+            {value}
+          </div>
+        ))}
       </div>
-      <div className={styles.secondaryNavItem}>
-        <a href={"./CV.pdf"} download={"CV_Procureur_Thomas"}>
-          CV
-          <FileDownloadOutlinedIcon />
-        </a>
+      {/* <div
+        className={styles.secondaryNavItem}
+        onClick={(_event) => window.open("./CV.pdf", "_blank")}
+      > */}
+      <div className={styles.cv}>
+        <FileDownloadOutlinedIcon />
+        CV
       </div>
-      {/* <TemporaryDrawer /> */}
+      {/* </div> */}
     </>
   );
 }

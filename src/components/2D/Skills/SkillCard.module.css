@@ -65,12 +65,6 @@
 }
 
 @media screen and (max-width: 700px) and (min-width: 600px) {
-  .card {
-    h2 {
-      text-align: start;
-    }
-  }
-
   .main-column {
     display: grid;
     grid-template-rows: 1fr;

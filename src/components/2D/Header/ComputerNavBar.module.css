@@ -2,7 +2,7 @@
   /* position: relative; */
   display: flex;
   max-width: 700px;
-  flex: 2;
+  flex: 1;
   justify-content: space-evenly;
   align-items: center;
   color: var(--text3);
@@ -13,18 +13,19 @@
   }
 }
 
-.secondaryNavItem {
-  height: 100%;
-  display: flex;
-  flex: 1;
-  justify-content: center;
-  align-items: center;
-  background: rgb(from var(--background_dark) r g b / 0.5);
-
-  color: var(--text);
-  text-decoration: none;
+.switch {
+  width: 100px;
   text-align: center;
-  transition: all 0.2s;
+}
+
+.cv {
+  width: 100px;
+  display: flex;
+  justify-content: center;
+  gap: 8px;
+  border-radius: 20px;
+  background-color: var(--secondary);
+  cursor: pointer;
 
   -webkit-tap-highlight-color: transparent;
 }
