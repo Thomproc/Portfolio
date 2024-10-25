@@ -10,13 +10,14 @@ export default function ComputerNavBar({
   return (
     <>
       <SwitchEnvironment />
-      <div className={styles.mainNavItem}>
+      <div className={styles.mainNavItems}>
         {/* <div className={styles.progress} /> */}
         {(Object.values(ERoutes2D) as Array<ERoutes2D>).map((value, index) => {
           const ItemIcon = Routes2DIcons[value];
           return (
             <div
               key={index}
+              className={styles.item}
               onClick={(_event) => {
                 Routes2DRefs[value].current?.scrollIntoView({
                   behavior: "smooth",
@@ -24,7 +25,7 @@ export default function ComputerNavBar({
                 });
               }}
             >
-              {!withoutIcons && <ItemIcon />}
+              <div>{!withoutIcons && <ItemIcon />}</div>
               {value}
             </div>
           );

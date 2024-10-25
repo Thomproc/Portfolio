@@ -2,7 +2,7 @@ import styles from "./NavBar.module.css";
 import { useEffect, useState } from "react";
 import ComputerNavBar from "./ComputerNavBar";
 import MobileNavBar from "./MobileNavBar";
-import FileDownloadOutlinedIcon from "@mui/icons-material/FileDownloadOutlined";
+import { Download } from "@mui/icons-material";
 
 const useResponsiveWidth = () => {
   const [width, setWidth] = useState(window.innerWidth);
@@ -38,7 +38,7 @@ export default function NavBar() {
         onClick={(_event) => window.open("./CV.pdf", "_blank")}
       >
         CV
-        <FileDownloadOutlinedIcon />
+        <Download />
       </div>
     </div>
   );

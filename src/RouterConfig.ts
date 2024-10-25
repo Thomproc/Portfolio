@@ -2,7 +2,7 @@ import React from "react";
 import {
   HomeOutlined,
   InsightsOutlined,
-  BusinessCenterOutlined,
+  CodeOutlined,
   EmailOutlined,
 } from "@mui/icons-material";
 
@@ -28,7 +28,7 @@ export const Routes2DRefs = {
 export const Routes2DIcons = {
   [ERoutes2D.HOME]: HomeOutlined,
   [ERoutes2D.SKILLS]: InsightsOutlined,
-  [ERoutes2D.PROJECTS]: BusinessCenterOutlined,
+  [ERoutes2D.PROJECTS]: CodeOutlined,
   [ERoutes2D.CONTACT]: EmailOutlined,
 };
 

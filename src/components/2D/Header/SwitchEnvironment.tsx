@@ -1,7 +1,10 @@
 import styles from "./SwitchEnvironment.module.css";
 import { useLocation, useNavigate } from "react-router-dom";
 import { EMainsRoutes } from "../../../RouterConfig";
-import { ArrowForward } from "@mui/icons-material";
+import {
+  RocketLaunchOutlined,
+  FolderSpecialOutlined,
+} from "@mui/icons-material";
 
 export default function SwitchEnvironment() {
   const navigate = useNavigate();
@@ -23,14 +26,14 @@ export default function SwitchEnvironment() {
         {location.pathname === EMainsRoutes.MAIN2D ? (
           <>
             <div className={styles["slider-button-left"]}>
-              <ArrowForward />
+              <RocketLaunchOutlined />
             </div>
             Univers
           </>
         ) : (
           <>
             <div className={styles["slider-button-right"]}>
-              <ArrowForward />
+              <FolderSpecialOutlined />
             </div>
             Portfolio
           </>

@@ -7,7 +7,7 @@
   justify-content: space-between;
   align-items: center;
 
-  padding: 0 12px;
+  padding: 12px 32px;
 
   z-index: 10;
   background: rgb(from var(--background) r g b / 0.3);
@@ -18,10 +18,18 @@
   width: 120px;
   display: flex;
   justify-content: center;
+  align-items: center;
   gap: 8px;
+  padding: 4px 0;
   border-radius: 20px;
-  background: radial-gradient(var(--secondary) 10%, var(--secondary_dark));
-  cursor: pointer;
+  border: solid 1px rgb(from var(--accent) r g b / 0.75);
+  box-shadow: 0 0 20px -8px var(--accent);
 
+  cursor: pointer;
+  transition: 0.3s;
   -webkit-tap-highlight-color: transparent;
+
+  &:hover {
+    box-shadow: 0 0 20px 0 var(--accent);
+  }
 }
