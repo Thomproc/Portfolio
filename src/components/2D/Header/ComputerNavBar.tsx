@@ -9,17 +9,26 @@ export default function ComputerNavBar() {
 
   return (
     <>
-      <div
-        className={styles.switch}
-        onClick={(_event) => {
-          if (location.pathname === EMainsRoutes.MAIN2D) {
-            navigate(EMainsRoutes.MAIN3D);
-            return;
-          }
-          navigate(EMainsRoutes.MAIN2D);
-        }}
-      >
-        {location.pathname === EMainsRoutes.MAIN2D ? "Univers" : "Portfolio"}
+      <div className={styles.switch}>
+        <label className={styles.switch}>
+          <input
+            type="checkbox"
+            onClick={(_event) => {
+              if (location.pathname === EMainsRoutes.MAIN2D) {
+                navigate(EMainsRoutes.MAIN3D);
+                return;
+              }
+              navigate(EMainsRoutes.MAIN2D);
+            }}
+          />
+          <div className={styles["slider"]}>
+            {/* <span> */}
+            {location.pathname === EMainsRoutes.MAIN2D
+              ? "Univers"
+              : "Portfolio"}
+            {/* </span> */}
+          </div>
+        </label>
       </div>
       <div className={styles.mainNavItem}>
         {/* <div className={styles.progress} /> */}
@@ -42,8 +51,8 @@ export default function ComputerNavBar() {
         onClick={(_event) => window.open("./CV.pdf", "_blank")}
       > */}
       <div className={styles.cv}>
-        <FileDownloadOutlinedIcon />
         CV
+        <FileDownloadOutlinedIcon />
       </div>
       {/* </div> */}
     </>

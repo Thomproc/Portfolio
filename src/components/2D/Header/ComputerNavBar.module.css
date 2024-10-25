@@ -1,5 +1,4 @@
 .mainNavItem {
-  /* position: relative; */
   display: flex;
   max-width: 700px;
   flex: 1;
@@ -10,21 +9,77 @@
   & > * {
     cursor: pointer;
     -webkit-tap-highlight-color: transparent;
+
+    &:hover {
+      color: var(--accent_dark);
+    }
   }
 }
 
 .switch {
-  width: 100px;
+  position: relative;
+  display: inline-block;
   text-align: center;
 }
 
+.cv,
+.switch {
+  width: 120px;
+}
+
+/* Hide default HTML checkbox */
+.switch input {
+  opacity: 0;
+  width: 0;
+  height: 0;
+}
+
+.slider {
+  height: 100%;
+  position: absolute;
+  cursor: pointer;
+  inset: 0;
+  border: solid 1px var(--secondary_dark);
+  border-radius: 20px;
+
+  transition: 0.4s;
+  & > span {
+    opacity: 1;
+    animation: opacity 0.5s linear forwards;
+  }
+}
+
+.slider:before {
+  content: "";
+  position: absolute;
+  left: 0;
+  height: 100%;
+  aspect-ratio: 1;
+  border-radius: 20px;
+  border: solid 1px var(--secondary);
+
+  background-color: rgb(from var(--background) r g b / 4);
+  transition: 0.4s;
+
+  transform: translate(-25%, 0);
+}
+
+/* input:checked + .slider {
+  background-color: var(--primary);
+} */
+
+input:checked + .slider:before {
+  -webkit-transform: translateX(calc(120px - 75%));
+  -ms-transform: translateX(calc(120px - 75%));
+  transform: translateX(calc(120px - 75%));
+}
+
 .cv {
-  width: 100px;
   display: flex;
   justify-content: center;
   gap: 8px;
   border-radius: 20px;
-  background-color: var(--secondary);
+  background: radial-gradient(var(--secondary) 10%, var(--secondary_dark));
   cursor: pointer;
 
   -webkit-tap-highlight-color: transparent;
@@ -47,3 +102,12 @@
     width: 100%;
   }
 } */
+
+@keyframes opacity {
+  0% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 1;
+  }
+}
