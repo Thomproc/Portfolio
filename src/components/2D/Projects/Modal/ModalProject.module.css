@@ -17,19 +17,6 @@
   overflow: scroll;
 }
 
-.close {
-  position: absolute;
-  top: 4px;
-  left: 4px;
-  cursor: pointer;
-  & > svg {
-    transition: all 0.3s ease-in-out;
-    &:hover {
-      scale: 1.2;
-    }
-  }
-}
-
 .banner {
   position: relative;
   display: flex;
@@ -76,8 +63,7 @@
 }
 
 .content {
-  margin: 2em 0;
-  padding: 0 0.75em;
+  margin: 2em;
   text-align: justify;
 }
 
@@ -96,26 +82,18 @@
   }
 }
 
-.header {
-  display: flex;
-  justify-content: center;
-  align-items: end;
-  flex-wrap: wrap-reverse;
-  gap: 2em;
-  margin-bottom: 12px;
-}
-
 .technologies-container {
   display: grid;
   place-items: center;
-  flex-grow: 1;
   gap: 12px;
-  text-align: center;
-
-  background-color: rgb(from var(--background_dark) r g b / 0.5);
+  margin-bottom: 2em;
   padding: 12px 8px;
+
+  background-color: rgb(from var(--background_dark) r g b / 0.6);
   border: solid 1px rgb(from var(--primary) r g b / 0.5);
   border-radius: 12px;
+
+  text-align: center;
 }
 
 .technologies-title {

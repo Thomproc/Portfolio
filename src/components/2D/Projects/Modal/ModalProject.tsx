@@ -1,15 +1,14 @@
 import styles from "./ModalProject.module.css";
-import { Modal } from "@mui/material";
+import { IconButton, Modal } from "@mui/material";
 import { ETypes, Project } from "../../../../models/Project";
 import BtnCTA from "../../Components/Buttons/BtnCTA";
 import TechnologiesChips from "../../Components/TechnologiesChips";
+import Carousel from "./Carousel";
 import {
   ComputerRounded,
   PhoneAndroidRounded,
   ArrowBackRounded,
 } from "@mui/icons-material";
-
-import Carousel from "./Carousel";
 
 export default function ModalProject({
   selectedProject,
@@ -24,12 +23,18 @@ export default function ModalProject({
         {selectedProject && (
           <>
             <div className={styles.banner}>
-              <div
+              {/* <div
                 className={styles.close}
                 onClick={() => setSelectedProject(null)}
               >
                 <ArrowBackRounded />
-              </div>
+              </div> */}
+              <IconButton
+                sx={{ position: "absolute", top: 4, left: 4 }}
+                onClick={() => setSelectedProject(null)}
+              >
+                <ArrowBackRounded />
+              </IconButton>
 
               <img
                 src={"./Images/Projects/" + selectedProject.image}
@@ -55,28 +60,26 @@ export default function ModalProject({
               </div>
             </div>
             <div className={styles.content}>
-              <div className={styles.header}>
-                <div className={styles.title}>
-                  <div className={styles.datas + " label"}>
-                    {selectedProject.type === ETypes.Web ? (
-                      <ComputerRounded />
-                    ) : (
-                      <PhoneAndroidRounded />
-                    )}
-                    <i>
-                      {selectedProject.context +
-                        " - " +
-                        selectedProject.date.toLocaleDateString()}
-                    </i>
-                  </div>
-                  <h2>Présentation</h2>
+              <div className={styles["technologies-container"]}>
+                <div className={styles["technologies-title"]}>
+                  <h3>Technologies</h3>
                 </div>
-                <div className={styles["technologies-container"]}>
-                  <div className={styles["technologies-title"]}>
-                    Technologies
-                  </div>
-                  <TechnologiesChips project={selectedProject} wrap />
+                <TechnologiesChips project={selectedProject} wrap />
+              </div>
+              <div className={styles.title}>
+                <div className={styles.datas + " label"}>
+                  {selectedProject.type === ETypes.Web ? (
+                    <ComputerRounded />
+                  ) : (
+                    <PhoneAndroidRounded />
+                  )}
+                  <i>
+                    {selectedProject.context +
+                      " - " +
+                      selectedProject.date.toLocaleDateString()}
+                  </i>
                 </div>
+                <h2>Présentation</h2>
               </div>
               <span className="paragraph">{selectedProject.description}</span>
             </div>

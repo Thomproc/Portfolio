@@ -1,11 +1,14 @@
 import styles from "./Carousel.module.css";
 import { Project } from "../../../../models/Project";
+import { useRef } from "react";
+
 import Slider from "react-slick";
 import "slick-carousel/slick/slick.css";
 import "slick-carousel/slick/slick-theme.css";
-import { useRef } from "react";
 
 import { ArrowBackRounded, ArrowForwardRounded } from "@mui/icons-material";
+
+import MyRipple from "../../Components/MyRipple";
 
 export default function Carousel({ project }: { project: Project }) {
   const sliderRef = useRef<Slider>(null);
@@ -15,12 +18,14 @@ export default function Carousel({ project }: { project: Project }) {
         className={styles.leftArrow}
         onClick={() => sliderRef.current?.slickPrev()}
       >
+        <MyRipple />
         <ArrowBackRounded />
       </div>
       <div
         className={styles.rightArrow}
         onClick={() => sliderRef.current?.slickNext()}
       >
+        <MyRipple />
         <ArrowForwardRounded />
       </div>
       <div className={styles.slider}>

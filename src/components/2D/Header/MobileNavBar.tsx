@@ -25,7 +25,7 @@ export default function MobileNavBar() {
     <Box sx={{ width: 250 }}>
       <List>
         {(Object.values(ERoutes2D) as Array<ERoutes2D>).map((value, index) => {
-          const LeftIcon = Routes2DIcons[value];
+          const ItemIcon = Routes2DIcons[value];
           return (
             <div
               key={index}
@@ -38,11 +38,10 @@ export default function MobileNavBar() {
               }}
             >
               <ListItem disablePadding>
-                <ListItemButton>
+                <ListItemButton sx={{ padding: "1.5em 1em" }}>
                   <ListItemIcon>
-                    <LeftIcon />
+                    <ItemIcon />
                   </ListItemIcon>
-                  {/* <ListItemText primary={value} /> */}
                   {value}
                 </ListItemButton>
               </ListItem>
@@ -50,7 +49,7 @@ export default function MobileNavBar() {
             </div>
           );
         })}
-        <div className="flex w-full justify-center py-4">
+        <div className="flex w-full justify-center py-6">
           <SwitchEnvironment />
         </div>
       </List>

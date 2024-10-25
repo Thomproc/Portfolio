@@ -2,6 +2,7 @@ import { Project } from "../../../models/Project";
 import styles from "./Card.module.css";
 import { ArrowRightOutlined } from "@mui/icons-material";
 import TechnologiesChips from "../Components/TechnologiesChips";
+import MyRipple from "../Components/MyRipple";
 
 export default function Card({
   project,
@@ -49,6 +50,7 @@ export default function Card({
           </div>
         </span>
       </div>
+      <MyRipple />
     </div>
   );
 }

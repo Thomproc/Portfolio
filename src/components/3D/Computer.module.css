@@ -4,8 +4,4 @@
   width: 300px;
   height: 200px;
   scrollbar-width: none;
-
-  * {
-    font-size: 4px;
-  }
 }

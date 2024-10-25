@@ -18,11 +18,21 @@ const useResponsiveWidth = () => {
   return width;
 };
 
+const switchNavBar = (screenWidth: number) => {
+  if (screenWidth < 720) {
+    return <MobileNavBar />;
+  } else if (screenWidth < 900) {
+    return <ComputerNavBar withoutIcons />;
+  }
+
+  return <ComputerNavBar />;
+};
+
 export default function NavBar() {
   const width = useResponsiveWidth();
   return (
     <div className={styles.navBar}>
-      {width < 650 ? <MobileNavBar /> : <ComputerNavBar />}
+      {switchNavBar(width)}
       <div
         className={styles.cv}
         onClick={(_event) => window.open("./CV.pdf", "_blank")}

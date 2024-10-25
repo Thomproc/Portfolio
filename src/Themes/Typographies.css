@@ -23,7 +23,7 @@ button {
   letter-spacing: calc(0.04 * 20px);
   background: none;
   border: none;
-  border-radius: 20px;
+  border-radius: 8px;
   cursor: pointer;
   -webkit-tap-highlight-color: transparent;
 }

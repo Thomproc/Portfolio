@@ -9,9 +9,16 @@ export default function BtnCTA({
 }: {
   secondaryStyle?: boolean;
   text: string;
-  targetRoute?: ERoutes2D;
-  targetLink?: string;
-}) {
+} & (
+  | {
+      targetLink: string | never;
+      targetRoute?: ERoutes2D | never;
+    }
+  | {
+      targetLink?: never;
+      targetRoute?: ERoutes2D;
+    }
+)) {
   return (
     <button
       className={secondaryStyle ? styles["cta2"] : styles["cta"]}

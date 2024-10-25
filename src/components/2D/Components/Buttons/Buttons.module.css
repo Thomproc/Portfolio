@@ -1,24 +1,32 @@
 .cta,
 .cta2 {
   padding: 0.5em 1em;
-  transition: all 0.2s;
+  transition: all 0.3s;
 }
 
 .cta {
-  color: var(--accent);
-  background: rgb(from var(--background) r g b / 0.3);
   backdrop-filter: blur(2px);
   border: solid 1px var(--accent);
   box-shadow: 0 0 16px -4px var(--accent);
 
+  background: var(--accent);
+  color: var(--background);
+
   &:hover {
     box-shadow: 0 0 16px 0px var(--accent);
+
+    color: var(--accent);
+    background: rgb(from var(--background) r g b / 0.3);
+
+    scale: 1.1;
   }
 }
 
 .cta2 {
-  color: var(--accent_dark);
+  color: var(--text);
+  border: solid 1px var(--accent);
+
   &:hover {
-    scale: 0.9;
+    scale: 1.1;
   }
 }
