@@ -2,7 +2,7 @@
   /* height: 300px; */
   display: flex;
   align-items: center;
-  background-color: rgb(from var(--background) r g b / 7);
+  background-color: var(--background);
   position: relative;
   box-shadow: 0 0 20px 0px black;
 

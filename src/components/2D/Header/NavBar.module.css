@@ -13,3 +13,15 @@
   background: rgb(from var(--background) r g b / 0.3);
   backdrop-filter: blur(5px);
 }
+
+.cv {
+  width: 120px;
+  display: flex;
+  justify-content: center;
+  gap: 8px;
+  border-radius: 20px;
+  background: radial-gradient(var(--secondary) 10%, var(--secondary_dark));
+  cursor: pointer;
+
+  -webkit-tap-highlight-color: transparent;
+}
