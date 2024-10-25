@@ -41,8 +41,8 @@
   left: 50%;
   aspect-ratio: 1;
   transform: translate(-50%, -50%);
-  border: none;
   border-radius: 50%;
+  border: none;
   animation: ripple 3s infinite cubic-bezier(0, 0.72, 1, 0.42);
 }
 

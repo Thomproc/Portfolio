@@ -17,10 +17,24 @@
   position: absolute;
   cursor: pointer;
   inset: 0;
-  border: solid 1px var(--secondary_dark);
+  border: solid 1px rgb(from var(--accent) r g b / 0.75);
   border-radius: 20px;
+  box-shadow: 0 0 20px -8px var(--accent);
+
+  background-color: rgb(from var(--text) r g b / 0.1);
 
   transition: 0.4s;
+
+  &:hover {
+    box-shadow: 0 0 20px -0px var(--accent);
+
+    .slider-button-left::before {
+      animation: hoverButton 1s infinite linear;
+    }
+    .slider-button-right::before {
+      animation: hoverButton 1s infinite linear reverse;
+    }
+  }
 }
 
 .slider-button-left,
@@ -30,42 +44,74 @@
   left: 0;
   height: 100%;
   aspect-ratio: 1;
-  border-radius: 20px;
-  border: solid 1px var(--secondary);
 
-  background-color: var(--background);
   transform: translate(-25%, 0);
-
   transition: 0.4s;
+
+  &::before {
+    content: "";
+    position: absolute;
+    inset: -2px;
+    border-radius: 50%;
+    border: 3px solid transparent;
+
+    background:
+      linear-gradient(rgb(from var(--background_dark) r g b / 1) 100%, black)
+        padding-box,
+      conic-gradient(
+          from -80deg,
+          var(--background_dark) 25deg,
+          rgb(from var(--accent_dark) r g b / 0.3) 40deg,
+          var(--accent) 160deg,
+          rgb(from var(--accent_dark) r g b / 0.3) 180deg,
+
+          var(--background_dark) 205deg,
+          rgb(from var(--accent_dark) r g b / 0.3) 220deg,
+          var(--accent) 340deg,
+          rgb(from var(--accent_dark) r g b / 0.3) 360deg
+        )
+        border-box;
+    animation: idleButton 6s infinite;
+  }
+
+  & > * {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+  }
 }
 
 .slider-button-right {
   -webkit-transform: translateX(calc(120px - 75%));
   -ms-transform: translateX(calc(120px - 75%));
-  transform: translateX(calc(120px - 75%));
+  transform: translateX(calc(120px - 75%)) rotate(180deg);
+
+  &::before {
+    animation: idleButton 6s reverse infinite;
+  }
 }
 
-/* input:checked + .slider {
-    background-color: var(--primary);
-  } */
-
-/* input:checked + .slider {
-  .slider-button {
-    -webkit-transform: translateX(calc(120px - 75%));
-    -ms-transform: translateX(calc(120px - 75%));
-    transform: translateX(calc(120px - 75%));
-  }
-} */
-
-@keyframes slide {
+@keyframes idleButton {
   0% {
-    -webkit-transform: translateX(0);
-    -ms-transform: translateX(0);
-    transform: translateX(0);
+    transform: rotate(0);
   }
+
+  33% {
+    transform: rotate(2turn);
+  }
+
   100% {
-    -webkit-transform: translateX(calc(120px - 75%));
-    -ms-transform: translateX(calc(120px - 75%));
-    transform: translateX(calc(120px - 75%));
+    transform: rotate(2turn);
+  }
+}
+
+@keyframes hoverButton {
+  0% {
+    transform: rotate(0);
+  }
+
+  100% {
+    transform: rotate(1turn);
   }
 }
