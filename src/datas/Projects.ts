@@ -6,17 +6,12 @@ import {
   ETechnologies,
 } from "../models/Project";
 
-import { FaNodeJs } from "react-icons/fa";
-
 const fuelToday: Project = {
   name: "Fuel Today",
   context: EContext.M2,
   date: new Date(2022, 0, 1),
   type: ETypes.Mobile,
-  technologies: [
-    { name: ETechnologies.AndroidStudio, icon: FaNodeJs },
-    { name: ETechnologies.Java, icon: FaNodeJs },
-  ],
+  technologies: [ETechnologies.AndroidStudio, ETechnologies.Java],
   image: "fuel_today.png",
   abstract:
     "Application mobile permettant de filtrer les stations-service à proximité afin de trouver celle au meilleur prix.",
@@ -30,12 +25,12 @@ const jupiTerror: Project = {
   date: new Date(2022, 0, 1),
   type: ETypes.Web,
   technologies: [
-    { name: ETechnologies.NodeJS, icon: FaNodeJs },
-    { name: ETechnologies.HTML, icon: FaNodeJs },
-    { name: ETechnologies.CSS, icon: FaNodeJs },
-    { name: ETechnologies.JS, icon: FaNodeJs },
-    { name: ETechnologies.ThreeJS, icon: FaNodeJs },
-    { name: ETechnologies.Blender, icon: FaNodeJs },
+    ETechnologies.NodeJS,
+    ETechnologies.HTML,
+    ETechnologies.CSS,
+    ETechnologies.JS,
+    ETechnologies.ThreeJS,
+    ETechnologies.Blender,
   ],
   image: "jupiTerror.png",
   abstract:
@@ -51,7 +46,7 @@ const twitter: Project = {
   context: EContext.M1,
   date: new Date(2022, 0, 1),
   type: ETypes.Web,
-  technologies: [{ name: ETechnologies.Python, icon: FaNodeJs }],
+  technologies: [ETechnologies.Python],
   image: "twitter.png",
   abstract:
     "Amélioration de l'analyseur de tweets pré-existant afin d'afiner la détection d'entitées liées au tourisme (lieux, activités).",
@@ -66,7 +61,7 @@ const scene_iso: Project = {
   context: EContext.Licence,
   date: new Date(2022, 0, 1),
   type: ETypes.Web,
-  technologies: [{ name: ETechnologies.Python, icon: FaNodeJs }],
+  technologies: [ETechnologies.Python],
   image: "scene_iso.png",
   abstract:
     "Création d'une interface 2D avec une illusion de 3D sur laquelle il est possible de placer et customiser des cubes.",
@@ -80,10 +75,7 @@ const gestion_comptes: Project = {
   context: EContext.Personnel,
   date: new Date(2022, 0, 1),
   type: ETypes.Mobile,
-  technologies: [
-    { name: ETechnologies.Flutter, icon: FaNodeJs },
-    { name: ETechnologies.PostgreSQL, icon: FaNodeJs },
-  ],
+  technologies: [ETechnologies.Flutter, ETechnologies.PostgreSQL],
   image: "compte.jpg",
   abstract:
     "Une application mobile pour visualiser la répartition des dépenses entre deux utilisateurs.",
@@ -100,11 +92,11 @@ const portfolio: Project = {
   date: new Date(2022, 0, 1),
   type: ETypes.Web,
   technologies: [
-    { name: ETechnologies.NodeJS, icon: FaNodeJs },
-    { name: ETechnologies.React, icon: FaNodeJs },
-    { name: ETechnologies.HTML, icon: FaNodeJs },
-    { name: ETechnologies.CSS, icon: FaNodeJs },
-    { name: ETechnologies.TS, icon: FaNodeJs },
+    ETechnologies.NodeJS,
+    ETechnologies.React,
+    ETechnologies.HTML,
+    ETechnologies.CSS,
+    ETechnologies.TS,
   ],
   image: "portfolio.png",
   abstract:

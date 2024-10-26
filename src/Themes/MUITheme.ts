@@ -1,5 +1,5 @@
 import { createTheme } from "@mui/material/styles";
-import { colors } from "./ColorTheme";
+import colors from "./ColorTheme";
 
 const theme = createTheme({
   palette: {

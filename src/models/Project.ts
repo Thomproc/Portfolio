@@ -1,6 +1,3 @@
-import { IconType } from "react-icons";
-import { FaNodeJs } from "react-icons/fa";
-
 export enum ECategories {
   Professionnel = "Professionnel",
   Scolaire = "Scolaire",
@@ -36,34 +33,13 @@ export enum ETechnologies {
   React = "React",
 }
 
-export const technologiesIcons: { [key in ETechnologies]: IconType } = {
-  [ETechnologies.NodeJS]: FaNodeJs,
-  [ETechnologies.TS]: FaNodeJs,
-  [ETechnologies.JS]: FaNodeJs,
-  [ETechnologies.HTML]: FaNodeJs,
-  [ETechnologies.CSS]: FaNodeJs,
-  [ETechnologies.ThreeJS]: FaNodeJs,
-  [ETechnologies.Blender]: FaNodeJs,
-  [ETechnologies.AndroidStudio]: FaNodeJs,
-  [ETechnologies.Java]: FaNodeJs,
-  [ETechnologies.Flutter]: FaNodeJs,
-  [ETechnologies.Python]: FaNodeJs,
-  [ETechnologies.PostgreSQL]: FaNodeJs,
-  [ETechnologies.React]: FaNodeJs,
-};
-
-type Technology = {
-  name: ETechnologies;
-  icon: IconType;
-};
-
 export type Project = {
   name: string;
   context: EContext;
   abstract: string;
   type: ETypes;
   date: Date;
-  technologies: Technology[];
+  technologies: ETechnologies[];
   description: string;
   image: string;
   github?: string;

@@ -1,9 +1,9 @@
 .technologies {
   display: flex;
-
   align-items: center;
   overflow: auto;
-  gap: 0.5em;
+  gap: 12px;
+  color: var(--text);
 }
 
 .technologies-wrap {
@@ -13,11 +13,13 @@
 
 .technology {
   display: flex;
+  gap: 12px;
   align-items: center;
   padding: 0.5em 0.75em;
 
   background:
-    linear-gradient(var(--background_dark), var(--background_dark)) padding-box,
+    radial-gradient(circle, var(--background) 50%, var(--background_dark))
+      padding-box,
     conic-gradient(
         from -80deg,
         var(--background_dark) 25deg,
@@ -31,6 +33,12 @@
         var(--primary_dark) 360deg
       )
       border-box;
+
   border-radius: 8px;
   border: 1px solid transparent;
+}
+
+.icon {
+  border-radius: 50%;
+  aspect-ratio: 1;
 }

@@ -20,7 +20,7 @@ const floor = "#B9B9B9";
 
 const deskReflector = "#B5AE9A";
 
-export const colors = {
+const colors = {
   background,
   text,
   primary,
@@ -39,3 +39,4 @@ export const colors = {
   fog,
   deskReflector,
 };
+export default colors;

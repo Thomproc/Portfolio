@@ -20,7 +20,7 @@ import {
   cameraPosition,
   orbitProps,
 } from "../../config";
-import { colors } from "../../Themes/ColorTheme";
+import colors from "../../Themes/ColorTheme";
 
 export default function Main() {
   const [target, setTarget] = useState<"desk" | "rubiksCube">("desk");
@@ -36,7 +36,7 @@ export default function Main() {
       setTarget(newTarget);
       return target === "desk";
     },
-    [target, cameraIsRotating]
+    [target, cameraIsRotating],
   );
 
   const handleControlStart = useCallback(() => {

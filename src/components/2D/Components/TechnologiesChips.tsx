@@ -1,5 +1,6 @@
 import styles from "./TechnologiesChips.module.css";
 import { Project } from "../../../models/Project";
+import TechnologyToIcon from "../../../datas/Technologies";
 export default function TechnologiesChips({
   project,
   wrap,
@@ -17,12 +18,20 @@ export default function TechnologiesChips({
         "label",
       ].join(" ")}
     >
-      {project.technologies.map((tech, index) => (
-        <div key={index} className={styles.technology}>
-          <tech.icon size={30} />
-          {!onlyIcons && tech.name}
-        </div>
-      ))}
+      {project.technologies.map((techName, index) => {
+        const TechIcon = TechnologyToIcon[techName];
+        return (
+          <div
+            key={index}
+            className={[styles.technology, onlyIcons && styles["icon"]].join(
+              " ",
+            )}
+          >
+            {TechIcon}
+            {!onlyIcons && techName}
+          </div>
+        );
+      })}
     </div>
   );
 }
