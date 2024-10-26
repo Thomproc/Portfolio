@@ -23,12 +23,6 @@ export default function ModalProject({
         {selectedProject && (
           <>
             <div className={styles.banner}>
-              {/* <div
-                className={styles.close}
-                onClick={() => setSelectedProject(null)}
-              >
-                <ArrowBackRounded />
-              </div> */}
               <IconButton
                 sx={{ position: "absolute", top: 4, left: 4 }}
                 onClick={() => setSelectedProject(null)}

@@ -4,32 +4,33 @@
   align-items: center;
   overflow: auto;
   gap: 0.5em;
-
-  & > div {
-    padding: 0.5em 0.75em;
-
-    background:
-      linear-gradient(var(--background_dark), var(--background_dark))
-        padding-box,
-      conic-gradient(
-          from -80deg,
-          var(--background_dark) 25deg,
-          var(--primary_dark) 40deg,
-          var(--primary) 160deg,
-          var(--primary_dark) 180deg,
-
-          var(--background_dark) 205deg,
-          var(--primary_dark) 220deg,
-          var(--primary) 340deg,
-          var(--primary_dark) 360deg
-        )
-        border-box;
-    border-radius: 8px;
-    border: 1px solid transparent;
-  }
 }
 
 .technologies-wrap {
   flex-wrap: wrap;
   justify-content: center;
+}
+
+.technology {
+  display: flex;
+  align-items: center;
+  padding: 0.5em 0.75em;
+
+  background:
+    linear-gradient(var(--background_dark), var(--background_dark)) padding-box,
+    conic-gradient(
+        from -80deg,
+        var(--background_dark) 25deg,
+        var(--primary_dark) 40deg,
+        var(--primary) 160deg,
+        var(--primary_dark) 180deg,
+
+        var(--background_dark) 205deg,
+        var(--primary_dark) 220deg,
+        var(--primary) 340deg,
+        var(--primary_dark) 360deg
+      )
+      border-box;
+  border-radius: 8px;
+  border: 1px solid transparent;
 }

@@ -3,9 +3,11 @@ import { Project } from "../../../models/Project";
 export default function TechnologiesChips({
   project,
   wrap,
+  onlyIcons,
 }: {
   project: Project;
   wrap?: boolean;
+  onlyIcons?: boolean;
 }) {
   return (
     <div
@@ -16,7 +18,10 @@ export default function TechnologiesChips({
       ].join(" ")}
     >
       {project.technologies.map((tech, index) => (
-        <div key={index}>{tech}</div>
+        <div key={index} className={styles.technology}>
+          <tech.icon size={30} />
+          {!onlyIcons && tech.name}
+        </div>
       ))}
     </div>
   );

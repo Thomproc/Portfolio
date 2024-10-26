@@ -1,32 +1,48 @@
 .cta,
 .cta2 {
-  padding: 0.5em 1em;
   transition: all 0.3s;
+}
+
+button {
+  padding: 0.5em 1em;
 }
 
 .cta {
   backdrop-filter: blur(2px);
-  border: solid 1px var(--accent);
+  border: solid 1px transparent;
   box-shadow: 0 0 16px -4px var(--accent);
 
   background: var(--accent);
   color: var(--background);
 
   &:hover {
-    box-shadow: 0 0 16px 0px var(--accent);
+    box-shadow: 0 0 24px 0px var(--accent);
 
     color: var(--accent);
-    background: rgb(from var(--background) r g b / 0.3);
-
-    scale: 1.1;
+    background: var(--background_dark);
+    border: solid 1px var(--accent);
   }
 }
 
 .cta2 {
-  color: var(--text);
-  border: solid 1px var(--accent);
+  position: relative;
+  height: fit-content;
+  cursor: pointer;
 
-  &:hover {
-    scale: 1.1;
+  &::before {
+    content: "";
+    position: absolute;
+    left: 50%;
+    transform: translate(-50%, 0);
+    bottom: 0;
+
+    height: 2px;
+    width: 20%;
+    background: var(--accent);
+
+    transition: 0.3s;
+  }
+  &:hover::before {
+    width: 80%;
   }
 }

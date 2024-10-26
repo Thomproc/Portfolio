@@ -20,19 +20,21 @@ export default function BtnCTA({
     }
 )) {
   return (
-    <button
-      className={secondaryStyle ? styles["cta2"] : styles["cta"]}
-      onClick={() => {
-        if (targetRoute) {
-          Routes2DRefs[targetRoute].current?.scrollIntoView({
-            behavior: "smooth",
-          });
-        } else if (targetLink) {
-          window.open(targetLink, "_blank");
-        }
-      }}
-    >
-      {text}
-    </button>
+    <div className={secondaryStyle ? styles["cta2"] : ""}>
+      <button
+        className={!secondaryStyle ? styles["cta"] : ""}
+        onClick={() => {
+          if (targetRoute) {
+            Routes2DRefs[targetRoute].current?.scrollIntoView({
+              behavior: "smooth",
+            });
+          } else if (targetLink) {
+            window.open(targetLink, "_blank");
+          }
+        }}
+      >
+        {text}
+      </button>
+    </div>
   );
 }

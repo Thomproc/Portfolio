@@ -49,7 +49,7 @@
   }
 }
 
-.project:hover:not(:has(.web-buttons > button:hover)) {
+.project:hover:not(:has(.web-buttons > *:hover)) {
   .see-more {
     text-decoration: underline 0.1em rgb(from var(--secondary) r g b / 0.8);
     text-underline-offset: 0.25em;
@@ -80,7 +80,6 @@
     max-height 0.5s ease-in-out,
     margin-top 0.3s ease-in-out;
   margin-top: 0;
-  position: relative;
 }
 
 .web-buttons {
@@ -91,20 +90,19 @@
   text-align: center;
   color: var(--text);
 
-  & > button {
-    font-weight: 600;
-    font-size: 0.8em;
+  & button {
+    height: min-content;
+    font-size: 0.75em;
     padding: 0.5em 1em;
-    transition: all 0.2s;
-
-    &:hover {
-      box-shadow: 0 0 12px var(--accent);
-    }
   }
 
   & > button:first-child {
     background: var(--background);
     color: var(--accent);
+    transition: 0.3s;
+    &:hover {
+      box-shadow: 0 0 12px var(--accent);
+    }
   }
 }
 
