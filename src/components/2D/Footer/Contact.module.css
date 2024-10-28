@@ -1,8 +1,15 @@
 .contact {
-  width: min(100%, 60em);
+  width: min(100%, 800px);
   margin: auto;
   padding: 0.75em;
-  text-align: center;
+
+  position: relative;
+}
+
+.header {
+  display: flex;
+  justify-content: space-between;
+  width: 100%;
 }
 
 .my-form {
@@ -11,13 +18,17 @@
   max-width: 800px;
   padding: 1em;
   margin: auto;
-  margin-top: 2em;
-  border-radius: 20px;
-  background-color: var(--background_dark);
-  box-shadow: 0 0 50px -10px rgb(from var(--primary) r g b / 0.8);
+  margin-top: 1em;
+  border-radius: 8px;
+  background-color: var(--background_light);
+  transition: 0.3s;
 
   & > * {
     gap: 1em;
+  }
+
+  &:has(.send-button:hover) {
+    animation: rotateColor 0.5s infinite alternate;
   }
 }
 
@@ -30,16 +41,24 @@
 }
 
 .send-button {
-  color: var(--accent);
-  &:hover {
-    .my-form {
-      box-shadow: 0 0 50px -10px rgb(from var(--accent) r g b / 0.8);
-    }
-  }
+  width: fit-content;
+  background: var(--accent);
+  border: solid 1px var(--background_dark);
+  color: var(--background);
+  transition: 0.3s;
+  font-size: medium;
 }
 
 @media screen and (max-width: 550px) {
   .input-row {
     flex-direction: column;
+  }
+}
+@keyframes rotateColor {
+  0% {
+    /* filter: hue-rotate(0deg); */
+  }
+  100% {
+    /* filter: hue-rotate(360deg); */
   }
 }

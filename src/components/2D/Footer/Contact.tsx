@@ -6,17 +6,23 @@ import SocialMedias from "./SocialMedias";
 
 enum EEmailParams {
   FROM_NAME = "from_name",
+  FROM_SURNAME = "from_surname",
   EMAIL = "email",
+  OBJECT = "object",
   MESSAGE = "message",
 }
 
 export default function Contact() {
   const [fromName, setFromName] = useState("");
+  const [fromSurname, setFromSurname] = useState("");
   const [email, setEmail] = useState("");
+  const [object, setObject] = useState("");
   const [message, setMessage] = useState("");
   const mailParams = {
     from_name: fromName,
+    from_surname: fromSurname,
     email: email,
+    object: object,
     message: message,
   };
 
@@ -24,6 +30,7 @@ export default function Contact() {
     emailjs.init("OX7XBSMFmNn6oTWJ8");
   }, []);
 
+  // METTRE :::: NOM PRENOM EMAIL "OBJET" MESSAGE
   const sendEmail = (e: FormEvent) => {
     e.preventDefault();
 
@@ -36,35 +43,61 @@ export default function Contact() {
     //     console.log("Erreur :(", _err.text);
     //   });
   };
+
   return (
     <div className={styles.contact}>
-      <h1>Contact</h1>
+      <div className={styles.header}>
+        <h2>Contact</h2>
+        <SocialMedias />
+      </div>
       <form className={styles["my-form"]} onSubmit={sendEmail}>
         <div className={styles["input-row"]}>
           <TextField
             variant="standard"
             fullWidth
             required
-            id={EEmailParams.FROM_NAME}
-            label="Votre nom"
-            value={fromName}
+            id={EEmailParams.FROM_SURNAME}
+            label="Nom"
+            value={fromSurname}
             onChange={(event: React.ChangeEvent<HTMLInputElement>) => {
-              setFromName(event.target.value);
+              setFromSurname(event.target.value);
             }}
           />
           <TextField
             variant="standard"
             fullWidth
             required
-            id={EEmailParams.EMAIL}
-            type="email"
-            label="Adresse mail"
-            value={email}
+            id={EEmailParams.FROM_NAME}
+            label="Prénom"
+            value={fromName}
             onChange={(event: React.ChangeEvent<HTMLInputElement>) => {
-              setEmail(event.target.value);
+              setFromName(event.target.value);
             }}
           />
         </div>
+        <TextField
+          variant="standard"
+          fullWidth
+          required
+          id={EEmailParams.EMAIL}
+          type="email"
+          label="Adresse mail"
+          value={email}
+          onChange={(event: React.ChangeEvent<HTMLInputElement>) => {
+            setEmail(event.target.value);
+          }}
+        />
+        <TextField
+          variant="standard"
+          fullWidth
+          required
+          id={EEmailParams.OBJECT}
+          label="Objet"
+          value={object}
+          onChange={(event: React.ChangeEvent<HTMLInputElement>) => {
+            setObject(event.target.value);
+          }}
+        />
         <TextField
           variant="standard"
           fullWidth
@@ -78,12 +111,12 @@ export default function Contact() {
             setMessage(event.target.value);
           }}
         />
-
-        <button type="submit" className={styles["send-button"]}>
-          Envoyer
-        </button>
+        <div className="m-auto">
+          <button type="submit" className={styles["send-button"]}>
+            Envoyer
+          </button>
+        </div>
       </form>
-      <SocialMedias />
     </div>
   );
 }

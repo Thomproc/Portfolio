@@ -15,6 +15,13 @@ const theme = createTheme({
     },
   },
   components: {
+    MuiModal: {
+      styleOverrides: {
+        backdrop: {
+          background: "rgba(0, 0, 0, 0.6)",
+        },
+      },
+    },
     MuiDrawer: {
       styleOverrides: {
         paper: {
@@ -22,11 +29,19 @@ const theme = createTheme({
         },
       },
     },
+    MuiInputBase: {
+      styleOverrides: {
+        root: {
+          paddingLeft: "8px",
+        },
+      },
+    },
     MuiInputLabel: {
       styleOverrides: {
         root: {
           zIndex: 1,
-          color: colors.text2,
+          paddingLeft: "8px",
+          color: colors.text3,
           "&.MuiFormLabel-filled": {
             color: colors.secondary, // Couleur du label flottant
           },

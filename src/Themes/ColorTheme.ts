@@ -7,6 +7,7 @@ const secondary = "#a174c4";
 const accent = "#ffbe5c";
 
 const background_dark = "#0F0F0F";
+const background_light = "#282828";
 const text2 = "#747474";
 const text3 = "#B7B7B7";
 // const primary_dark = "#072859";
@@ -28,6 +29,7 @@ const colors = {
   accent,
 
   background_dark,
+  background_light,
   text2,
   text3,
   primary_dark,

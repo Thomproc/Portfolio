@@ -22,14 +22,12 @@ export default function ModalProject({
       <div className={styles.modal}>
         {selectedProject && (
           <>
-            <div className={styles.banner}>
-              <IconButton
-                sx={{ position: "absolute", top: 4, left: 4 }}
-                onClick={() => setSelectedProject(null)}
-              >
+            <div className={styles.close}>
+              <IconButton onClick={() => setSelectedProject(null)}>
                 <ArrowBackRounded />
               </IconButton>
-
+            </div>
+            <div className={styles.banner}>
               <img
                 src={"./Images/Projects/" + selectedProject.image}
                 alt={selectedProject.image}
