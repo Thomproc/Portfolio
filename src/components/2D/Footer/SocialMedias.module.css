@@ -1,46 +1,36 @@
-.social-container {
+.social {
+  display: flex;
+  gap: 16px;
 }
 
-.social-icons {
-  li {
-    display: inline-block;
-    margin: 0.15em;
-    position: relative;
-    font-size: 1.2em;
+.icon-container {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  scale: 1.5;
+  padding: 2px;
+  margin-right: 8px;
+
+  background:
+    radial-gradient(var(--background_dark), var(--background_dark)) padding-box,
+    conic-gradient(
+        var(--primary),
+        var(--secondary),
+        var(--primary),
+        var(--secondary)
+      )
+      border-box;
+
+  border-radius: 8px;
+  border: 1px solid transparent;
+
+  transition: 0.4s;
+  &:has(svg:hover) {
+    background: var(--text);
   }
 
   svg {
-    color: var(--text);
-    position: absolute;
-    top: 50%;
-    left: 50%;
-    transform: translate(-50%, -50%);
-    transition: all 265ms ease-out;
-  }
-
-  a {
-    &:before {
-      content: "";
-      width: 50px;
-      aspect-ratio: 1;
-      border-radius: 50%;
-      display: block;
-      background: linear-gradient(
-        45deg,
-        var(--primary),
-        var(--primary_dark) 80%
-      );
-      transition: all 265ms ease-out;
-    }
-
-    &:hover:before {
-      transform: scale(0);
-      transition: all 265ms ease-in;
-    }
-
-    &:hover svg {
-      transform: scale(1.8) translate(-25%, -25%);
-      transition: all 265ms ease-in;
-    }
+    transition: 0.3s;
   }
 }

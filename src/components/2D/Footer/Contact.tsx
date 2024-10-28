@@ -47,7 +47,7 @@ export default function Contact() {
   return (
     <div className={styles.contact}>
       <div className={styles.header}>
-        <h2>Contact</h2>
+        <h2>Contactez-moi !</h2>
         <SocialMedias />
       </div>
       <form className={styles["my-form"]} onSubmit={sendEmail}>

@@ -39,16 +39,34 @@ export default function Carousel({ project }: { project: Project }) {
           autoplaySpeed={3000}
           arrows={false}
           slidesToShow={3}
-          responsive={[{ breakpoint: 500, settings: { slidesToShow: 1 } }]}
+          responsive={[
+            { breakpoint: 800, settings: { slidesToShow: 2 } },
+            { breakpoint: 500, settings: { slidesToShow: 1 } },
+          ]}
         >
-          <div className="h-28 px-4 outline-none">
-            <img src={"./Images/Projects/" + project.image} />
+          <div className={styles["img-container"]}>
+            <img
+              src={"./Images/Projects/" + project.image}
+              onClick={() =>
+                window.open("./Images/Projects/" + project.image, "_blank")
+              }
+            />
           </div>
-          <div className="h-28 px-4 outline-none">
-            <img src={"./Images/Projects/" + project.image} />
+          <div className={styles["img-container"]}>
+            <img
+              src={"./Images/Projects/" + project.image}
+              onClick={() =>
+                window.open("./Images/Projects/" + project.image, "_blank")
+              }
+            />
           </div>
-          <div className="h-28 px-4 outline-none">
-            <img src={"./Images/Projects/" + project.image} />
+          <div className={styles["img-container"]}>
+            <img
+              src={"./Images/Projects/" + project.image}
+              onClick={() =>
+                window.open("./Images/Projects/" + project.image, "_blank")
+              }
+            />
           </div>
         </Slider>
       </div>

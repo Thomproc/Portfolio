@@ -42,6 +42,7 @@ const theme = createTheme({
           zIndex: 1,
           paddingLeft: "8px",
           color: colors.text3,
+          fontFamily: "inherit",
           "&.MuiFormLabel-filled": {
             color: colors.secondary, // Couleur du label flottant
           },
@@ -54,8 +55,11 @@ const theme = createTheme({
     MuiInput: {
       styleOverrides: {
         root: {
+          fontFamily: "inherit",
+          borderRadius: "4px",
+          overflow: "hidden",
           color: colors.text,
-          background: colors.background,
+          background: colors.background_light,
           "&:before": {
             borderBottom: `2px solid ${colors.secondary_dark}`,
           },

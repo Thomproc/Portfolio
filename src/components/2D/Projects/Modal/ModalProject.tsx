@@ -7,7 +7,7 @@ import Carousel from "./Carousel";
 import {
   ComputerRounded,
   PhoneAndroidRounded,
-  ArrowBackRounded,
+  ArrowBackIosNewRounded,
 } from "@mui/icons-material";
 
 export default function ModalProject({
@@ -24,7 +24,7 @@ export default function ModalProject({
           <>
             <div className={styles.close}>
               <IconButton onClick={() => setSelectedProject(null)}>
-                <ArrowBackRounded />
+                <ArrowBackIosNewRounded />
               </IconButton>
             </div>
             <div className={styles.banner}>

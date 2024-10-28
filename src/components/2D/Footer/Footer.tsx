@@ -4,6 +4,9 @@ import Contact from "./Contact";
 export default function Footer() {
   return (
     <div className={styles.container}>
+      <div className={styles["img-container"]}>
+        <img src="./Images/bg_footer.png" alt="BackgroundFooter" />
+      </div>
       <Contact />
       {/* Créditer les modèles et icones / images, [space beween], réseaux sociaux,
       mail
