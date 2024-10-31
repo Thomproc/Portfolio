@@ -11,7 +11,7 @@ export default function HeroSection({ in3DWorld }: { in3DWorld: boolean }) {
           "--minHeight": in3DWorld ? "180px" : "600px",
           "--minHeightMobile": in3DWorld ? "none" : "600px",
           "--paddingTop": in3DWorld ? "0px" : "5em",
-        } as any
+        } as React.CSSProperties
       }
       onMouseMove={(e) => {
         const satellites = document.getElementById("satellites")!;

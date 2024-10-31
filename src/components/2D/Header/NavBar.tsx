@@ -3,6 +3,8 @@ import { useEffect, useState } from "react";
 import ComputerNavBar from "./ComputerNavBar";
 import MobileNavBar from "./MobileNavBar";
 import { Download } from "@mui/icons-material";
+import { useLocation } from "react-router-dom";
+import { EMainsRoutes } from "../../../RouterConfig";
 
 const useResponsiveWidth = () => {
   const [width, setWidth] = useState(window.innerWidth);
@@ -29,10 +31,15 @@ const switchNavBar = (screenWidth: number) => {
 };
 
 export default function NavBar() {
+  const location = useLocation();
   const width = useResponsiveWidth();
   return (
     <div className={styles.navBar}>
-      {switchNavBar(width)}
+      {location.pathname === EMainsRoutes.MAIN2D ? (
+        switchNavBar(width)
+      ) : (
+        <ComputerNavBar withoutItems />
+      )}
       <div
         className={styles.cv}
         onClick={(_event) => window.open("./CV.pdf", "_blank")}

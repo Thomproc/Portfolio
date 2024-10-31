@@ -1,48 +1,24 @@
-.mainNavItems {
-  max-width: 700px;
-  display: flex;
-  flex: 1;
-  justify-content: space-between;
-  align-items: center;
-  margin: 0 2em;
-}
-
 .item-0,
 .item-1,
 .item-2,
 .item-3 {
-  display: flex;
-  gap: 8px;
-  cursor: pointer;
-
-  -webkit-tap-highlight-color: transparent;
-
-  &:hover {
-    color: var(--accent_dark) !important;
-    svg {
-      color: var(--accent_dark);
-    }
-  }
+  animation-timeline: scroll();
 }
 
 .item-0 {
   animation-name: highlightItem0;
-  animation-timeline: scroll();
 }
 
 .item-1 {
   animation-name: highlightItem1;
-  animation-timeline: scroll();
 }
 
 .item-2 {
   animation-name: highlightItem2;
-  animation-timeline: scroll();
 }
 
 .item-3 {
   animation-name: highlightItem3;
-  animation-timeline: scroll();
 }
 
 @keyframes highlightItem0 {

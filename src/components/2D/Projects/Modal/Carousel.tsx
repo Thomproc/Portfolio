@@ -29,6 +29,17 @@ export default function Carousel({ project }: { project: Project }) {
         <ArrowForwardRounded />
       </div>
       <div className={styles.slider}>
+        <style>
+          {`
+          .slick-dots li button:before {
+            color: var(--text3);
+            opacity: 0.5; 
+          }
+          .slick-dots li.slick-active button:before {
+            color: var(--text);
+          }
+  `}
+        </style>
         <Slider
           ref={sliderRef}
           dots

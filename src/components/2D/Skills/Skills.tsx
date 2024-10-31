@@ -13,7 +13,7 @@ export default function Skills() {
             "--color2": ESkillsColors.BACKEND,
             "--color3": ESkillsColors.FRONTEND,
             "--color4": ESkillsColors.THREED,
-          } as any
+          } as React.CSSProperties
         }
       >
         <h1>Compétences</h1>

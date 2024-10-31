@@ -25,7 +25,7 @@ export default function Satellite({
           "--diameter": diameter,
           "--duration": duration,
           "--orbitRotation": rotation,
-        } as any
+        } as React.CSSProperties
       }
     >
       <div className={styles["satellite"]}>

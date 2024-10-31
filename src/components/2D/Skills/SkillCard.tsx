@@ -9,7 +9,7 @@ export default function SkillCard({ skill }: { skill: TSkill }) {
           "--color": skill.color,
           "--area": skill.area,
           "--nbCategories": skill.categories.length,
-        } as any
+        } as React.CSSProperties
       }
     >
       <h2>{skill.name}</h2>

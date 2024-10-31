@@ -8,7 +8,7 @@ const background_dark = "#0F0F0F";
 const background_light = "#212121";
 const text2 = "#747474";
 const text3 = "#B7B7B7";
-const accent_dark = "#d29c4b";
+const accent_dark = "#fcc573";
 const primary_dark = "#00396b";
 const secondary_dark = "#533b67";
 
