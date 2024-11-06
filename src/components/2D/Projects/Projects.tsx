@@ -55,21 +55,23 @@ export default function Projects() {
                   />
                 );
               })
-            : Object.entries(projects).map(([category, projectsInCategory]) => {
-                if (!projectsInCategory.length) {
-                  return;
-                }
+            : Object.entries(projects).map(
+                ([_category, projectsInCategory]) => {
+                  if (!projectsInCategory.length) {
+                    return;
+                  }
 
-                return projectsInCategory.map((project, index) => {
-                  return (
-                    <Card
-                      key={index}
-                      project={project}
-                      handleClick={setSelectedProject}
-                    />
-                  );
-                });
-              })}
+                  return projectsInCategory.map((project, index) => {
+                    return (
+                      <Card
+                        key={index}
+                        project={project}
+                        handleClick={setSelectedProject}
+                      />
+                    );
+                  });
+                },
+              )}
         </div>
       </div>
 
