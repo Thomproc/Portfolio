@@ -13,7 +13,7 @@ export default function ComputerNavBar({
     <>
       <SwitchEnvironment />
       <div className={styles.mainNavItems}>
-        {!withoutItems &&
+        {!withoutItems ? (
           (Object.values(ERoutes2D) as Array<ERoutes2D>).map((value, index) => {
             const ItemIcon = Routes2DIcons[value];
             return (
@@ -31,7 +31,10 @@ export default function ComputerNavBar({
                 {value}
               </div>
             );
-          })}
+          })
+        ) : (
+          <></>
+        )}
       </div>
     </>
   );

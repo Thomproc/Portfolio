@@ -30,18 +30,17 @@ export default function Contact() {
     emailjs.init("OX7XBSMFmNn6oTWJ8");
   }, []);
 
-  // METTRE :::: NOM PRENOM EMAIL "OBJET" MESSAGE
   const sendEmail = (e: FormEvent) => {
     e.preventDefault();
 
-    // emailjs
-    //   .send("service_2ws4xnj", "template_gfhq1z8", mailParams)
-    //   .then((_res) => {
-    //     console.log("C est parti !", _res.text);
-    //   })
-    //   .catch((_err) => {
-    //     console.log("Erreur :(", _err.text);
-    //   });
+    emailjs
+      .send("service_2ws4xnj", "template_gfhq1z8", mailParams)
+      .then((_res) => {
+        console.log("C est parti !", _res.text);
+      })
+      .catch((_err) => {
+        console.log("Erreur :(", _err.text);
+      });
   };
 
   return (

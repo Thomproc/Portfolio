@@ -7,7 +7,7 @@
   justify-content: space-between;
   align-items: center;
 
-  padding: 12px 32px;
+  padding: 12px min(5%, 32px);
 
   z-index: 10;
   background: rgb(from var(--background) r g b / 0.3);

@@ -66,6 +66,7 @@ export default function Main() {
   return (
     <Canvas shadows>
       <color attach="background" args={[colors.background3D]} />
+
       <Environment />
 
       <PerspectiveCamera makeDefault fov={90} position={cameraPosition} />
