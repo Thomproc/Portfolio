@@ -24,6 +24,7 @@ export default function HeroSection({ in3DWorld }: { in3DWorld: boolean }) {
         }deg)`;
       }}
     >
+      <img src={"./Images/HeroSection/background.jpg"} alt="background" />
       <div className={styles["hero-section"]}>
         <div>
           <Introduction />

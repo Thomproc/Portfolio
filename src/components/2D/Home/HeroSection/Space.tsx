@@ -6,7 +6,7 @@ export default function Space() {
     <div className={styles["space"]}>
       <div className={styles["wrapper"]}>
         <div className={styles["ripple-container"]} />
-        <div className={styles.image} />
+        <img src="./Images/HeroSection/photo.jpeg" />
         <div id="satellites" className={styles.satellites}>
           <Satellite
             offset="-2%"

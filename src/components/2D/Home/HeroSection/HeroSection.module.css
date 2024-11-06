@@ -5,13 +5,10 @@
   max-height: calc(100cqh - 4em);
   position: relative;
 
-  &::before {
-    content: "";
-    background-image: url("./Images/HeroSection/background.jpg");
-    background-repeat: no-repeat;
-    background-size: cover;
-    background-position: center;
+  & > img {
     position: absolute;
+    inset: 0;
+    object-fit: cover;
     width: 100cqw;
     height: 100%;
   }

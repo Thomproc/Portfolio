@@ -3,8 +3,6 @@
   align-items: center;
   justify-content: center;
   height: 70cqw;
-  /* min-height: 250px; */
-
   width: 100%;
   pointer-events: none;
 }
@@ -18,15 +16,14 @@
 
   perspective: 900px;
   transform-style: preserve-3d;
-}
 
-.image {
-  background-image: url("./Images/HeroSection/photo.jpeg");
-  background-size: contain;
-  border-radius: 50%;
-  width: 100%;
-  aspect-ratio: 1;
-  animation: scale 3s infinite cubic-bezier(0, 0.72, 1, 0.42);
+  & > img {
+    object-fit: contain;
+    border-radius: 50%;
+    width: 100%;
+    aspect-ratio: 1;
+    animation: scale 3s infinite cubic-bezier(0, 0.72, 1, 0.42);
+  }
 }
 
 .satellites {
