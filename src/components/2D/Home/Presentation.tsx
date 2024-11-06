@@ -7,10 +7,11 @@ export default function Presentation() {
           <div className={styles["description"]}>
             <div className={styles["title"]}>Hey, je suis Thomas !</div>
             <span>
-              Passioné par le développement d'applications qui vous seront
-              utiles, curieux afin d'évoluer en permanence, et enfin soucieux de
-              la qualité de mes produits et de la satisfaction client, j'espère
-              que mes services seront à la hauteur de vos attentes.
+              Curieux et passioné par le développement d'applications, la
+              programmation m'apporte satisfaction puisqu'elle permet
+              l'expression de ma créativité et la réalisation de projets
+              complexes avec pour seuls outils mes phalanges distales (émoji
+              main squelette).
             </span>
           </div>
         </div>

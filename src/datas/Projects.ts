@@ -17,6 +17,7 @@ const fuelToday: Project = {
     "Application mobile permettant de filtrer les stations-service à proximité afin de trouver celle au meilleur prix.",
   description: `FuelToday est une application mobile développée dans le cadre de mes études en utilisant Android Studio et Java. 
                 Cette application permet aux utilisateurs de trouver des stations-service à proximité en fonction de leur localisation, grâce à l’utilisation du GPS intégré au téléphone. En définissant un rayon de recherche personnalisé, l’application effectue une requête vers une API gratuite pour récupérer les informations sur les stations-service environnantes.`,
+  github: "https://github.com/Thomproc/fuelToday",
 };
 
 const jupiTerror: Project = {
@@ -68,6 +69,7 @@ const scene_iso: Project = {
   description: `
   Ce projet consistait à imaginer puis implémenter une interface permettant à l'utilisateur de placer / supprimer des cubes sur une scène en vue isométrique. Il pourra aussi ajouter / enlever une couleur à une face, appliquer / enlever une "texture" à un cube, faire tourner la scène, sauvegarder / ouvrir une scène qu'il a composer. 
   L'ensemble du projet a été réalisé en python (librairie Tkinter) avec une approche orientée objet.`,
+  github: "https://github.com/Thomproc/Scene_iso_github",
 };
 
 const gestion_comptes: Project = {
