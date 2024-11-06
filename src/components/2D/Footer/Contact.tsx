@@ -3,7 +3,6 @@ import styles from "./Contact.module.css";
 import TextField from "@mui/material/TextField";
 import emailjs from "@emailjs/browser";
 import SocialMedias from "./SocialMedias";
-import { Snackbar } from "@mui/material";
 
 enum EEmailParams {
   FROM_NAME = "from_name",
