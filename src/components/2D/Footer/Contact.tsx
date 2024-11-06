@@ -3,6 +3,7 @@ import styles from "./Contact.module.css";
 import TextField from "@mui/material/TextField";
 import emailjs from "@emailjs/browser";
 import SocialMedias from "./SocialMedias";
+import { Snackbar } from "@mui/material";
 
 enum EEmailParams {
   FROM_NAME = "from_name",
@@ -34,9 +35,11 @@ export default function Contact() {
     e.preventDefault();
 
     emailjs
-      .send("service_2ws4xnj", "template_gfhq1z8", mailParams)
+      // .send("service_2ws4xnj", "template_gfhq1z8", mailParams)
+      .send("service_2ws4xnj", "template_gfhq1z", mailParams)
+
       .then((_res) => {
-        console.log("C est parti !", _res.text);
+        console.log("Email envoyé !", _res.text);
       })
       .catch((_err) => {
         console.log("Erreur :(", _err.text);
