@@ -9,7 +9,7 @@ import {
 const fuelToday: Project = {
   name: "Fuel Today",
   context: EContext.M2,
-  date: new Date(2022, 0, 1),
+  date: new Date(2024, 4, 8),
   type: ETypes.Mobile,
   technologies: [ETechnologies.AndroidStudio, ETechnologies.Java],
   image: "fuel_today.png",
@@ -23,7 +23,7 @@ const fuelToday: Project = {
 const jupiTerror: Project = {
   name: "Jupi-Terror",
   context: EContext.M1,
-  date: new Date(2022, 0, 1),
+  date: new Date(2022, 2, 27),
   type: ETypes.Web,
   technologies: [
     ETechnologies.NodeJS,
@@ -45,7 +45,7 @@ const jupiTerror: Project = {
 const twitter: Project = {
   name: "Twitter",
   context: EContext.M1,
-  date: new Date(2022, 0, 1),
+  date: new Date(2023, 4, 8),
   type: ETypes.Web,
   technologies: [ETechnologies.Python],
   image: "twitter.png",
@@ -60,7 +60,7 @@ const twitter: Project = {
 const scene_iso: Project = {
   name: "Scène isométrique",
   context: EContext.Licence,
-  date: new Date(2022, 0, 1),
+  date: new Date(2021, 11, 24),
   type: ETypes.Web,
   technologies: [ETechnologies.Python],
   image: "scene_iso.png",
@@ -75,7 +75,7 @@ const scene_iso: Project = {
 const gestion_comptes: Project = {
   name: "Comptabilité",
   context: EContext.Personnel,
-  date: new Date(2022, 0, 1),
+  date: new Date(2022, 4, 12),
   type: ETypes.Mobile,
   technologies: [ETechnologies.Flutter, ETechnologies.PostgreSQL],
   image: "compte.jpg",
@@ -91,7 +91,7 @@ const gestion_comptes: Project = {
 const portfolio: Project = {
   name: "Portfolio",
   context: EContext.Personnel,
-  date: new Date(2022, 0, 1),
+  date: new Date(2024, 10, 7),
   type: ETypes.Web,
   technologies: [
     ETechnologies.NodeJS,

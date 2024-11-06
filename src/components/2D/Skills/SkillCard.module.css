@@ -73,7 +73,11 @@
     & > *:not(:last-child) {
       border-right: solid 1px rgb(from var(--color) r g b / 0.2);
       border-bottom: none;
-      padding-bottom: 0;
+      padding: 0 0.75em;
+    }
+
+    & > *:last-child {
+      padding: 0 0.75em;
     }
   }
 }

@@ -7,7 +7,7 @@ import {
   AndroidOutlined,
   OnDeviceTrainingOutlined,
   ViewInArOutlined,
-  AnimationRounded,
+  // AnimationRounded,
 } from "@mui/icons-material";
 
 export enum ESkills {
@@ -123,13 +123,13 @@ export const skills: TSkill[] = [
       {
         name: "Blender",
         icon: ViewInArOutlined,
-        content: ["Logiciel de création ...."],
+        content: ["Logiciel de modélisation et animation 3D"],
       },
-      {
-        name: "Spline",
-        icon: AnimationRounded,
-        content: ["Logiciel de création ...."],
-      },
+      // {
+      //   name: "Spline",
+      //   icon: AnimationRounded,
+      //   content: ["Outil de design et animations 3D interactives"],
+      // },
     ],
   },
 ];

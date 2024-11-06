@@ -3,6 +3,7 @@ import styles from "./Contact.module.css";
 import TextField from "@mui/material/TextField";
 import emailjs from "@emailjs/browser";
 import SocialMedias from "./SocialMedias";
+import { Alert, CircularProgress, Snackbar } from "@mui/material";
 
 enum EEmailParams {
   FROM_NAME = "from_name",
@@ -13,6 +14,9 @@ enum EEmailParams {
 }
 
 export default function Contact() {
+  const [isLoading, setIsLoading] = useState(false);
+  const [isSuccess, setIsSuccess] = useState<null | boolean>(null);
+
   const [fromName, setFromName] = useState("");
   const [fromSurname, setFromSurname] = useState("");
   const [email, setEmail] = useState("");
@@ -32,6 +36,8 @@ export default function Contact() {
 
   const sendEmail = (e: FormEvent) => {
     e.preventDefault();
+    setIsLoading(true);
+    setIsSuccess(null);
 
     emailjs
       // .send("service_2ws4xnj", "template_gfhq1z8", mailParams)
@@ -39,10 +45,13 @@ export default function Contact() {
 
       .then((_res) => {
         console.log("Email envoyé !", _res.text);
+        setIsSuccess(true);
       })
       .catch((_err) => {
         console.log("Erreur :(", _err.text);
-      });
+        setIsSuccess(false);
+      })
+      .finally(() => setIsLoading(false));
   };
 
   return (
@@ -113,11 +122,39 @@ export default function Contact() {
           }}
         />
         <div className="m-auto">
-          <button type="submit" className={styles["send-button"]}>
-            Envoyer
+          <button
+            type="submit"
+            className={`${styles["send-button"]} ${
+              isSuccess === true
+                ? styles["success"]
+                : isSuccess === false
+                  ? styles["error"]
+                  : ""
+            }`}
+            disabled={isLoading}
+          >
+            <div>Envoyer</div>
+            {isLoading && (
+              <CircularProgress size={20} style={{ color: "white" }} />
+            )}
           </button>
         </div>
       </form>
+      <Snackbar
+        anchorOrigin={{ vertical: "bottom", horizontal: "center" }}
+        open={isSuccess !== null}
+        autoHideDuration={2000}
+        onClose={() => setIsSuccess(null)}
+      >
+        <Alert
+          severity={isSuccess ? "success" : "error"}
+          // variant="filled"
+        >
+          {isSuccess === true
+            ? "Message envoyé ;)"
+            : "Échec de l'envoi... Veuillez réessayer"}
+        </Alert>
+      </Snackbar>
     </div>
   );
 }
