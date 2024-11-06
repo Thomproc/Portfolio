@@ -146,10 +146,7 @@ export default function Contact() {
         autoHideDuration={2000}
         onClose={() => setIsSuccess(null)}
       >
-        <Alert
-          severity={isSuccess ? "success" : "error"}
-          // variant="filled"
-        >
+        <Alert severity={isSuccess ? "success" : "error"}>
           {isSuccess === true
             ? "Message envoyé ;)"
             : "Échec de l'envoi... Veuillez réessayer"}
