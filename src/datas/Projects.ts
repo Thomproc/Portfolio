@@ -102,13 +102,10 @@ const gestion_comptes: Project = {
   technologies: [ETechnologies.Flutter, ETechnologies.PostgreSQL],
   mainImagePath: "./Images/Projects/compte/compte.jpg",
   carouselImages: [
-    "portfolio.png",
-    "homepage.png",
-    "skills.png",
-    "project.png",
-    "modal.png",
-    "contact.png",
-    "rubiksCube.png",
+    "compte.jpg",
+    "add_transaction.png",
+    "all_charts.png",
+    "spends_two_months.png",
   ],
   abstract:
     "Une application mobile pour visualiser la répartition des dépenses entre deux utilisateurs.",
@@ -141,13 +138,19 @@ const portfolio: Project = {
     "contact.png",
     "rubiksCube.png",
   ],
-  abstract:
-    "Le portfolio du dev, c'est comme le CV d'un RH : il doit être parfait, mais on sait tous qu'il n’y a pas de vrai contrôle qualité !",
+  abstract: "Le portfolio d'un développeur, un incontournable !",
+  // description: `
+  // J'ai développé un portfolio en ligne pour mettre en valeur mes compétences et mes projets, dans le cadre de mon lancement en tant que freelance.
+  // Ce dernier permet aux visiteurs de découvrir mes réalisations et compétences techniques à travers une interface moderne et intuitive.
+  // Ce projet reflète mon expertise en développement web et mon engagement à offrir des services professionnels de qualité.
+  // `,
   description: `
-  J'ai développé un portfolio en ligne pour mettre en valeur mes compétences et mes projets, dans le cadre de mon lancement en tant que freelance.
-  Ce dernier permet aux visiteurs de découvrir mes réalisations et mes compétences techniques à travers une interface moderne et intuitive.
-  Ce projet reflète mon expertise en développement web et mon engagement à offrir des services professionnels de qualité.
-  `,
+ 
+J'ai créé un portfolio en ligne pour présenter clairement mes compétences et projets. 
+L'interface permet aux visiteurs de naviguer facilement entre mes réalisations et d'explorer 
+mes compétences techniques sans complexité. 
+Ce projet montre mes compétences en développement web avec React, un framework que j'aimerais maîtriser davantage !
+`,
 };
 
 export const projects: {
