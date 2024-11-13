@@ -24,11 +24,7 @@ export default function Computer({
   });
 
   return (
-    <group
-      onClick={() => navigate(EMainsRoutes.MAIN2D)}
-      scale={scale}
-      position={position}
-    >
+    <group scale={scale} position={position}>
       <primitive object={computer.scene} />
       <Html
         className={styles["computer"]}
@@ -37,7 +33,7 @@ export default function Computer({
         zIndexRange={[computerPosition[2]]}
         position={[0, 0, -0.037]}
         transform
-        // onClick={() => navigate(EMainsRoutes.MAIN2D)}
+        onClick={() => navigate(EMainsRoutes.MAIN2D)}
       >
         <Homepage in3DWorld={true} />
       </Html>

@@ -64,52 +64,58 @@ export default function Main() {
   }, []);
 
   return (
-    <Canvas shadows>
-      <color attach="background" args={[colors.background3D]} />
+    <>
+      <Canvas shadows>
+        <color attach="background" args={[colors.background3D]} />
 
-      <Environment />
+        <Environment />
 
-      <PerspectiveCamera makeDefault fov={90} position={cameraPosition} />
-      {/* <axesHelper args={[20]} /> */}
+        <PerspectiveCamera makeDefault fov={90} position={cameraPosition} />
+        {/* <axesHelper args={[20]} /> */}
 
-      <RubiksCubeComponent
-        dim={RCdim}
-        cubesSize={RCsizeCube}
-        rotationSpeed={RCrotationSpeed}
-        envPosition={RCposition}
-        envRotationY={RCrotationY}
-        focusedPosition={RCfocusedPosition}
-        focusedRotationY={RCfocusedRotationY}
-        isFocused={target === "rubiksCube"}
-        focusMe={() => switchTarget("rubiksCube")}
-        cameraIsRotating={cameraIsRotating}
+        <RubiksCubeComponent
+          dim={RCdim}
+          cubesSize={RCsizeCube}
+          rotationSpeed={RCrotationSpeed}
+          envPosition={RCposition}
+          envRotationY={RCrotationY}
+          focusedPosition={RCfocusedPosition}
+          focusedRotationY={RCfocusedRotationY}
+          isFocused={target === "rubiksCube"}
+          focusMe={() => switchTarget("rubiksCube")}
+          cameraIsRotating={cameraIsRotating}
+        />
+
+        <Computer position={computerPosition} scale={computerScale} />
+        <OrbitControls
+          regress
+          onStart={handleControlStart}
+          onEnd={handleControlEnd}
+          enablePan={false}
+          enableZoom={false}
+          minAzimuthAngle={orbitProps[target].minAzimuthAngle}
+          maxAzimuthAngle={orbitProps[target].maxAzimuthAngle}
+          minPolarAngle={orbitProps[target].minPolarAngle}
+          maxPolarAngle={orbitProps[target].maxPolarAngle}
+          maxDistance={orbitProps[target].distance}
+          minDistance={orbitProps[target].distance}
+          target={orbitProps[target].target}
+        />
+        <ambientLight intensity={1} />
+        <SpotLight
+          castShadow
+          intensity={1.3}
+          distance={0}
+          position={[0, 300, 0]}
+          angle={Math.PI / 3}
+          penumbra={1}
+          decay={0}
+        />
+      </Canvas>
+      <div
+        id="popup"
+        className="absolute bottom-0 left-0 right-0 bg-black bg-opacity-70 px-4 py-2"
       />
-
-      <Computer position={computerPosition} scale={computerScale} />
-      <OrbitControls
-        regress
-        onStart={handleControlStart}
-        onEnd={handleControlEnd}
-        enablePan={false}
-        enableZoom={false}
-        minAzimuthAngle={orbitProps[target].minAzimuthAngle}
-        maxAzimuthAngle={orbitProps[target].maxAzimuthAngle}
-        minPolarAngle={orbitProps[target].minPolarAngle}
-        maxPolarAngle={orbitProps[target].maxPolarAngle}
-        maxDistance={orbitProps[target].distance}
-        minDistance={orbitProps[target].distance}
-        target={orbitProps[target].target}
-      />
-      <ambientLight intensity={1} />
-      <SpotLight
-        castShadow
-        intensity={1.3}
-        distance={0}
-        position={[0, 300, 0]}
-        angle={Math.PI / 3}
-        penumbra={1}
-        decay={0}
-      />
-    </Canvas>
+    </>
   );
 }

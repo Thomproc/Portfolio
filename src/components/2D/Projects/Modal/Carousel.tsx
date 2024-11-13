@@ -11,6 +11,9 @@ import { ArrowBackRounded, ArrowForwardRounded } from "@mui/icons-material";
 import MyRipple from "../../Components/MyRipple";
 
 export default function Carousel({ project }: { project: Project }) {
+  const folderPath =
+    project.mainImagePath.split("/").slice(0, -1).join("/") + "/";
+
   const sliderRef = useRef<Slider>(null);
   return (
     <div className={styles.carousel}>
@@ -55,30 +58,15 @@ export default function Carousel({ project }: { project: Project }) {
             { breakpoint: 500, settings: { slidesToShow: 1 } },
           ]}
         >
-          <div className={styles["img-container"]}>
-            <img
-              src={"./Images/Projects/" + project.image}
-              onClick={() =>
-                window.open("./Images/Projects/" + project.image, "_blank")
-              }
-            />
-          </div>
-          <div className={styles["img-container"]}>
-            <img
-              src={"./Images/Projects/" + project.image}
-              onClick={() =>
-                window.open("./Images/Projects/" + project.image, "_blank")
-              }
-            />
-          </div>
-          <div className={styles["img-container"]}>
-            <img
-              src={"./Images/Projects/" + project.image}
-              onClick={() =>
-                window.open("./Images/Projects/" + project.image, "_blank")
-              }
-            />
-          </div>
+          {project.carouselImages.map((image, index) => (
+            <div
+              key={index}
+              className={styles["img-container"]}
+              onClick={() => window.open(folderPath + image, "_blank")}
+            >
+              <img src={folderPath + image} alt={image} />
+            </div>
+          ))}
         </Slider>
       </div>
     </div>

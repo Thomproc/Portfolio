@@ -63,7 +63,7 @@ export default function RubiksCubeComponent({
         setSelectedCubeId(meshId);
       }
     },
-    [animation.playing, isFocused, focusMe]
+    [animation.playing, isFocused, focusMe],
   );
 
   // Gestion des événements clavier pour faire tourner le cube
@@ -71,12 +71,12 @@ export default function RubiksCubeComponent({
     const prepareCubesToRotate = (
       onSameAxisRotation: (
         meshPosition: Vector3,
-        selectedMeshPosition: Vector3
-      ) => boolean
+        selectedMeshPosition: Vector3,
+      ) => boolean,
     ) => {
       // Ajout des cubes à tourner dans le groupe "faceToRotate"
       const selectedMesh = RC.current?.getObjectByName(
-        selectedCubeId!.toString()
+        selectedCubeId!.toString(),
       );
       if (selectedMesh && faceToRotate.current) {
         faceToRotate.current.rotation.set(0, 0, 0);
@@ -189,7 +189,25 @@ export default function RubiksCubeComponent({
   }, [selectedCubeId, animation.playing, wrongKey]);
 
   useEffect(() => {
-    !isFocused && setSelectedCubeId(null);
+    const popup = document.getElementById("popup");
+    if (isFocused) {
+      popup!.style.display = "block";
+      popup!.innerHTML = `
+      <p >
+        Rotations autour de l'axe :
+        <ul>
+          <li>&emsp;- vertical (Gauche / Droite) : <b>Q</b> et <b>D</b> </li>
+          <li>&emsp;- horizontal (Haut / Bas) : <b>Z</b> et <b>S</b> </li>
+          <li>&emsp;- en profondeur (Sens horaire / Sens anti-horaire) : <b>E</b> et <b>A</b> </li>
+          <li>Appuyez sur <b>Echap</b> pour sortir </li>      
+        </ul>
+      </p>
+      `;
+    } else {
+      popup!.style.display = "none";
+      popup!.innerHTML = "";
+      setSelectedCubeId(null);
+    }
   }, [isFocused]);
 
   // Animation de la rotation des cubes

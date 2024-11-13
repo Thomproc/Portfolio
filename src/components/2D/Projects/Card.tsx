@@ -13,7 +13,10 @@ export default function Card({
 }) {
   return (
     <div className={styles["project"]} onClick={() => handleClick(project)}>
-      <img src={"./Images/Projects/" + project.image} alt={project.image} />
+      <img
+        src={project.mainImagePath}
+        alt={project.mainImagePath.split("/").pop()}
+      />
       <div className={styles["foreground"]}>
         <div className={styles.header}>
           <h3>{project.name}</h3>

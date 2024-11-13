@@ -41,7 +41,8 @@ export type Project = {
   date: Date;
   technologies: ETechnologies[];
   description: string;
-  image: string;
+  mainImagePath: string;
+  carouselImages: string[];
   github?: string;
   website?: string;
 };

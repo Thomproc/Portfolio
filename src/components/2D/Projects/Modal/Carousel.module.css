@@ -1,6 +1,5 @@
 .carousel {
   display: flex;
-  align-items: center;
   background-color: var(--background);
   position: relative;
   box-shadow: 0 0 20px 0px black;
@@ -87,7 +86,6 @@
 }
 
 .img-container {
-  /* height: 7em; */
   margin: 16px 0;
   padding: 0 8px;
   outline: none;

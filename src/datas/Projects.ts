@@ -12,7 +12,16 @@ const fuelToday: Project = {
   date: new Date(2024, 4, 8),
   type: ETypes.Mobile,
   technologies: [ETechnologies.AndroidStudio, ETechnologies.Java],
-  image: "fuel_today.png",
+  mainImagePath: "./Images/Projects/fuel_today/fuel_today.png",
+  carouselImages: [
+    "portfolio.png",
+    "homepage.png",
+    "skills.png",
+    "project.png",
+    "modal.png",
+    "contact.png",
+    "rubiksCube.png",
+  ],
   abstract:
     "Application mobile permettant de filtrer les stations-service à proximité afin de trouver celle au meilleur prix.",
   description: `FuelToday est une application mobile développée dans le cadre de mes études en utilisant Android Studio et Java. 
@@ -33,11 +42,19 @@ const jupiTerror: Project = {
     ETechnologies.ThreeJS,
     ETechnologies.Blender,
   ],
-  image: "jupiTerror.png",
+  mainImagePath: "./Images/Projects/jupiTerror/jupiTerror.png",
+  carouselImages: [
+    "jupiTerror.png",
+    "homepage.png",
+    "spaceship_upgrade1.png",
+    "spaceship_upgrade2.png",
+    "gameover.png",
+    "victory.png",
+  ],
   abstract:
     "Jeu web qui est une copie du célèbre Space Invaders... mais en 3D !",
   description: `
-  Dans le cadre de ma première année de Master, j'ai été amené à concevoir un clone du jeu Space Invaders en 3D dans le respect du cahier des charges. Pour cela j'ai respecté le cahier des charges fournit par l'encadrant qui incluait l'utilisation de primitives 3D animées, d'effets post-processing, la création de plusieurs niveaux, une "IA" pour les ennemis, l'utilisation de sons et plusieurs angles de vues possibles (vue d'ensemble statique ou point de vue du vaisseau).`,
+  Dans le cadre de ma première année de Master, j'ai été amené à concevoir un clone du jeu Space Invaders en 3D dans le respect du cahier des charges. Pour cela j'ai respecté le cahier des charges fourni par l'encadrant qui incluait l'utilisation de primitives 3D animées, d'effets post-processing, la création de plusieurs niveaux, une "IA" pour les ennemis, l'utilisation de sons et plusieurs angles de vues possibles (vue d'ensemble statique ou point de vue du vaisseau).`,
   github: "https://github.com/Thomproc/Space_invaders_threeJS",
   website: "https://Thomproc.github.io",
 };
@@ -48,7 +65,16 @@ const twitter: Project = {
   date: new Date(2023, 4, 8),
   type: ETypes.Web,
   technologies: [ETechnologies.Python],
-  image: "twitter.png",
+  mainImagePath: "./Images/Projects/twitter/twitter.png",
+  carouselImages: [
+    "portfolio.png",
+    "homepage.png",
+    "skills.png",
+    "project.png",
+    "modal.png",
+    "contact.png",
+    "rubiksCube.png",
+  ],
   abstract:
     "Amélioration de l'analyseur de tweets pré-existant afin d'afiner la détection d'entitées liées au tourisme (lieux, activités).",
   description: `
@@ -63,7 +89,13 @@ const scene_iso: Project = {
   date: new Date(2021, 11, 24),
   type: ETypes.Web,
   technologies: [ETechnologies.Python],
-  image: "scene_iso.png",
+  mainImagePath: "./Images/Projects/scene_iso/scene_iso.png",
+  carouselImages: [
+    "scene_iso.png",
+    "homepage.png",
+    "customTexture.png",
+    "customColor.png",
+  ],
   abstract:
     "Création d'une interface 2D avec une illusion de 3D sur laquelle il est possible de placer et customiser des cubes.",
   description: `
@@ -78,7 +110,16 @@ const gestion_comptes: Project = {
   date: new Date(2022, 4, 12),
   type: ETypes.Mobile,
   technologies: [ETechnologies.Flutter, ETechnologies.PostgreSQL],
-  image: "compte.jpg",
+  mainImagePath: "./Images/Projects/compte/compte.jpg",
+  carouselImages: [
+    "portfolio.png",
+    "homepage.png",
+    "skills.png",
+    "project.png",
+    "modal.png",
+    "contact.png",
+    "rubiksCube.png",
+  ],
   abstract:
     "Une application mobile pour visualiser la répartition des dépenses entre deux utilisateurs.",
   description: `
@@ -100,7 +141,16 @@ const portfolio: Project = {
     ETechnologies.CSS,
     ETechnologies.TS,
   ],
-  image: "portfolio.png",
+  mainImagePath: "./Images/Projects/portfolio/portfolio.png",
+  carouselImages: [
+    "portfolio.png",
+    "homepage.png",
+    "skills.png",
+    "project.png",
+    "modal.png",
+    "contact.png",
+    "rubiksCube.png",
+  ],
   abstract:
     "Le portfolio du dev, c'est comme le CV d'un RH : il doit être parfait, mais on sait tous qu'il n’y a pas de vrai contrôle qualité !",
   description: `

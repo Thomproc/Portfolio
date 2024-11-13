@@ -29,8 +29,8 @@ export default function ModalProject({
             </div>
             <div className={styles.banner}>
               <img
-                src={"./Images/Projects/" + selectedProject.image}
-                alt={selectedProject.image}
+                src={selectedProject.mainImagePath}
+                alt={selectedProject.mainImagePath.split("/").pop()}
               />
 
               <h1>{selectedProject.name}</h1>
