@@ -10,8 +10,9 @@ export default function Presentation() {
               Curieux et passioné par le développement d'applications, la
               programmation m'apporte satisfaction puisqu'elle permet
               l'expression de ma créativité et la réalisation de projets
-              complexes avec pour seuls outils mes phalanges distales (émoji
-              main squelette).
+              complexes avec pour seuls outils mes phalanges distales !
+              <br />
+              <span style={{ fontSize: "1.5em" }}>&#128075;</span>
             </span>
           </div>
         </div>

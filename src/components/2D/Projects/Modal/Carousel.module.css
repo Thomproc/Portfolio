@@ -24,13 +24,13 @@
 
 .leftArrow,
 .rightArrow {
-  background-color: rgb(from var(--background_dark) r g b / 0.4);
+  background-color: rgb(from var(--background_dark) r g b / 0.5);
   backdrop-filter: blur(5px);
   position: absolute;
   top: 0;
   z-index: 1;
   height: 100%;
-  padding: 0 0.5em;
+  padding: 0 8px;
   display: grid;
   place-items: center;
   cursor: pointer;
@@ -69,16 +69,11 @@
 }
 
 .slider {
+  height: 100%;
   width: 100%;
   padding: 32px;
 
-  height: fit-content;
-  overflow: hidden;
-
   img {
-    width: 100%;
-    height: 100%;
-    object-fit: cover;
     border-radius: 12px;
     overflow: hidden;
     cursor: pointer;
@@ -86,7 +81,10 @@
 }
 
 .img-container {
-  margin: 16px 0;
+  min-height: 150px;
+  display: flex;
+  align-content: center;
+  margin: auto 0;
   padding: 0 8px;
   outline: none;
   transition: 0.3s;

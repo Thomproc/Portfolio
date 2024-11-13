@@ -13,15 +13,7 @@ const fuelToday: Project = {
   type: ETypes.Mobile,
   technologies: [ETechnologies.AndroidStudio, ETechnologies.Java],
   mainImagePath: "./Images/Projects/fuel_today/fuel_today.png",
-  carouselImages: [
-    "portfolio.png",
-    "homepage.png",
-    "skills.png",
-    "project.png",
-    "modal.png",
-    "contact.png",
-    "rubiksCube.png",
-  ],
+  carouselImages: ["research.jpg", "settings.jpg", "map.jpg"],
   abstract:
     "Application mobile permettant de filtrer les stations-service à proximité afin de trouver celle au meilleur prix.",
   description: `FuelToday est une application mobile développée dans le cadre de mes études en utilisant Android Studio et Java. 
@@ -67,20 +59,18 @@ const twitter: Project = {
   technologies: [ETechnologies.Python],
   mainImagePath: "./Images/Projects/twitter/twitter.png",
   carouselImages: [
-    "portfolio.png",
-    "homepage.png",
-    "skills.png",
-    "project.png",
-    "modal.png",
-    "contact.png",
-    "rubiksCube.png",
+    "presentation.png",
+    "new_ihm.png",
+    "pattern_with_example.png",
+    "dependency_tree.png",
+    "sample_result.png",
   ],
   abstract:
     "Amélioration de l'analyseur de tweets pré-existant afin d'afiner la détection d'entitées liées au tourisme (lieux, activités).",
   description: `
   Ce projet a été réalisé durant 3 mois afin d'aider un Doctorant en informatique. Le but était de détecter dans les tweets des lieux touristiques et des concepts associés au tourisme tels que des activités. 
-  Pour ce faire, j'ai dû me familiariser avec une première version existante du projet afin de l'améliorer ainsi que découvrir les étapes intervenants dans le traitement automatique du langage.
-  Une fois ce domaine découvert, je me suis formé à l'utilisation de la bibliothèque spaCy (Python) permettant justement l'analyse des tweets et donc l'extraction des entités souhaitées par application de règles de grammaires que j'ai préconçues.`,
+  Pour ce faire, j'ai dû me familiariser avec une première version existante du projet afin de l'améliorer ainsi que découvrir les étapes intervenant dans le traitement automatique du langage.
+  Une fois ce domaine découvert, je me suis formé à l'utilisation de la bibliothèque spaCy (Python) permettant justement l'analyse des tweets et donc l'extraction des entités souhaitées par application de règles de grammaire que j'ai préconçues.`,
 };
 
 const scene_iso: Project = {
@@ -99,7 +89,7 @@ const scene_iso: Project = {
   abstract:
     "Création d'une interface 2D avec une illusion de 3D sur laquelle il est possible de placer et customiser des cubes.",
   description: `
-  Ce projet consistait à imaginer puis implémenter une interface permettant à l'utilisateur de placer / supprimer des cubes sur une scène en vue isométrique. Il pourra aussi ajouter / enlever une couleur à une face, appliquer / enlever une "texture" à un cube, faire tourner la scène, sauvegarder / ouvrir une scène qu'il a composer. 
+  Ce projet consistait à imaginer puis implémenter une interface permettant à l'utilisateur de placer / supprimer des cubes sur une scène en vue isométrique. Il pourra aussi ajouter / enlever une couleur à une face, appliquer / enlever une "texture" à un cube, faire tourner la scène, sauvegarder / ouvrir une scène qu'il a composé. 
   L'ensemble du projet a été réalisé en python (librairie Tkinter) avec une approche orientée objet.`,
   github: "https://github.com/Thomproc/Scene_iso_github",
 };

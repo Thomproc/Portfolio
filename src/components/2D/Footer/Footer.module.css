@@ -17,6 +17,12 @@
       radial-gradient(var(--primary) 60%, var(--secondary_dark)) border-box;
     border-top: 1px solid transparent;
   }
+
+  & > span {
+    position: relative;
+    color: var(--text3);
+    font-size: small;
+  }
 }
 
 .img-container {
