@@ -40,8 +40,7 @@ export default function Contact() {
     setIsSuccess(null);
 
     emailjs
-      // .send("service_2ws4xnj", "template_gfhq1z8", mailParams)
-      .send("service_2ws4xnj", "template_gfhq1z", mailParams)
+      .send("service_2ws4xnj", "template_gfhq1z8", mailParams)
 
       .then((_res) => {
         console.log("Email envoyé !", _res.text);
