@@ -1,24 +1,10 @@
 import styles from "./NavBar.module.css";
-import { useEffect, useState } from "react";
+import useResponsiveWidth from "../../Hooks/ResponsiveWidth";
 import ComputerNavBar from "./ComputerNavBar";
 import MobileNavBar from "./MobileNavBar";
 import { Download } from "@mui/icons-material";
 import { useLocation } from "react-router-dom";
 import { EMainsRoutes } from "../../../RouterConfig";
-
-const useResponsiveWidth = () => {
-  const [width, setWidth] = useState(window.innerWidth);
-
-  useEffect(() => {
-    const handleResize = () => {
-      setWidth(window.innerWidth);
-    };
-    window.addEventListener("resize", handleResize);
-    return () => window.removeEventListener("resize", handleResize);
-  }, []);
-
-  return width;
-};
 
 const switchNavBar = (screenWidth: number) => {
   if (screenWidth < 720) {

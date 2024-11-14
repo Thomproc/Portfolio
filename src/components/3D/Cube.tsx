@@ -1,5 +1,7 @@
 import { useState, useMemo } from "react";
 import { Color, MeshLambertMaterial } from "three";
+import { isBrowser } from "react-device-detect";
+
 import { RoundedBoxGeometry } from "three-stdlib";
 import { TCube } from "../../models/Cube";
 import { Edges } from "@react-three/drei";
@@ -23,7 +25,7 @@ export default function Cube({
       cube.size,
       cube.size,
       4,
-      cube.cornerRadius
+      cube.cornerRadius,
     );
   }, [cube.size, cube.cornerRadius]);
 
@@ -44,18 +46,30 @@ export default function Cube({
     <group name={cube.id.toString()} position={cube.initialPosition}>
       <mesh
         castShadow
-        onClick={(event) => {
-          event.stopPropagation();
-          setSelectedCube(isSelected ? null : cube.id);
-        }}
-        onPointerEnter={(event) => {
-          event.stopPropagation();
-          setIsHovered(true);
-        }}
-        onPointerOut={(event) => {
-          event.stopPropagation();
-          setIsHovered(false);
-        }}
+        onClick={
+          isBrowser
+            ? (event) => {
+                event.stopPropagation();
+                setSelectedCube(isSelected ? null : cube.id);
+              }
+            : () => null
+        }
+        onPointerEnter={
+          isBrowser
+            ? (event) => {
+                event.stopPropagation();
+                setIsHovered(true);
+              }
+            : () => null
+        }
+        onPointerOut={
+          isBrowser
+            ? (event) => {
+                event.stopPropagation();
+                setIsHovered(false);
+              }
+            : () => null
+        }
       >
         <boxGeometry
           args={[
